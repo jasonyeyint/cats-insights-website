@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | CATS Insights</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resource-btn { margin-right: 8px; margin-bottom: 8px; font-size: 13px; padding: 8px 12px; }
+        details.course-details {
+            background: white; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 6px; overflow: hidden;
+        }
+        details.course-details summary {
+            background: var(--primary); color: white; padding: 12px 15px; cursor: pointer; font-weight: 500; list-style: none; position: relative;
+        }
+        details.course-details summary::-webkit-details-marker { display: none; }
+        details.course-details summary::after {
+            content: '+'; position: absolute; right: 15px; font-weight: bold;
+        }
+        details[open].course-details summary::after { content: '-'; }
+        details.course-details .details-content { padding: 15px; background: #fafafa; }
+        .details-content h5 { margin-bottom: 10px; color: var(--primary); font-size: 15px; }
+        .flex-wrap-gap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/LOGO.jpg" alt="CATS Insights Logo" class="brand-logo">
+                CATS Insights
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                <li><a href="chemistry-of-kent.html" class="nav-link">Blog</a></li>
+                <li><a href="impact-report.html" class="nav-link">Impact Report</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="section" style="background-color: var(--primary); color: white; padding-bottom: 20px;">
+        <div class="container fade-in text-center">
+            <h1 style="font-size: 36px; margin-top: 20px; color: white;">Courses & Resources</h1>
+            <p style="font-size: 20px; color: #ddd; margin-bottom: 30px;">Access our syllabus, lesson slides, and teaching scripts.</p>
+        </div>
+    </header>
+
+    <!-- Courses Grid -->
+    <section class="section">
+        <div class="container fade-in">
+            <!-- Full Width Foundational Suite Link -->
+            <div class="card" style="margin-bottom: 30px; background-color: var(--primary); color: white; border-radius: 8px; border: none; padding: 25px;">
+                <div style="flex: 1;">
+                    <h2 style="color: white; margin-bottom: 10px;">CATS Foundational Suite</h2>
+                    <p style="color: #ddd; margin-bottom: 15px;">Access the complete architectural framework, governance documents, and operational guides.</p>
+                    <a href="foundational-suite.html" class="btn" style="background-color: var(--secondary); color: var(--text-dark); border: none;">Explore the Suite</a>
+                </div>
+            </div>
+
+            <!-- Teaching Resources (Category 1) -->
+            <div id="teaching-resources" style="margin-bottom: 50px;">
+                <h2 style="border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-bottom: 20px;">Teaching Resources</h2>
+                <p style="margin-bottom: 20px;">A constantly expanding library of high-quality educational materials, infographics, and teaching aids produced by CATS Insights members for use in A-Level STEM classrooms.</p>
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-top: 0; margin-bottom: 30px;">
+                    <!-- Resource Item -->
+                    <div class="card" style="padding: 20px;">
+                        <span class="badge" style="background-color: var(--primary); color: white; font-size: 12px; margin-bottom: 10px;">Chemistry</span>
+                        <h3 style="font-size: 18px; margin-bottom: 10px;">CaCO₃ Infographic</h3>
+                        <p style="font-size: 14px; margin-bottom: 15px;">A specialized deep-dive infographic designed for seamless A-Level curriculum integration.</p>
+                        <a href="#" class="btn resource-btn" style="width: 100%;" download>Download Asset</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Training Courses -->
+            <h2 style="border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px;">Academic Training Courses</h2>
+            <div class="card-grid" style="grid-template-columns: 1fr; margin-top: 0;">
+                
+                <!-- Writers Course -->
+                <div class="card fade-in" style="flex-direction: column; gap: 20px;">
+                    <div>
+                        <span class="badge" style="background-color: var(--secondary); color: var(--text-dark);">Core Training</span>
+                        <h2 style="margin-top: 10px;">Writers Course</h2>
+                        <p>The foundational course for all CATS Insights members. Learn how to translate complex chemical concepts into engaging, accessible articles using the Inverted Pyramid method and PEEL structures.</p>
+                    </div>
+                    
+                    <div style="width: 100%;">
+
+                        <!-- Materials -->
+                        <details class="course-details">
+                            <summary>Materials (Lesson Slides & Scripts)</summary>
+                            <div class="details-content">
+                                <h5>Lesson Slides (PDF)</h5>
+                                <div class="flex-wrap-gap">
+                                    <a href="documents/writers_slides_L1.pdf" class="btn resource-btn" download>Lesson 1</a>
+                                    <a href="documents/writers_slides_L2.pdf" class="btn resource-btn" download>Lesson 2</a>
+                                    <a href="documents/writers_slides_L3.pdf" class="btn resource-btn" download>Lesson 3</a>
+                                    <a href="documents/writers_slides_L4.pdf" class="btn resource-btn" download>Lesson 4</a>
+                                    <a href="documents/writers_slides_L5.pdf" class="btn resource-btn" download>Lesson 5</a>
+                                    <a href="documents/writers_slides_L6.pdf" class="btn resource-btn" download>Lesson 6</a>
+                                    <a href="documents/writers_slides_L7.pdf" class="btn resource-btn" download>Lesson 7</a>
+                                    <a href="documents/writers_slides_L8.pdf" class="btn resource-btn" download>Lesson 8</a>
+                                    <a href="documents/writers_slides_L9.pdf" class="btn resource-btn" download>Lesson 9</a>
+                                </div>
+                                <h5>Scripts (PDF)</h5>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="documents/writers_scripts_L1.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 1</a>
+                                    <a href="documents/writers_scripts_L2.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 2</a>
+                                    <a href="documents/writers_scripts_L3.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 3</a>
+                                    <a href="documents/writers_scripts_L4.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 4</a>
+                                    <a href="documents/writers_scripts_L5.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 5</a>
+                                    <a href="documents/writers_scripts_L6.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 6</a>
+                                    <a href="documents/writers_scripts_L7.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 7</a>
+                                    <a href="documents/writers_scripts_L8.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 8</a>
+                                    <a href="documents/writers_scripts_L9.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 9</a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Tutorial Videos -->
+                        <details class="course-details">
+                            <summary>Tutorial Videos (Lesson Recordings)</summary>
+                            <div class="details-content">
+                                <p style="font-size: 14px; margin-bottom: 10px;">Catch up on the live LearningPlanet Workshop Presentations and full recording archives.</p>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 1</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 2</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 3</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 4</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 5</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 6</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 7</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 8</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 9</a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Assessments & Tests -->
+                        <details class="course-details">
+                            <summary>Assessments & Tests</summary>
+                            <div class="details-content">
+                                <h5>Formal Tests</h5>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="documents/writers_test_L10.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Lesson 10 Test</a>
+                                    <a href="documents/writers_test_1.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 1: Research Competency</a>
+                                    <a href="documents/writers_test_2.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 2: Writing Competency</a>
+                                    <a href="documents/writers_test_3.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 3: Citation Competency</a>
+                                    <a href="documents/writers_test_4.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 4: Critical Analysis</a>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Editors Course -->
+                <div class="card fade-in" style="flex-direction: column; gap: 20px;">
+                    <div>
+                        <span class="badge" style="background-color: var(--secondary); color: var(--text-dark);">Advanced Training</span>
+                        <h2 style="margin-top: 10px;">Editors Course</h2>
+                        <p>Designed for Lead Writers and Section Editors. Focuses on constructive peer review, maintaining consistent tonal guidelines, fact-checking chemical equations, and mastering Oxford Referencing.</p>
+                    </div>
+                    
+                    <div style="width: 100%;">
+
+                        <!-- Materials -->
+                        <details class="course-details">
+                            <summary>Materials (Lesson Slides & Scripts)</summary>
+                            <div class="details-content">
+                                <h5>Lesson Slides (PDF)</h5>
+                                <div class="flex-wrap-gap">
+                                    <a href="documents/editors_slides_L1.pdf" class="btn resource-btn" download>Lesson 1</a>
+                                    <a href="documents/editors_slides_L2.pdf" class="btn resource-btn" download>Lesson 2</a>
+                                    <a href="documents/editors_slides_L3.pdf" class="btn resource-btn" download>Lesson 3</a>
+                                    <a href="documents/editors_slides_L4.pdf" class="btn resource-btn" download>Lesson 4</a>
+                                    <a href="documents/editors_slides_L5.pdf" class="btn resource-btn" download>Lesson 5</a>
+                                    <a href="documents/editors_slides_L6.pdf" class="btn resource-btn" download>Lesson 6</a>
+                                    <a href="documents/editors_slides_L7.pdf" class="btn resource-btn" download>Lesson 7</a>
+                                </div>
+                                <h5>Scripts (PDF)</h5>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="documents/editors_scripts_L1.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 1</a>
+                                    <a href="documents/editors_scripts_L2.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 2</a>
+                                    <a href="documents/editors_scripts_L3.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 3</a>
+                                    <a href="documents/editors_scripts_L4.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 4</a>
+                                    <a href="documents/editors_scripts_L5.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 5</a>
+                                    <a href="documents/editors_scripts_L6.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 6</a>
+                                    <a href="documents/editors_scripts_L7.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>Lesson 7</a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Tutorial Videos -->
+                        <details class="course-details">
+                            <summary>Tutorial Videos (Lesson Recordings)</summary>
+                            <div class="details-content">
+                                <p style="font-size: 14px; margin-bottom: 10px;">Review advanced editing techniques and live workshop examples.</p>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 1</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 2</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 3</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 4</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 5</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 6</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 7</a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Assessments & Tests -->
+                        <details class="course-details">
+                            <summary>Assessments & Tests</summary>
+                            <div class="details-content">
+                                <h5>Formal Tests</h5>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="documents/editors_test_L8.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Lesson 8 Test</a>
+                                    <a href="documents/editors_test_1.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 1: Error Detection</a>
+                                    <a href="documents/editors_test_2.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 2: Feedback Quality</a>
+                                    <a href="documents/editors_test_3.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 3: Citation & Bibliography Repair</a>
+                                    <a href="documents/editors_test_4.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 4: Concision Cut</a>
+                                    <a href="documents/editors_test_5.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Test 5: Full QA Audit</a>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Designer Course -->
+                <div class="card fade-in" style="flex-direction: column; gap: 20px;">
+                    <div>
+                        <span class="badge" style="background-color: var(--secondary); color: var(--text-dark);">Specialist Training</span>
+                        <h2 style="margin-top: 10px;">Designer Course</h2>
+                        <p>Tailored for the creative team. Learn how to transform data and dense text into compelling, accurate infographics and diagrams that enhance science communication.</p>
+                    </div>
+                    
+                    <div style="width: 100%;">
+
+                        <!-- Materials -->
+                        <details class="course-details">
+                            <summary>Materials (Lesson Slides & Scripts)</summary>
+                            <div class="details-content">
+                                <h5>Lesson Slides (PDF)</h5>
+                                <div class="flex-wrap-gap">
+                                    <a href="documents/designer_slides_1.pdf" class="btn resource-btn" download>1. Design 101</a>
+                                    <a href="documents/designer_slides_2.pdf" class="btn resource-btn" download>2. Academic Article</a>
+                                    <a href="documents/designer_slides_3.pdf" class="btn resource-btn" download>3. Posters</a>
+                                    <a href="documents/designer_slides_4.pdf" class="btn resource-btn" download>4. Magazine</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: #f0ad4e; color: white; border: none;" title="Due 26/03/26">5. Graphs/Tables (In Progress)</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: #f0ad4e; color: white; border: none;" title="Due 23/04/26">6. Presentations (In Progress)</a>
+                                </div>
+                                <h5>Scripts (PDF)</h5>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="documents/designer_scripts_1.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>1. Design 101</a>
+                                    <a href="documents/designer_scripts_2.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>2. Academic Article</a>
+                                    <a href="documents/designer_scripts_3.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>3. Posters</a>
+                                    <a href="documents/designer_scripts_4.pdf" class="btn resource-btn" style="background-color: var(--secondary); color: var(--text-dark);" download>4. Magazine</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: #f0ad4e; color: white; border: none;" title="Due 26/03/26">5. Graphs/Tables (In Progress)</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: #f0ad4e; color: white; border: none;" title="Due 23/04/26">6. Presentations (In Progress)</a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Tutorial Videos -->
+                        <details class="course-details">
+                            <summary>Tutorial Videos (Lesson Recordings)</summary>
+                            <div class="details-content">
+                                <p style="font-size: 14px; margin-bottom: 10px;">Watch tutorials on using Canva, Adobe Express, and digital drawing tools.</p>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 1: Design 101</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 2: Academic Article</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 3: Posters</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: var(--text-dark); color: white;">Video 4: Magazine</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: #f0ad4e; color: white; border: none;" title="Due 26/03/26">Video 5: Graphs/Tables (In Progress)</a>
+                                    <a href="#" class="btn resource-btn" style="background-color: #f0ad4e; color: white; border: none;" title="Due 23/04/26">Video 6: Presentations (In Progress)</a>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Assessments & Tests -->
+                        <details class="course-details">
+                            <summary>Examinations & Tests</summary>
+                            <div class="details-content">
+                                <h5>Examination Periods (Mandatory Attendance)</h5>
+                                <div class="flex-wrap-gap" style="margin-bottom: 0;">
+                                    <a href="documents/designer_test_1.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Academic Article Design Test</a>
+                                    <a href="documents/designer_test_2.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Posters Design Test</a>
+                                    <a href="documents/designer_test_3.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Magazine Design Test</a>
+                                    <a href="documents/designer_test_4.pdf" class="btn resource-btn" style="background-color: #d9534f; color: white;" download>Presentation Design Test</a>
+                                </div>
+                                <p style="font-size: 12px; color: #666; margin-top: 10px; margin-bottom: 0;">*Note: Academic Article and Magazine tests require analytic presentation foundational prep.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <p style="margin: 0;">CATS Insights &copy; 2026 | The Worthgate School, Canterbury, Kent</p>
+            <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
+                <a href="https://instagram.com/catsinsightsofficial" target="_blank" style="display: flex; align-items: center; gap: 5px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    @catsinsightsofficial
+                </a>
+                <a href="mailto:catsinsightscanterbury@gmail.com" style="display: flex; align-items: center; gap: 5px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    catsinsightscanterbury@gmail.com
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>

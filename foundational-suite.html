@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundational Suite | CATS Insights</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resource-btn { margin-right: 8px; margin-bottom: 8px; font-size: 13px; padding: 8px 12px; }
+        details.suite-details {
+            background: white; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 6px; overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        details.suite-details summary {
+            background: var(--primary); color: white; padding: 15px 20px; cursor: pointer; font-weight: 500; font-size: 18px; list-style: none; position: relative;
+        }
+        details.suite-details summary::-webkit-details-marker { display: none; }
+        details.suite-details summary::after {
+            content: '+'; position: absolute; right: 20px; font-weight: bold; font-size: 20px;
+        }
+        details[open].suite-details summary::after { content: '-'; }
+        details.suite-details .details-content { padding: 20px; background: #fafafa; }
+        .details-content p.suite-purpose { margin-bottom: 15px; font-style: italic; color: var(--text-dark); }
+        .doc-list { list-style: none; padding: 0; margin: 0; }
+        .doc-list li { margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid #eaeaea; }
+        .doc-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .doc-list li strong { color: var(--primary); display: block; margin-bottom: 3px; }
+        .doc-list li span { font-size: 14px; color: #555; }
+        .tier-badge { font-size: 11px; padding: 3px 6px; border-radius: 4px; color: white; margin-left: 10px; font-weight: bold; }
+        .tier-1 { background-color: #d9534f; } /* Critical Path */
+        .tier-2 { background-color: #f0ad4e; } /* Operational Efficiency */
+        .tier-3 { background-color: #5bc0de; } /* Institutional Legacy */
+        .btn-download-small { font-size: 12px; padding: 5px 10px; border: 1px solid var(--secondary); border-radius: 4px; color: var(--primary); text-decoration: none; font-weight: 500; transition: 0.2s; white-space: nowrap; }
+        .btn-download-small:hover { background-color: var(--secondary); color: var(--text-dark); }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/LOGO.jpg" alt="CATS Insights Logo" class="brand-logo">
+                CATS Insights
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                <li><a href="chemistry-of-kent.html" class="nav-link">Blog</a></li>
+                <li><a href="impact-report.html" class="nav-link">Impact Report</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="section" style="background-color: var(--primary); color: white; padding-bottom: 20px;">
+        <div class="container fade-in text-center">
+            <h1 style="font-size: 36px; margin-top: 20px; color: white;">Foundational Suite</h1>
+            <p style="font-size: 20px; color: #ddd; margin-bottom: 30px;">The complete architectural framework and documentation for our organization.</p>
+        </div>
+    </header>
+
+    <!-- Suites Section -->
+    <section class="section">
+        <div class="container fade-in">
+            <a href="resources.html" style="display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 500;">&larr; Back to Resources</a>
+            
+            <div style="background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Priority Tiers</h3>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div><span class="tier-badge tier-1" style="margin-left: 0;">TIER 1</span> <span style="font-size: 14px;">Critical Path (Cannot publish without these)</span></div>
+                    <div><span class="tier-badge tier-2" style="margin-left: 0;">TIER 2</span> <span style="font-size: 14px;">Operational Efficiency</span></div>
+                    <div><span class="tier-badge tier-3" style="margin-left: 0;">TIER 3</span> <span style="font-size: 14px;">Institutional Legacy</span></div>
+                </div>
+            </div>
+
+            <!-- Suite 1 -->
+            <details class="suite-details" open>
+                <summary>SUITE 1: Governance & Constitution</summary>
+                <div class="details-content">
+                    <p class="suite-purpose">Purpose: Establish the legal and structural foundation of CATS Insights.</p>
+                    <ul class="doc-list">
+                        <li>
+                            <div>
+                                <strong>1.1 The Constitution <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Mission, values, organizational structure, amendment procedures</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>1.2 Delegation & Workflow Framework <span class="tier-badge tier-2">T2</span></strong>
+                                <span>6-stage closed loop, escalation procedures, accountability</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>1.3 Role Descriptions Manual <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Complete job descriptions for all 15+ roles with KPIs</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>1.4 Leadership Succession Playbook <span class="tier-badge tier-3">T3</span></strong>
+                                <span>How to identify, train, and transition new captains</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>1.5 Code of Conduct & Ethics <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Academic integrity, behavioral standards, disciplinary procedures</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>1.6 Annual Planning Guide <span class="tier-badge tier-3">T3</span></strong>
+                                <span>Year-at-a-glance, term milestones, edition cycle calendar</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>1.7 Decision-Making Protocol <span class="tier-badge tier-3">T3</span></strong>
+                                <span>Authority levels, approval matrices, emergency protocols</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>1.8 Organizational Chart <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Visual hierarchy, reporting lines, contact directory</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Suite 2 -->
+            <details class="suite-details">
+                <summary>SUITE 2: Academic Development</summary>
+                <div class="details-content">
+                    <p class="suite-purpose">Purpose: Equip writers with everything needed to produce publication-ready content.</p>
+                    <ul class="doc-list">
+                        <li>
+                            <div>
+                                <strong>2.1 The Official Writer's Guide <span class="tier-badge tier-1">T1</span></strong>
+                                <span>Tone, structure, word counts, 3-Level Framework, submission process</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.2 The Oxford Citation Protocol <span class="tier-badge tier-1">T1</span></strong>
+                                <span>Oxford format, QuillBot tutorial, DOI requirements, common errors</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.3 The Research Handbook <span class="tier-badge tier-1">T1</span></strong>
+                                <span>Finding sources, evaluating credibility, JSTOR, Boolean search</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.4 The Topic Menu <span class="tier-badge tier-2">T2</span></strong>
+                                <span>30+ pre-approved topics with difficulty ratings, banned list</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.5 The 3-Level Framework Guide <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Level 1/2/3 examples across STEM disciplines</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.6 Research Planning Worksheet <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Source tracker, argument outline, evidence matrix</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.7 Article Draft Template <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Pre-formatted structure, citation placeholders</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.8 Academic Integrity Declaration <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Plagiarism definition, AI policy acknowledgment</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>2.9 Writer's FAQ & Troubleshooting <span class="tier-badge tier-3">T3</span></strong>
+                                <span>Common questions, writer's block solutions</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Suite 3 -->
+            <details class="suite-details">
+                <summary>SUITE 3: Editorial & Quality Assurance</summary>
+                <div class="details-content">
+                    <p class="suite-purpose">Purpose: Ensure every piece meets standards for accuracy, integrity, and style.</p>
+                    <ul class="doc-list">
+                        <li>
+                            <div>
+                                <strong>3.1 The Editorial Handbook <span class="tier-badge tier-1">T1</span></strong>
+                                <span>How to edit (not proofread), structural vs line editing, feedback</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>3.2 The Editorial Checklist <span class="tier-badge tier-1">T1</span></strong>
+                                <span>20-point verification for every article</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>3.3 The QA Gatekeeper Protocol <span class="tier-badge tier-1">T1</span></strong>
+                                <span>Turnitin, GPTZero, citation verification, fact-checking</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>3.4 Feedback Scripts & Templates <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Pre-written constructive criticism phrases</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>3.5 The AI Policy Statement <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Acceptable vs prohibited AI use, declaration requirements</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>3.6 Common Errors Guide <span class="tier-badge tier-2">T2</span></strong>
+                                <span>50 most frequent errors with before/after examples</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>3.7 Fact-Checking Protocol <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Source verification, scientific accuracy standards</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>3.8 Editor Training Curriculum <span class="tier-badge tier-3">T3</span></strong>
+                                <span>4-session training sequence, certification requirements</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Suite 4 -->
+            <details class="suite-details">
+                <summary>SUITE 4: Design & Visual Identity</summary>
+                <div class="details-content">
+                    <p class="suite-purpose">Purpose: Ensure every visual output is unmistakably CATS Insights.</p>
+                    <ul class="doc-list">
+                        <li>
+                            <div>
+                                <strong>4.1 The Master Style Guide <span class="tier-badge tier-1">T1</span></strong>
+                                <span>Colors, typography, logo rules, co-branding with Worthgate</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>4.2 Publication Design Manual <span class="tier-badge tier-1">T1</span></strong>
+                                <span>12-column grid, figure placement, caption formatting</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>4.3 Social Media Style Guide <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Instagram specs, Story templates, hashtag strategy</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>4.4 Poster & Print Protocol <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Print specs, bleed (3mm), QR placement, paper stock</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>4.5 Data Visualization Standards <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Graph templates, axis conventions, colorblind-safe palettes</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>4.6 Template Library Index <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Catalog of all Canva templates with usage instructions</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>4.7 Image & Asset Guidelines <span class="tier-badge tier-2">T2</span></strong>
+                                <span>Copyright, Creative Commons, resolution requirements</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>4.8 Designer Training Curriculum <span class="tier-badge tier-3">T3</span></strong>
+                                <span>4-session training, software proficiency assessment</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download</a>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Suites 5-7 Summarized -->
+            <details class="suite-details">
+                <summary>SUITES 5-7: Operations, Production, & External</summary>
+                <div class="details-content">
+                    <p class="suite-purpose">Administrative operations, publication assembly, and external outreach components.</p>
+                    <ul class="doc-list">
+                        <li>
+                            <div>
+                                <strong>Suite 5: Operations & Administration</strong>
+                                <span>Operations Manual, Meeting Protocol Pack, Master Database Guide, New Member Onboarding, New Captain Onboarding, Email Templates, Digital Workspace Guide, End-of-Year Handover, Attendance Policy</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download All (9 docs)</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Suite 6: Production Pipeline</strong>
+                                <span>Production Workflow Diagram (Tier 1), T-Minus Deadline Calendar, RFD Handoff Protocol, Pre-Publication Checklist, Edition Planning Guide, Post-Publication Review Template</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download All (6 docs)</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Suite 7: Special Projects & External</strong>
+                                <span>Project Proposal Template, Budget Request Template, Risk Assessment Template, External Partnership Agreement, Workshop Planning Pack, Certificate System Guide, RSC Award Application Guide, CATS Global Expansion Pack</span>
+                            </div>
+                            <a href="#" class="btn-download-small">Download All (8 docs)</a>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Template Library -->
+            <details class="suite-details">
+                <summary>TEMPLATE LIBRARY (18 Templates)</summary>
+                <div class="details-content">
+                    <ul class="doc-list">
+                        <li>
+                            <div>
+                                <strong>Publication Templates (T1-T5)</strong>
+                                <span>Article layouts (1-page, 2-page, 3-page feature), Edition cover, Table of contents</span>
+                            </div>
+                            <a href="#" class="btn-download-small">View Templates</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Social Media Templates (T6-T10)</strong>
+                                <span>Instagram post (teaser, quote card), Carousel (educational), Story (reminder, deadline)</span>
+                            </div>
+                            <a href="#" class="btn-download-small">View Templates</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Administrative Templates (T11-T15)</strong>
+                                <span>Meeting agenda, Meeting minutes, Action item tracker, Member database, Project tracker</span>
+                            </div>
+                            <a href="#" class="btn-download-small">View Templates</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Recognition Templates (T16-T18)</strong>
+                                <span>Certificates: Bronze, Silver, Gold</span>
+                            </div>
+                            <a href="#" class="btn-download-small">View Templates</a>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <p style="margin: 0;">CATS Insights &copy; 2026 | The Worthgate School, Canterbury, Kent</p>
+            <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
+                <a href="https://instagram.com/catsinsightsofficial" target="_blank" style="display: flex; align-items: center; gap: 5px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    @catsinsightsofficial
+                </a>
+                <a href="mailto:catsinsightscanterbury@gmail.com" style="display: flex; align-items: center; gap: 5px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    catsinsightscanterbury@gmail.com
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
