@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Model & How We Work | CATS Insights</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .tier-card { border-top: 5px solid var(--primary); padding: 30px; margin-bottom: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .tier-1 { border-top-color: var(--primary); }
+        .tier-2 { border-top-color: var(--secondary); }
+        .tier-3 { border-top-color: #888; }
+        .role-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); height: 100%; border: 1px solid #eee; }
+        .role-title { font-size: 1.1rem; color: var(--primary); font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .role-bullets { margin-left: 20px; font-size: 0.9rem; color: #555; line-height: 1.5; }
+        .role-info { margin-top: 15px; font-size: 0.85rem; padding-top: 10px; border-top: 1px solid #f0f0f0; }
+        .timeline-container { position: relative; padding-left: 40px; margin: 40px 0; }
+        .timeline-step { position: relative; margin-bottom: 40px; }
+        .timeline-step::before { content: ""; position: absolute; left: -31px; top: 0; bottom: -40px; width: 2px; background: var(--secondary); }
+        .timeline-step:last-child::before { display: none; }
+        .timeline-dot { position: absolute; left: -39px; top: 0; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; border: 3px solid var(--secondary); }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../images/LOGO.jpg" alt="CATS Insights Logo" class="brand-logo">
+                CATS Insights
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="navbar-nav">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="../about.html" class="nav-link active">About</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="what-we-are.html">What Is CATS Insights?</a></li>
+                        <li><a href="our-model.html">Our Model</a></li>
+                        <li><a href="values.html">Values & Objectives</a></li>
+                        <li><a href="why-it-matters.html">Why It Matters</a></li>
+                    </ul>
+                </li>
+                <li><a href="../publication.html" class="nav-link">Publications</a></li>
+                <li><a href="../resources.html" class="nav-link">Resources</a></li>
+                <li><a href="../chemistry-of-kent.html" class="nav-link">Blog</a></li>
+                <li><a href="../digital-outreach.html" class="nav-link">Digital Outreach</a></li>
+                <li class="nav-dropdown">
+                    <a href="../impact-report.html" class="nav-link">Impact Report</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="../workshop.html">Workshop</a></li>
+                        <li><a href="../mentoring.html">Mentoring</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="container" style="padding-top: 20px;">
+        <nav style="font-size: 0.9rem; color: #666;">
+            <a href="../index.html" style="color: var(--primary); text-decoration: none;">Home</a> &gt; 
+            <a href="../about.html" style="color: var(--primary); text-decoration: none;">About</a> &gt; 
+            Our Model
+        </nav>
+    </div>
+
+    <!-- Page Header -->
+    <header class="hero fade-in" style="padding: 60px 0;">
+        <div class="container text-center">
+            <h1>Our Model & How We Work</h1>
+            <p style="font-size: 1.2rem; color: #ddd;">Structure, process, and the systems that make it function.</p>
+        </div>
+    </header>
+
+    <!-- Section 1: Hierarchy -->
+    <section class="section">
+        <div class="container fade-in">
+            <h2 class="text-center" style="margin-bottom: 40px;">Organisational Architecture</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; color: #555;">The organisation operates on a three-tier hierarchy to prevent decision paralysis, ensure accountability, and give every member clarity on where responsibility lies.</p>
+
+            <!-- Tiers -->
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="tier-card tier-1">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Tier 1 — Strategic</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><strong>President:</strong> Kyal Sin Ye Yint (Jason)</li>
+                        <li><strong>Vice President:</strong> Alex</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Responsibility: Direction, editorial vision, faculty relationships, final approval authority. Prevents decision paralysis.</p>
+                </div>
+                <div class="tier-card tier-2">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Tier 2 — Operational</h3>
+                    <p style="font-size: 0.9rem; color: #666;">The Captains. Managing departments, mentorship, quality control, and week-to-week momentum. Implementation of the core strategy.</p>
+                </div>
+                <div class="tier-card tier-3">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Tier 3 — Execution</h3>
+                    <p style="font-size: 0.9rem; color: #666;">~22+ General members conducting the intellectual work: Writing, Editing, Designing, and Outreach activities.</p>
+                </div>
+            </div>
+
+            <!-- Captain Roles -->
+            <h3 class="text-center" style="margin: 60px 0 30px; color: var(--primary);">The Command Tier (Captains)</h3>
+            <div class="card-grid">
+                <!-- Role 1 -->
+                <div class="role-card">
+                    <div class="role-title">Lead Writer</div>
+                    <ul class="role-bullets">
+                        <li>Oversees quality of all articles</li>
+                        <li>Mentors writers via feedback</li>
+                        <li>Coordinates revision cycles</li>
+                    </ul>
+                    <div class="role-info">
+                        <strong>Time:</strong> 4–6 hrs/wk (writing phases)<br>
+                        <strong>Skills:</strong> Editorial judgement, mentorship
+                    </div>
+                </div>
+                <!-- Role 2 -->
+                <div class="role-card">
+                    <div class="role-title">Lead Editor</div>
+                    <ul class="role-bullets">
+                        <li>Manages editorial workflow</li>
+                        <li>Assigns article reviews</li>
+                        <li>Verifies citation adherence</li>
+                    </ul>
+                    <div class="role-info">
+                        <strong>Time:</strong> 5–7 hrs/wk (editing phases)<br>
+                        <strong>Skills:</strong> Project management, attention to detail
+                    </div>
+                </div>
+                <!-- Role 3 -->
+                <div class="role-card">
+                    <div class="role-title">Lead Designer</div>
+                    <ul class="role-bullets">
+                        <li>Develops visual identity</li>
+                        <li>Designs page layouts</li>
+                        <li>Cohesion of branding</li>
+                    </ul>
+                    <div class="role-info">
+                        <strong>Time:</strong> 4–6 hrs/wk (design phases)<br>
+                        <strong>Skills:</strong> Visual communication, Proficiency
+                    </div>
+                </div>
+                <!-- Role 4 -->
+                <div class="role-card">
+                    <div class="role-title">Academic Development</div>
+                    <ul class="role-bullets">
+                        <li>Leads training workshops</li>
+                        <li>Collaborates on resources</li>
+                        <li>Primary mentor for standards</li>
+                    </ul>
+                    <div class="role-info">
+                        <strong>Time:</strong> 2–4 hrs/wk<br>
+                        <strong>Skills:</strong> Mentorship, curriculum design
+                    </div>
+                </div>
+                <!-- Role 5 -->
+                <div class="role-card">
+                    <div class="role-title">Community Outreach</div>
+                    <ul class="role-bullets">
+                        <li>Plans STEM workshops</li>
+                        <li>Manages charitable endeavours</li>
+                        <li>External community lead</li>
+                    </ul>
+                    <div class="role-info">
+                        <strong>Time:</strong> 1–5 hrs/wk<br>
+                        <strong>Skills:</strong> Event management, science comms
+                    </div>
+                </div>
+                <!-- Role 6 -->
+                <div class="role-card">
+                    <div class="role-title">QA Lead</div>
+                    <ul class="role-bullets">
+                        <li>Turnitin plagiarism checks</li>
+                        <li>AI signature analysis</li>
+                        <li>Verifies source credibility</li>
+                    </ul>
+                    <div class="role-info">
+                        <strong>Time:</strong> 3–5 hrs/wk (review phases)<br>
+                        <strong>Skills:</strong> Systematic verification, ethical judgement
+                    </div>
+                </div>
+                <!-- Role 7 -->
+                <div class="role-card">
+                    <div class="role-title">Secretary</div>
+                    <ul class="role-bullets">
+                        <li>Internal communications lead</li>
+                        <li>Meeting schedules & minutes</li>
+                        <li>Workspace maintenance</li>
+                    </ul>
+                    <div class="role-info">
+                        <strong>Time:</strong> 3–5 hrs/wk<br>
+                        <strong>Skills:</strong> Administrative management, documentation
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Systems -->
+    <section class="section bg-light">
+        <div class="container fade-in">
+            <h2 class="text-center" style="margin-bottom: 40px;">Digital Infrastructure</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div class="card text-center" style="padding: 20px;">
+                    <h4 style="color: var(--primary);">MS Teams</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Primary channel for team coordination and announcements.</p>
+                </div>
+                <div class="card text-center" style="padding: 20px;">
+                    <h4 style="color: var(--primary);">Google Drive</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Centralised file storage for drafts and foundational resources.</p>
+                </div>
+                <div class="card text-center" style="padding: 20px;">
+                    <h4 style="color: var(--primary);">Master Sheet</h4>
+                    <p style="font-size: 0.85rem; color: #666;">The single source of truth for all operational metrics and pipeline status.</p>
+                </div>
+                <div class="card text-center" style="padding: 20px;">
+                    <h4 style="color: var(--primary);">Instagram</h4>
+                    <p style="font-size: 0.85rem; color: #666;">Core platform for marketing and public community engagement.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 3: Workflow -->
+    <section class="section">
+        <div class="container fade-in">
+            <h2 class="text-center" style="margin-bottom: 50px;">The Publication Workflow</h2>
+            <div class="timeline-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <h4 style="color: var(--primary);">Stage 1 — Planning (2 weeks)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Topic selection, recruitment, and theme establishment. Led by President and Captains.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <h4 style="color: var(--primary);">Stage 2 — Writing & Learning (6–8 weeks)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Drafting with mentorship, workshops, and iterative feedback loops. Solo: 500-1000 words. Adv: 2000+.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <h4 style="color: var(--primary);">Stage 3 — Editorial Processing (3–4 weeks)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Peer review, revisions, Turnitin &lt;20% similarity check, and strict manual authorship verification via Google Docs version history and editorial judgement.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <h4 style="color: var(--primary);">Stage 4 — Design & Layout (2–3 weeks)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Designers carefully format the articles to be released in the official publication.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <h4 style="color: var(--primary);">Stage 5 — Final Review (1–2 weeks)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Faculty advisor (Miss Emma) audit and optional external expert consultation for final approval.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot"></div>
+                    <h4 style="color: var(--primary);">Stage 6 — Publication & Launch (1 week)</h4>
+                    <p style="font-size: 0.9rem; color: #555;">Digital release, social media distribution, and email broadcast across all 7 CATS Global Schools.</p>
+                </div>
+            </div>
+            <p class="text-center" style="font-style: italic; color: #888;">Full cycle: approximately 5–6 months per edition.</p>
+        </div>
+    </section>
+
+    <!-- Section 4: QA Framework -->
+    <section class="section bg-light">
+        <div class="container fade-in">
+            <h2 class="text-center" style="margin-bottom: 40px;">Quality Standards</h2>
+            <div style="overflow-x: auto; max-width: 900px; margin: 0 auto;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    <thead style="background: var(--primary); color: white;">
+                        <tr>
+                            <th style="padding: 15px; border: 1px solid #333;">Test</th>
+                            <th style="padding: 15px; border: 1px solid #333;">Critical Question</th>
+                            <th style="padding: 15px; border: 1px solid #333;">Required Standard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; border: 1px solid #eee; font-weight: bold;">Specialist Test</td>
+                            <td style="padding: 15px; border: 1px solid #eee;">Would an expert find errors?</td>
+                            <td style="padding: 15px; border: 1px solid #eee;">Zero scientific inaccuracies.</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 15px; border: 1px solid #eee; font-weight: bold;">Peer Test</td>
+                            <td style="padding: 15px; border: 1px solid #eee;">Can an A-Level student follow?</td>
+                            <td style="padding: 15px; border: 1px solid #eee;">Accessible but rigorous.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border: 1px solid #eee; font-weight: bold;">Citation Test</td>
+                            <td style="padding: 15px; border: 1px solid #eee;">Is it credible & traceable?</td>
+                            <td style="padding: 15px; border: 1px solid #eee;">Must follow our detailed citation protocol.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+
+        </div>
+    </section>
+
+
+
+    <!-- Section 6: Planning / Meeting -->
+    <section class="section bg-light">
+        <div class="container fade-in" style="max-width: 800px; margin: 0 auto;">
+            <h2 class="text-center" style="margin-bottom: 30px;">Weekly Operating Structure</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Standardisation prevents confusion and maintains rhythm across long publication cycles.</p>
+            <div class="card" style="padding: 30px; background: white;">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">Meeting Logistics</h4>
+                <p>Every Thursday | 4:05 PM – 5:00 PM | School Library</p>
+                <h4 style="color: var(--primary); margin-top: 25px; margin-bottom: 15px;">Agenda</h4>
+                <ul style="color: #666; font-size: 0.95rem;">
+                    <li>Opening & Attendance (5 min)</li>
+                    <li>President's Strategic Update (10 min)</li>
+                    <li>Departmental Reports (20 min)</li>
+                    <li>Work Packet Claims (15 min)</li>
+                    <li>Problem-Solving & VP Action Review (10 min)</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 0.85rem; color: #999;">Attendance is mandatory. Unexcused absence results in formal notice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="container text-center" style="margin-bottom: 60px;">
+        <a href="../about.html" class="btn" style="background: #eee; color: #333; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: 500;">&larr; Back to About</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <p style="margin: 0;">CATS Insights &copy; 2026 | The Worthgate School, Canterbury, Kent</p>
+            <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
+                <a href="https://instagram.com/catsinsightsofficial" target="_blank" style="display: flex; align-items: center; gap: 5px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    @catsinsightsofficial
+                </a>
+                <a href="mailto:catsinsightscanterbury@gmail.com" style="display: flex; align-items: center; gap: 5px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    catsinsightscanterbury@gmail.com
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="../script.js"></script>
+</body>
+</html>

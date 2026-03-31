@@ -20,10 +20,26 @@
             <button class="hamburger" aria-label="Toggle navigation">☰</button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="about/what-we-are.html">What Is CATS Insights?</a></li>
+                        <li><a href="about/our-model.html">Our Model</a></li>
+                        <li><a href="about/values.html">Values & Objectives</a></li>
+                        <li><a href="about/why-it-matters.html">Why It Matters</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html" class="nav-link">Publications</a></li>
                 <li><a href="resources.html" class="nav-link">Resources</a></li>
                 <li><a href="chemistry-of-kent.html" class="nav-link">Blog</a></li>
-                <li><a href="impact-report.html" class="nav-link active">Impact Report</a></li>
+                <li><a href="digital-outreach.html" class="nav-link">Digital Outreach</a></li>
+                <li class="nav-dropdown">
+                    <a href="impact-report.html" class="nav-link active">Impact Report</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="workshop.html">Workshop</a></li>
+                        <li><a href="mentoring.html">Mentoring</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
@@ -47,46 +63,33 @@
     <section class="section">
         <div class="container fade-in" style="max-width: 900px; background-color: var(--bg-white); padding: 50px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
             
-            <h2 style="border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-bottom: 30px;">Executive Summary</h2>
-            <p>Over the past academic year, the CATS Insights team at The Worthgate School has successfully bridged the gap between complex A-Level chemistry concepts and engaging, accessible public science communication. By establishing a robust, student-led editorial framework, we have not only produced high-quality educational materials but have also fostered a sustainable community of young science writers.</p>
-
             <!-- Brad Henry Quote -->
-            <div class="quote-card" style="margin: 30px 0;">
+            <div class="quote-card" style="margin-bottom: 30px;">
                 "A good teacher can inspire hope, ignite the imagination, and instil a love of learning."
                 <span class="quote-author" style="display: block; margin-top: 12px; font-style: normal;">- Brad Henry</span>
             </div>
 
-            <h2 style="border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Category Mapping Table</h2>
-            <div class="table-wrapper" style="margin-top: 0;">
-                <table class="table" style="font-size: 14px;">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Evidence Focus</th>
-                            <th>Key Metric/Outcome</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Category 1</td><td>CaCO₃ Teaching Resource</td><td>Used in 3 local A-Level classrooms.</td></tr>
-                        <tr><td>Category 2</td><td>"Chemistry of Kent" Series</td><td>3 thoroughly researched local articles.</td></tr>
-                        <tr><td>Category 3</td><td>"Writing Chemistry" Workshop</td><td>+65% metric improvement in referencing capability.</td></tr>
-                        <tr><td>Category 4</td><td>Tiered Mentoring System</td><td>100% adherence to PEEL structuring post-mentoring.</td></tr>
-                        <tr><td>Category 5</td><td>Digital Outreach</td><td>14.2k Instagram reach and 1,105 saves.</td></tr>
-                    </tbody>
-                </table>
+            <!-- Elif Quote -->
+            <div class="quote-card" style="margin: 20px 0; padding: 20px; border-left: 4px solid var(--primary); background: #fafafa; font-size: 0.95rem; font-style: italic; color: #444; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                "The writing course provided by CATS Insights was very beneficial for me. It helped me become more knowledgeable and improve my writing skills, and I believe this skill will benefit me in the future."
+                <span class="quote-author" style="display: block; margin-top: 8px; font-style: normal; font-weight: 500; font-size: 0.85rem; color: var(--primary);">- Elif, Year 12</span>
             </div>
 
-            <h2 style="border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Workshop Outcomes</h2>
-            <p>The "Writing Chemistry for Non-Chemists" workshop proved highly effective in demystifying science communication. Quantitative feedback indicated a 46% increase in student confidence when tasked with explaining complex chemical phenomena (such as transition metal complex colours) to a lay audience.</p>
-
-            <h2 style="border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Mentoring Metrics</h2>
-            <p>Our 1-to-1 editorial feedback loop transformed the quality of student submissions. By implementing a multi-stage review pipeline, we reduced unexplained jargon by an average of 90% and shortened overly dense sentence structures, improving Flesch-Kincaid readability scores across the board.</p>
-
-            <h2 style="border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Digital Reach</h2>
-            <p>Through strategic use of social media, particularly Instagram, we expanded the reach of our chemical insights far beyond the school walls. By prioritising "Saves" over "Likes", we ensured our infographics and bite-sized chemistry facts served as genuine educational resources, rather than fleeting entertainment.</p>
-
-            <h2 style="border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">Governance & Sustainability</h2>
-            <p>Perhaps our most significant achievement is the creation of the CATS Insights structural framework. Operating with 48 foundational documents and a strict succession policy, we have ensured that the publication will persist and thrive long after the current Senior Editorial Board graduates.</p>
+            <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--primary);">Student Voices on Academic Impact</h3>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                <div class="quote-card" style="margin: 0; padding: 15px; background: white; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 3px solid var(--secondary);">
+                    "CATS Insights is an organization that supports young creatives, providing resources to produce high-quality articles and providing the opportunity to express their creative self."
+                    <span class="quote-author" style="display: block; margin-top: 8px; font-size: 0.85rem; font-weight: 500;">- Elain, Year 12</span>
+                </div>
+                <div class="quote-card" style="margin: 0; padding: 15px; background: white; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 3px solid var(--secondary);">
+                    "CATS Insights has taught me the depth of academic work and has developed the curiosity in my A-Levels outside of my lessons, enabling me to write about my subjects outside of the specification!"
+                    <span class="quote-author" style="display: block; margin-top: 8px; font-size: 0.85rem; font-weight: 500;">- Philip, Year 12</span>
+                </div>
+                <div class="quote-card" style="margin: 0; padding: 15px; background: white; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 3px solid var(--secondary);">
+                    "I joined CATS Insights for my university application. I stayed because the work is genuinely interesting. Writing an article on a topic you chose, researching it yourself, having it challenged and improved by editors, and then having it approved for publication in an academic journal, it’s truly wonderful."
+                    <span class="quote-author" style="display: block; margin-top: 8px; font-size: 0.85rem; font-weight: 500;">- Aung, Year 12</span>
+                </div>
+            </div>
 
             <!-- Maria Montessori Quote -->
             <div class="quote-card" style="margin: 30px 0;">

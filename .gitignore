@@ -1,0 +1,10 @@
+.DS_Store
+Mentoring Evidence/
+Blog Articles/
+Brewed In the Garden Article/
+CATS Documents/
+Context/
+*.py
+article_text.txt
+hops_text.txt
+superconductivity_text.txt

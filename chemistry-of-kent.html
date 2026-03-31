@@ -25,10 +25,26 @@
             </button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="about/what-we-are.html">What Is CATS Insights?</a></li>
+                        <li><a href="about/our-model.html">Our Model</a></li>
+                        <li><a href="about/values.html">Values & Objectives</a></li>
+                        <li><a href="about/why-it-matters.html">Why It Matters</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html" class="nav-link">Publications</a></li>
                 <li><a href="resources.html" class="nav-link">Resources</a></li>
                 <li><a href="chemistry-of-kent.html" class="nav-link active">Blog</a></li>
-                <li><a href="impact-report.html" class="nav-link">Impact Report</a></li>
+                <li><a href="digital-outreach.html" class="nav-link">Digital Outreach</a></li>
+                <li class="nav-dropdown">
+                    <a href="impact-report.html" class="nav-link">Impact Report</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="workshop.html">Workshop</a></li>
+                        <li><a href="mentoring.html">Mentoring</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
@@ -54,7 +70,7 @@
                 <h2 style="margin: 0;">Series 1: The Chemistry of Kent</h2>
                 <span class="badge" style="background-color: var(--primary); font-size: 11px;">3 Articles</span>
             </div>
-            <p style="margin-bottom: 30px; color: #555;">An exploration of the chemical stories hidden in the landscape, industry, and agriculture of Kent. Each article is independently researched by a student contributor and peer-reviewed by the editorial board.</p>
+            <p style="margin-bottom: 30px; color: #555;">An ongoing series of feature articles exploring the science hidden in Kent's iconic landmarks, industry and heritage.</p>
             <div class="card-grid" style="margin-top: 0;">
                 
                 <!-- Article 1: White Cliffs -->
@@ -67,7 +83,7 @@
                     <p style="color: #666; font-size: 14px; margin-bottom: 10px;">October 2025</p>
                     <p style="font-weight: 500; margin-bottom: 20px;">The Calcium Carbonate Heritage of the Coast.</p>
                     <p>Explore the formation, chemical erosion, and thermal decomposition of CaCO₃ that shapes our iconic Kentish landscape.</p>
-                    <a href="white-cliffs.html" class="btn">Read Full Article</a>
+                    <a href="404.html" class="btn">Read Full Article</a>
                 </div>
 
                 <!-- Article 2: Pfizer -->
@@ -80,88 +96,24 @@
                     <p style="color: #666; font-size: 14px; margin-bottom: 10px;">November 2025</p>
                     <p style="font-weight: 500; margin-bottom: 20px;">Pharmaceutical Giants in our Backyard.</p>
                     <p>A historical overview of drug discovery in Kent, from early beginnings to blockbusters like Fluconazole and Sildenafil.</p>
-                    <a href="pfizer-sandwich.html" class="btn">Read Full Article</a>
+                    <a href="404.html" class="btn">Read Full Article</a>
                 </div>
 
                 <!-- Article 3: Kent Hops -->
-                <div class="card fade-in">
-                    <div class="card-image">
-                        [ Kent Hops Placeholder Image ]
-                    </div>
-                    <span class="badge" style="background-color: var(--secondary); color: var(--text-dark);">Article</span>
-                    <h3>Chemistry of Kent Hops</h3>
-                    <p style="color: #666; font-size: 14px; margin-bottom: 10px;">January 2026</p>
-                    <p style="font-weight: 500; margin-bottom: 20px;">The Alpha and Beta Acids Behind the Flavour.</p>
-                    <p>Dive into the organic chemistry of Humulone and Lupulone, the essential compounds that define Kent's brewing heritage.</p>
-                    <a href="hop-chemistry.html" class="btn">Read Full Article</a>
+                <div class="card fade-in" style="display: flex; flex-direction: column;">
+                    <img src="images/Figure 1.jpg" alt="Traditional oast houses in Kent" style="width: 100%; height: 180px; object-fit: cover; margin: -25px -25px 15px -25px; border-radius: 8px 8px 0 0; display: block; max-width: calc(100% + 50px);">
+                    <span class="badge" style="background-color: var(--primary); color: white; align-self: flex-start;">Chemistry</span>
+                    <h3 style="margin-top: 10px; margin-bottom: 5px;">Brewed in the Garden: The Chemistry of Kentish Hops</h3>
+                    <p style="color: #666; font-size: 14px; margin-bottom: 10px; font-weight: 500;">By Kyal Sin (Jason) Ye Yint &nbsp;|&nbsp; 10 min read</p>
+                    <p style="font-size: 14px; color: #444; margin-bottom: 20px; flex-grow: 1;">A sweeps over the organic chemistry of Humulus lupulus — from the thermal isomerisation of alpha-acids to preservation by Kentish oast houses and volatile terpene profiles that shape the modern pint.</p>
+                    <a href="hop-chemistry.html" class="btn" style="text-align: center;">Read Full Article &rarr;</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Quote: Cervantes -->
-    <section style="padding: 30px 0;">
-        <div class="container fade-in">
-            <div class="quote-card" style="max-width: 750px; margin: 0 auto; font-size: 1.05rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; text-align: center; font-style: italic;">
-                "The pen is the tongue of the mind."
-                <span class="quote-author" style="display: block; margin-top: 12px; font-style: normal;">- Miguel de Cervantes</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Series 2: Chemistry of the Everyday -->
-    <section class="section bg-light">
-        <div class="container fade-in">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 10px;">
-                <h2 style="margin: 0; color: var(--primary);">Series 2: Chemistry of the Everyday</h2>
-                <span class="badge" style="background-color: #f0ad4e; color: white; font-size: 11px;">In Development</span>
-            </div>
-            <p style="margin-bottom: 30px; color: #555;">A new series decoding the chemical reactions and molecular structures behind ordinary household items. From the soap you wash your hands with to the batteries in your phone, this series makes the invisible chemistry of daily life visible.</p>
-            <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 0;">
-                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
-                    <span class="badge" style="background-color: #f0ad4e; color: white;">Drafting Phase</span>
-                    <h3 style="color: #666;">The Chemistry of Cleaning</h3>
-                    <p style="color: #888;">How surfactants in soap molecules break down grease on a molecular level and why hot water makes it more effective.</p>
-                </div>
-                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
-                    <span class="badge" style="background-color: #f0ad4e; color: white;">Drafting Phase</span>
-                    <h3 style="color: #666;">The Science of Cooking</h3>
-                    <p style="color: #888;">Maillard reactions, caramelisation, and the chemistry that transforms raw ingredients into flavour.</p>
-                </div>
-                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
-                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
-                    <h3 style="color: #666;">How Batteries Work</h3>
-                    <p style="color: #888;">Electrochemistry in your pocket: lithium-ion cells, redox reactions, and why your phone dies in the cold.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Series 3: The Future of Materials -->
-    <section class="section">
-        <div class="container fade-in">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 10px;">
-                <h2 style="margin: 0; color: var(--primary);">Series 3: The Future of Materials</h2>
-                <span class="badge" style="background-color: #d9534f; color: white; font-size: 11px;">In Development</span>
-            </div>
-            <p style="margin-bottom: 30px; color: #555;">A deep-dive investigation into advanced polymers, superconductors, and the bespoke nanomaterials shaping tomorrow's technology. This series bridges A-Level chemistry with cutting-edge materials science research.</p>
-            <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 0;">
-                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
-                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
-                    <h3 style="color: #666;">Graphene: The Wonder Material</h3>
-                    <p style="color: #888;">Why a single layer of carbon atoms could revolutionise electronics, medicine, and construction.</p>
-                </div>
-                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
-                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
-                    <h3 style="color: #666;">Biodegradable Plastics</h3>
-                    <p style="color: #888;">Can polymer chemistry solve the plastic crisis? Exploring PLA, PHA, and the race for compostable alternatives.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Standalone Feature Articles -->
+    <!-- Standalone Feature Articles (Moved Up) -->
     <section class="section bg-light">
         <div class="container fade-in">
             <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px;">
@@ -170,6 +122,27 @@
             </div>
             <p style="margin-bottom: 30px; color: #555;">Independent, one-off pieces that don't belong to a specific series. These articles cover topics chosen entirely by individual contributors based on personal curiosity and academic interest.</p>
             <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 0;">
+                
+                <!-- Published Feature Article: Philosophy -->
+                <div class="card fade-in" style="display: flex; flex-direction: column;">
+                    <img src="images/What is an idea cover image.png" alt="Philosophy of Ideas" style="width: 100%; height: 180px; object-fit: cover; margin: -25px -25px 15px -25px; border-radius: 8px 8px 0 0; display: block; max-width: calc(100% + 50px);">
+                    <span class="badge" style="background-color: var(--primary); color: white; align-self: flex-start;">Philosophy</span>
+                    <h3 style="margin-top: 10px; margin-bottom: 5px;">What exactly are ideas?</h3>
+                    <p style="color: #666; font-size: 14px; margin-bottom: 10px; font-weight: 500;">By Luca Candelot &nbsp;|&nbsp; 8 min read</p>
+                    <p style="font-size: 14px; color: #444; margin-bottom: 20px; flex-grow: 1;">What is an idea, really? This article traces the concept of the "Idea" from Kant's transcendental dialectics through to Gilles Deleuze's radical reconceptualisation in Difference and Repetition — arguing that ideas are not essences but multiplicities: complex, open-ended problems that persist regardless of whether they have a solution. A lucid introduction to one of contemporary philosophy's most demanding concepts.</p>
+                    <a href="what-exactly-are-ideas.html" class="btn" style="text-align: center;">Read Article &rarr;</a>
+                </div>
+
+                <!-- Published Feature Article: Physics -->
+                <div class="card fade-in" style="display: flex; flex-direction: column;">
+                    <img src="images/Cover Image.png" alt="Superconductivity" style="width: 100%; height: 180px; object-fit: cover; margin: -25px -25px 15px -25px; border-radius: 8px 8px 0 0; display: block; max-width: calc(100% + 50px);">
+                    <span class="badge" style="background-color: var(--primary); color: white; align-self: flex-start;">Physics</span>
+                    <h3 style="margin-top: 10px; margin-bottom: 5px;">Superconductivity: Materials and Underlying Mechanisms</h3>
+                    <p style="color: #666; font-size: 14px; margin-bottom: 10px; font-weight: 500;">By Oleksandr Boyko (Alex) &nbsp;|&nbsp; 9 min read</p>
+                    <p style="font-size: 14px; color: #444; margin-bottom: 20px; flex-grow: 1;">Certain materials, when cooled below a critical temperature, conduct electricity with absolutely zero resistance. This article by CATS Insights Vice President Oleksandr Boyko unpacks the quantum mechanical basis of superconductivity — from Cooper pair formation to the Meissner effect — and traces the technology from its accidental 1911 discovery to its real-world applications in MRI scanners, maglev trains, and particle accelerators.</p>
+                    <a href="superconductivity-materials-mechanisms.html" class="btn" style="text-align: center;">Read Article &rarr;</a>
+                </div>
+
                 <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
                     <span class="badge" style="background-color: #f0ad4e; color: white;">Drafting Phase</span>
                     <h3 style="color: #666;">The Science of Sleep</h3>
@@ -184,6 +157,95 @@
                     <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
                     <h3 style="color: #666;">How Vaccines Train Your Immune System</h3>
                     <p style="color: #888;">From antigens to memory B cells: the biochemistry behind one of medicine's greatest achievements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote: Cervantes -->
+    <section style="padding: 30px 0;">
+        <div class="container fade-in">
+            <div class="quote-card" style="max-width: 750px; margin: 0 auto; font-size: 1.05rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; text-align: center; font-style: italic;">
+                "The pen is the tongue of the mind."
+                <span class="quote-author" style="display: block; margin-top: 12px; font-style: normal;">- Miguel de Cervantes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series 2: The Physics of Everything -->
+    <section class="section bg-light">
+        <div class="container fade-in">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 10px;">
+                <h2 style="margin: 0; color: var(--primary);">Series 2: The Physics of Everything</h2>
+                <span class="badge" style="background-color: #f0ad4e; color: white; font-size: 11px;">In Development</span>
+            </div>
+            <p style="margin-bottom: 30px; color: #555;">From the centrifugal forces in your washing machine to the thermodynamics of your air fryer, this series deconstructs the complex physics hidden within everyday household appliances. We make the mechanical and thermal wonders of the modern home accessible through clear, student-led analysis.</p>
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 0;">
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #f0ad4e; color: white;">Drafting Phase</span>
+                    <h3 style="color: #666;">The Kitchen Laboratory</h3>
+                    <p style="color: #888;">How induction hobs use electromagnetism to heat your pans without getting hot themselves.</p>
+                </div>
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
+                    <h3 style="color: #666;">Resonance in the Microwave</h3>
+                    <p style="color: #888;">The physics of standing waves and how dielectric heating cooks food from the inside out.</p>
+                </div>
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
+                    <h3 style="color: #666;">Pressure & Vacuum</h3>
+                    <p style="color: #888;">Fluid dynamics in the vacuum cleaner and the atmospheric physics of a coffee percolator.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series 3: Electricity & Electromagnetism -->
+    <section class="section">
+        <div class="container fade-in">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 10px;">
+                <h2 style="margin: 0; color: var(--primary);">Series 3: Electricity & Electromagnetism</h2>
+                <span class="badge" style="background-color: #d9534f; color: white; font-size: 11px;">In Development</span>
+            </div>
+            <p style="margin-bottom: 30px; color: #555;">An exploration of the fundamental forces that power our civilization. This series bridges the gap between basic circuitry and the advanced electromagnetic theory required for modern power grids and electronic communication.</p>
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 0;">
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
+                    <h3 style="color: #666;">The Smart Grid Revolution</h3>
+                    <p style="color: #888;">How AC/DC conversion and transformer physics are evolving to support renewable energy storage.</p>
+                </div>
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
+                    <h3 style="color: #666;">Superconducting Cables</h3>
+                    <p style="color: #888;">The next frontier in power transmission: eliminating resistance losses in urban energy networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series 4: Cinema, Literature, and the Philosophical Lens -->
+    <section class="section bg-light">
+        <div class="container fade-in">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 10px;">
+                <h2 style="margin: 0; color: var(--primary);">Series 4: Cinema, Literature, and the Philosophical Lens</h2>
+                <span class="badge" style="background-color: #5bc0de; color: white; font-size: 11px;">Coming Soon</span>
+            </div>
+            <p style="margin-bottom: 30px; color: #555;">Moving beyond mere criticism, this series applies rigorous philosophical frameworks to the world’s greatest stories. We explore how cinema and literature act as vehicles for examining ethics, existentialism, and the human condition.</p>
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 0;">
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #5bc0de; color: white;">Concept Stage</span>
+                    <h3 style="color: #666;">The Existentialism of Sci-Fi</h3>
+                    <p style="color: #888;">Analyzing *Blade Runner* and *Arrival* through the lens of Sartrean freedom and Heideggerian 'Being-towards-death'.</p>
+                </div>
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #5bc0de; color: white;">Concept Stage</span>
+                    <h3 style="color: #666;">Dostoevsky and the Moral Law</h3>
+                    <p style="color: #888;">Exploring the intersection of guilt, theology, and Kantian ethics in *Crime and Punishment* and *The Brothers Karamazov*.</p>
+                </div>
+                <div class="card fade-in" style="background-color: #f9f9f9; border: 1px dashed #ccc; box-shadow: none;">
+                    <span class="badge" style="background-color: #d9534f; color: white;">Research Phase</span>
+                    <h3 style="color: #666;">Deconstructing the Hero's Journey</h3>
+                    <p style="color: #888;">A post-structuralist critique of Monomyth theory in modern blockbuster storytelling.</p>
                 </div>
             </div>
         </div>

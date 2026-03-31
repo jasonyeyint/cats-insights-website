@@ -20,10 +20,26 @@
             <button class="hamburger" aria-label="Toggle navigation">☰</button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="about/what-we-are.html">What Is CATS Insights?</a></li>
+                        <li><a href="about/our-model.html">Our Model</a></li>
+                        <li><a href="about/values.html">Values & Objectives</a></li>
+                        <li><a href="about/why-it-matters.html">Why It Matters</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html" class="nav-link">Publications</a></li>
                 <li><a href="resources.html" class="nav-link">Resources</a></li>
                 <li><a href="chemistry-of-kent.html" class="nav-link">Blog</a></li>
-                <li><a href="impact-report.html" class="nav-link">Impact Report</a></li>
+                <li><a href="digital-outreach.html" class="nav-link active">Digital Outreach</a></li>
+                <li class="nav-dropdown">
+                    <a href="impact-report.html" class="nav-link">Impact Report</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="workshop.html">Workshop</a></li>
+                        <li><a href="mentoring.html">Mentoring</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
@@ -43,6 +59,28 @@
             <h2>Our Digital Strategy</h2>
             <p>CATS Insights maintains an active presence across multiple digital platforms. Each channel serves a distinct purpose: from sharing educational content and behind-the-scenes updates on Instagram, to hosting our codebase and technical infrastructure on GitHub, to publishing long-form video content on YouTube. Together, these platforms demonstrate our commitment to making our work publicly accessible and transparent.</p>
             <p>Below you will find direct links to every official CATS Insights channel. Judges and visitors are encouraged to explore each platform to see the breadth and consistency of our digital outreach.</p>
+        </div>
+    </section>
+
+    <!-- Educational Content Showcase Section -->
+    <section class="section">
+        <div class="container fade-in" style="max-width: 900px; margin: 0 auto;">
+            <h2 class="text-center" style="margin-bottom: 20px;">Educational Content Showcase</h2>
+            <p class="text-center" style="margin-bottom: 40px; color: #666; max-width: 700px; margin-left: auto; margin-right: auto;">
+                We equip our team members with the skills and opportunity to create engaging educational multimedia. Below is an example of the communicative content our members learn to produce to bring science to public audiences.
+            </p>
+            <div class="card" style="padding: 30px; border-top: 4px solid var(--primary);">
+                <h3 style="margin-bottom: 15px; color: var(--primary);">Microwaves and Metal: The Science Explained</h3>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 20px; background-color: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                        <source src="Microwaves%20and%20Metal.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p style="font-size: 15px; color: var(--text-dark); line-height: 1.6;">
+                    This dynamic explainer visualises the complex physical chemistry behind why placing metal inside a microwave causes plasma arcing. By combining clear scripting, engaging visuals, and robust scientific fact-checking, this piece exemplifies our commitment to making advanced STEM concepts accessible. It also serves as a tangible demonstration of the digital, communication, and multimedia skillsets that CATS Insights members regularly develop and apply.
+                </p>
+            </div>
         </div>
     </section>
 

@@ -20,169 +20,100 @@
             <button class="hamburger" aria-label="Toggle navigation">☰</button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="about/what-we-are.html">What Is CATS Insights?</a></li>
+                        <li><a href="about/our-model.html">Our Model</a></li>
+                        <li><a href="about/values.html">Values & Objectives</a></li>
+                        <li><a href="about/why-it-matters.html">Why It Matters</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html" class="nav-link">Publications</a></li>
                 <li><a href="resources.html" class="nav-link">Resources</a></li>
                 <li><a href="chemistry-of-kent.html" class="nav-link">Blog</a></li>
-                <li><a href="impact-report.html" class="nav-link">Impact Report</a></li>
+                <li><a href="digital-outreach.html" class="nav-link">Digital Outreach</a></li>
+                <li class="nav-dropdown">
+                    <a href="impact-report.html" class="nav-link active">Impact Report</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="workshop.html">Workshop</a></li>
+                        <li><a href="mentoring.html">Mentoring</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
 
     <header class="section bg-light" style="padding-bottom: 20px;">
         <div class="container fade-in text-center">
-            <span class="badge">RSC Category 3: STEM School Event</span>
-            <h1 style="font-size: 36px; margin-top: 20px;">Writing Chemistry for Non-Chemists</h1>
+            <span class="badge">RSC Category 3: STEM School Engagement</span>
+            <h1 style="font-size: 36px; margin-top: 20px;">Workshops & Masterclasses</h1>
         </div>
     </header>
 
     <section class="section" style="padding-top: 20px;">
         <div class="container fade-in">
-            <!-- Event Info Card -->
-            <div class="card" style="display: flex; flex-flow: row wrap; gap: 40px; margin-bottom: 40px; background-color: var(--primary); color: white;">
-                <div>
-                    <h4 style="color: var(--secondary); margin-bottom: 5px;">Date</h4>
-                    <p style="margin: 0;">12 November 2025</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--secondary); margin-bottom: 5px;">Location</h4>
-                    <p style="margin: 0;">The Worthgate School</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--secondary); margin-bottom: 5px;">Duration</h4>
-                    <p style="margin: 0;">45 minutes</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--secondary); margin-bottom: 5px;">Facilitator</h4>
-                    <p style="margin: 0;">Jason Ye Yint (Founder & President)</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--secondary); margin-bottom: 5px;">Attendees</h4>
-                    <p style="margin: 0;">45 CATS Insights members from Years 10–13</p>
-                </div>
-            </div>
-
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
-                <!-- Left Column -->
-                <div>
-                    <h2>Learning Objectives</h2>
-                    <ol style="margin-left: 20px; line-height: 1.8; margin-bottom: 30px;">
-                        <li>Distinguish between 3 audience levels (Expert, Educated Non-Specialist, General Public).</li>
-                        <li>Apply PEEL paragraph structure to science writing.</li>
-                        <li>Self-assess using the Three-Test Framework (Specialist Test, Peer Test, Citation Test).</li>
-                    </ol>
-
-                    <h2>Workshop Highlight Video</h2>
-                    <div class="video-wrapper" style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <!-- YouTube Embed -->
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Workshop Highlights (Unlisted)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- Right Column -->
-                <div>
-                    <h2>Workshop Materials (PDFs)</h2>
-                    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px;">
-                        <a href="documents/3-Level_Framework_Handout.pdf" target="_blank" class="card" style="padding: 15px 20px; flex-direction: row; align-items: center; justify-content: space-between;">
-                            <strong style="color: var(--primary);">3-Level Framework Handout</strong>
-                            <span class="btn" style="padding: 8px 15px;">PDF</span>
-                        </a>
-                        <a href="documents/Fix_This_Paragraph_Exercise_Sheet.pdf" target="_blank" class="card" style="padding: 15px 20px; flex-direction: row; align-items: center; justify-content: space-between;">
-                            <strong style="color: var(--primary);">"Fix This Paragraph" Exercise Sheet</strong>
-                            <span class="btn" style="padding: 8px 15px;">PDF</span>
-                        </a>
-                        <a href="documents/Topic_Menu_Handout.pdf" target="_blank" class="card" style="padding: 15px 20px; flex-direction: row; align-items: center; justify-content: space-between;">
-                            <strong style="color: var(--primary);">Topic Menu Handout</strong>
-                            <span class="btn" style="padding: 8px 15px;">PDF</span>
-                        </a>
-                        <a href="documents/Workshop_Presentation_Slides.pdf" target="_blank" class="card" style="padding: 15px 20px; flex-direction: row; align-items: center; justify-content: space-between;">
-                            <strong style="color: var(--primary);">Presentation Slides Deck</strong>
-                            <span class="btn" style="padding: 8px 15px;">PDF</span>
-                        </a>
-                        <a href="documents/Workshop_Facilitator_Script.pdf" target="_blank" class="card" style="padding: 15px 20px; flex-direction: row; align-items: center; justify-content: space-between;">
-                            <strong style="color: var(--primary);">Facilitator Workshop Script</strong>
-                            <span class="btn" style="padding: 8px 15px;">PDF</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Impact Data -->
-            <h2 style="margin-top: 40px;">Quantitative Outcomes & Impact Data</h2>
-            <div style="margin-bottom: 20px;">
-                <a href="documents/Workshop_AttendanceSheet.pdf" target="_blank" class="btn">View Original Attendance Scan (PDF)</a>
-            </div>
-            <div class="table-wrapper">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Metric</th>
-                            <th>Pre-Workshop</th>
-                            <th>Post-Workshop / Follow-up</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Identify Level 2 (Educated Non-Specialist) writing</td>
-                            <td>85% could not identify</td>
-                            <td style="color: green; font-weight: bold;">92% successfully rewrote to Level 2</td>
-                        </tr>
-                        <tr>
-                            <td>Submission of 300-word draft following workshop</td>
-                            <td>N/A (Start)</td>
-                            <td style="color: green; font-weight: bold;">78% submitted within 7 days</td>
-                        </tr>
-                        <tr>
-                            <td>Average jargon reduction in student drafting</td>
-                            <td>Baseline High</td>
-                            <td style="color: green; font-weight: bold;">65% Reduction</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
             
-            <div class="card" style="margin-top: 20px; background-color: var(--light); border-left: 4px solid var(--secondary);">
-                <h4 style="margin-top: 0;">Measurable Improvement Sample</h4>
-                <p style="margin-bottom: 5px;"><strong>Student A Draft 1:</strong> 12 undefined technical terms, avg sentence length 38 words.</p>
-                <p style="margin-bottom: 5px;"><strong>Student A Draft 2:</strong> 3 terms (all defined), avg sentence length 19 words.</p>
-                <p style="margin-bottom: 0; color: green; font-weight: bold;">Clarity Improvement: +65%</p>
+
+
+            <!-- Breakout Quote -->
+            <div class="quote-card" style="max-width: 850px; margin: 40px auto; font-size: 1.15rem; font-style: italic; color: #333; padding: 30px; text-align: center; border-left: 6px solid var(--primary); background: #f9f9f9; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                "The writing course provided by CATS Insights was very beneficial for me. It helped me become more knowledgeable and improve my writing skills, and I believe this skill will benefit me in the future."
+                <span class="quote-author" style="display: block; margin-top: 15px; font-style: normal; font-weight: 500; font-size: 0.95rem; color: var(--primary);">- Elif, Year 12</span>
             </div>
 
-            <!-- Student Feedback -->
-            <h2 style="margin-top: 40px;">Student Feedback</h2>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div class="quote-card" style="margin: 0;">
-                    "I finally understand how to strip out the excess jargon from my chemistry reports without dumbing the science down. The 3-Level framework was a game changer."
-                    <span class="quote-author">- Feedback on Learning</span>
+            <!-- WORKSHOP 1: WRITING CHEMISTRY FOR NON-CHEMISTS -->
+            <div style="margin-top: 60px; border-top: 2px solid #eee; padding-top: 40px;">
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                    <div style="background: #FFF9E6; padding: 15px; border-radius: 50%; font-size: 2rem;">🧪</div>
+                    <div>
+                        <h2 style="margin: 0;">Writing Chemistry for Non-Chemists</h2>
+                        <p style="color: #666; margin-top: 5px;">The Foundational STEM Communication Masterclass</p>
+                    </div>
                 </div>
-                <div class="quote-card" style="margin: 0;">
-                    "Having my peer apply the 'Specialist Test' directly to my draft really exposed where I was being too technical. My rewritten paragraph flowed so much better."
-                    <span class="quote-author">- Feedback on Writing Improvement</span>
-                </div>
-                <div class="quote-card" style="margin: 0;">
-                    "I would 100% recommend CATS Insights to anyone doing A-Level sciences. It actively forces you to truly understand your subject before you teach it to someone else."
-                    <span class="quote-author">- Recommendation Metric</span>
+
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div>
+                        <h3>Masterclass Overview</h3>
+                        <p>This masterclass taught students the essential framework for communicating complex scientific concepts to non-specialists. Focus areas included controlling scientific jargon, structuring arguments using the 3-Level framework, and maintaining academic rigour while ensuring mass accessibility.</p>
+                        <a href="https://drive.google.com/drive/folders/197ChTmWb5ZpWJ_3OY0IC6w6i3hk5HwAY?usp=sharing" target="_blank" class="btn" style="display: block; width: 100%; text-align: center; font-size: 1.1rem; padding: 15px; margin-top: 30px;">🎥 View Full Video Recording</a>
+                    </div>
+                    <div class="card" style="background: #fafafa; border: 1px solid #eee;">
+                        <h4 style="margin-bottom: 15px; color: var(--primary);"><span style="font-size: 1.2rem; margin-right: 8px;">📂</span> Downloadable Workshop Materials</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="documents/Category_3_Materials/Workshop_Presentation_Plan.docx.pdf" target="_blank" class="btn" style="background: white; color: #444; border: 1px solid #ddd; text-align: left; padding: 12px 15px;">📄 Workshop Presentation Plan</a>
+                            <a href="documents/Category_3_Materials/3-Level%20Framework%20Handout.pdf" target="_blank" class="btn" style="background: white; color: #444; border: 1px solid #ddd; text-align: left; padding: 12px 15px;">📄 3-Level Framework Handout</a>
+                            <a href="documents/Category_3_Materials/Topic%20Menu%20Handout.pdf" target="_blank" class="btn" style="background: white; color: #444; border: 1px solid #ddd; text-align: left; padding: 12px 15px;">📄 Topic Menu Handout</a>
+                            <a href="documents/Category_3_Materials/%22Fix%20This%20Paragraph%22%20Exercise%20Sheet.pdf" target="_blank" class="btn" style="background: white; color: #444; border: 1px solid #ddd; text-align: left; padding: 12px 15px;">📄 "Fix This Paragraph" Exercise Sheet</a>
+                            <a href="documents/Category_3_Materials/CATS%20Insights%20_%20Level%202%20Writing%20Submission%20(Responses).xlsx" target="_blank" class="btn" style="background: white; color: #444; border: 1px solid #ddd; text-align: left; padding: 12px 15px;">📊 Level 2 Writing Submissions (Excel)</a>
+                            <a href="documents/Category_3_Materials/whitecliff.pdf" target="_blank" class="btn" style="background: white; color: #444; border: 1px solid #ddd; text-align: left; padding: 12px 15px;">📄 Workshop Presentation Slides</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Photo Gallery -->
-            <h2 style="margin-top: 40px;">Event Gallery</h2>
-            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                <img src="images/Workshop_01_RoomSetup.jpg" alt="Room setup before workshop" style="width: 100%; height: 200px; object-fit: cover; background-color: #ddd; border-radius: 8px;">
-                <img src="images/Workshop_02_JasonTeaching.jpg" alt="Jason teaching / presenting to the group" style="width: 100%; height: 200px; object-fit: cover; background-color: #ddd; border-radius: 8px;">
-                <img src="images/Workshop_03_GroupExercise.jpg" alt="Students doing the group exercise (Fix This Paragraph)" style="width: 100%; height: 200px; object-fit: cover; background-color: #ddd; border-radius: 8px;">
-                <img src="images/Workshop_04_StudentPresenting.jpg" alt="Student presenting or sharing their rewrite" style="width: 100%; height: 200px; object-fit: cover; background-color: #ddd; border-radius: 8px;">
-                <img src="images/Workshop_05_GroupCollaboration.jpg" alt="Group collaboration / discussion" style="width: 100%; height: 200px; object-fit: cover; background-color: #ddd; border-radius: 8px;">
-                <img src="images/Workshop_06_GroupPhoto.jpg" alt="Group photo of all attendees at the end" style="width: 100%; height: 200px; object-fit: cover; background-color: #ddd; border-radius: 8px;">
+            <!-- WORKSHOP 2: UNESCO LEARNING PLANET DAY -->
+            <div style="margin-top: 60px; border-top: 2px solid #eee; padding-top: 40px;">
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                    <div style="background: #E8F4FD; padding: 15px; border-radius: 50%; font-size: 2rem;">🌍</div>
+                    <div>
+                        <h2 style="margin: 0;">UNESCO Learning Planet Day Workshop</h2>
+                        <p style="color: #666; margin-top: 5px;">International Recognition & School-Registered Event</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <div>
+                        <h3>Event Overview</h3>
+                        <p>On the behest of The Worthgate School, CATS Insights prepared a workshop on academic writing, research, how to read research papers, how to extract information without plagiarising, and essentially a masterclass covering a plethora of different academic topics to teach students.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Workshop Impact Report Final Document -->
-            <h2 style="margin-top: 50px;">Executive Documentation</h2>
-            <div class="card" style="text-align: center; padding: 40px;">
-                <h3 style="margin-top: 0;">1-Page Workshop Impact Report</h3>
-                <p>The definitive summary document containing Title, Date, Facilitator, Attendees, Learning Objectives, Quantitative Outcomes, Qualitative Feedback, and the Measurable Improvement Sample.</p>
-                <br>
-                <a href="documents/Workshop_Impact_Report_Final.pdf" target="_blank" class="btn" style="font-size: 18px; padding: 15px 30px;">Download Final Impact Report (PDF)</a>
-            </div>
+
+
+        </div>
+    </section>
 
         </div>
     </section>

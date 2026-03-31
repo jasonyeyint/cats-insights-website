@@ -9,6 +9,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Dropdown Handling
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.nav-link');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        // Desktop: hover to show/hide
+        dropdown.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 768 && menu) {
+                menu.style.display = 'block';
+            }
+        });
+        dropdown.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 768 && menu) {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Mobile: click to toggle
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && menu) {
+                e.preventDefault();
+                const isOpen = menu.style.display === 'block';
+                menu.style.display = isOpen ? 'none' : 'block';
+                menu.style.position = 'static';
+                menu.style.transform = 'none';
+                menu.style.boxShadow = 'none';
+                menu.style.borderRadius = '0';
+                menu.style.paddingLeft = '15px';
+                dropdown.classList.toggle('open');
+            }
+        });
+    });
+
     // Scroll Fade-In Animation
     const observerOptions = {
         root: null,

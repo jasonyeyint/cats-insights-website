@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemistry of Kent Hops | CATS Insights</title>
+    <title>Brewed in the Garden: The Chemistry of Kentish Hops | CATS Insights</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-body { max-width: 720px; margin: 0 auto; padding: 40px 20px; font-size: 17px; line-height: 1.7; color: var(--text-dark); }
+        .article-body h2 { font-size: 1.8rem; font-weight: 700; margin-top: 50px; margin-bottom: 20px; color: var(--text-dark); }
+        .article-body h3 { font-size: 1.4rem; font-weight: 600; margin-top: 35px; margin-bottom: 15px; color: var(--text-dark); }
+        .article-body p { margin-bottom: 20px; }
+        .article-body sup a { color: var(--secondary); text-decoration: none; font-weight: 600; padding: 0 2px; }
+        .article-body sup a:hover { text-decoration: underline; }
+        .bib-list p { margin-bottom: 15px; padding-left: 20px; text-indent: -20px; }
+        .figure-container { margin: 40px 0; text-align: center; }
+        .figure-container img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea; }
+        .figure-caption { font-style: italic; font-size: 14.5px; color: #444; margin-bottom: 5px; }
+        .figure-source { font-size: 13px; color: #888; }
+    </style>
 </head>
-<body>
+<body class="bg-light">
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -18,82 +33,192 @@
                 <img src="images/LOGO.jpg" alt="CATS Insights Logo" class="brand-logo">
                 CATS Insights
             </a>
-            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <button class="hamburger" aria-label="Toggle navigation">
+                ☰
+            </button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link">About</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="about/what-we-are.html">What Is CATS Insights?</a></li>
+                        <li><a href="about/our-model.html">Our Model</a></li>
+                        <li><a href="about/values.html">Values & Objectives</a></li>
+                        <li><a href="about/why-it-matters.html">Why It Matters</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html" class="nav-link">Publications</a></li>
                 <li><a href="resources.html" class="nav-link">Resources</a></li>
                 <li><a href="chemistry-of-kent.html" class="nav-link active">Blog</a></li>
-                <li><a href="impact-report.html" class="nav-link">Impact Report</a></li>
+                <li><a href="digital-outreach.html" class="nav-link">Digital Outreach</a></li>
+                <li class="nav-dropdown">
+                    <a href="impact-report.html" class="nav-link">Impact Report</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="workshop.html">Workshop</a></li>
+                        <li><a href="mentoring.html">Mentoring</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Article Header -->
-    <header class="section bg-light" style="padding-bottom: 20px;">
-        <div class="container fade-in">
-            <a href="chemistry-of-kent.html" style="display: inline-block; margin-bottom: 20px;">&larr; Back to Articles</a>
-            <span class="badge">History of Chemistry</span>
-            <h1 style="font-size: 42px; margin-bottom: 10px;">Chemistry of Kent Hops</h1>
-            <p style="font-size: 20px; color: #555; margin-bottom: 15px;">The Alpha and Beta Acids Behind the Flavour</p>
-            <div style="display: flex; gap: 20px; font-weight: 500; color: var(--primary);">
-                <span>By CATS Insights Editorial Team</span>
-                <span>|</span>
-                <span>January 2026</span>
-            </div>
+    <main style="background-color: white; padding-bottom: 60px;">
+        <!-- Breadcrumb -->
+        <div style="max-width: 720px; margin: 0 auto; padding: 30px 20px 0; font-size: 14px; color: #666;">
+            <a href="index.html" style="color: #666; text-decoration: none;">Home</a> > <a href="chemistry-of-kent.html" style="color: #666; text-decoration: none;">Blog</a> > Brewed in the Garden: The Chemistry of Kentish Hops
         </div>
-    </header>
 
-    <!-- Article Content -->
-    <article class="section" style="padding-top: 20px;">
-        <div class="container fade-in" style="max-width: 800px;">
+        <!-- Header Block -->
+        <header style="max-width: 720px; margin: 0 auto; padding: 20px; margin-top: 10px;">
+            <span class="badge" style="background-color: var(--primary); color: white; margin-bottom: 15px; display: inline-block;">Chemistry</span>
+            <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 15px; color: var(--text-dark); line-height: 1.3;">Brewed in the Garden: The Chemistry of Kentish Hops</h1>
             
-            <div class="card-image" style="height: 300px; margin: 30px 0;">
-                [ Placeholder Image: Kentish Hop Gardens ]
-            </div>
-
-            <h2>Introduction</h2>
-            <p>Kent is known as the "Garden of England," a title earned in large part due to its historical dominance in hop farming. For centuries, the distinct oast houses of Kent have dried hops (Humulus lupulus) destined for breweries across the globe. The magic of the hop, however, lies in its complex organic chemistry.</p>
-
-            <h2>Kent Hop Heritage</h2>
-            <p>Hops were introduced to Kent in the early 16th century. The county's specific soil composition and mild maritime climate provided the perfect terroir for growing them. The true value of the hop flower lies in the lupulin glands, which produce a sticky yellow resin packed with active chemical compounds.</p>
-
-            <h2>Alpha-Acid Chemistry: Humulone</h2>
-            <p>The primary source of bitterness in beer comes from alpha acids, the most prominent being humulone (C₂₁H₃₀O₅). In their natural state, alpha acids are not particularly bitter and are insoluble in water. However, when boiled during the brewing process, humulone undergoes thermal isomerization to form cis- and trans-isohumulone.</p>
-            <div class="chem-eq">
-                Humulone &rarr; (Heat/Boiling) &rarr; Isohumulone
-            </div>
-            <p>This isomerization reaction vastly increases the compound's solubility and results in the sharp, quintessential bitterness that balances the sweetness of the malt. Kentish hops, like the famous East Kent Goldings, are renowned for their delicate, smooth alpha-acid profiles.</p>
-
-            <h2>Beta-Acids: Lupulone</h2>
-            <p>Alongside alpha acids, hops contain beta acids such as lupulone (C₂₆H₃₈O₄). Unlike alpha acids, beta acids do not isomerize during boiling. Instead, they impart bitterness through oxidation over time. As beer ages, alpha acids break down and beta acid oxidation products replace the lost bitterness, acting as a natural preservative—a chemical property historically utilised in the creation of India Pale Ales (IPAs).</p>
-
-            <h2>Terpenes and Flavour</h2>
-            <p>The characteristic aromas of Kentish hops—often described as earthy, floral, or spicy—are derived from essential oils, primarily consisting of terpenes. Myrcene (C₁₀H₁₆) provides green, resinous notes, while humulene (C₁₅H₂₄) offers the woody, earthy profile so closely associated with traditional British ales.</p>
-
-            <h2>Modern Applications</h2>
-            <p>Today, researchers are looking beyond the brewery. The humulones and lupulones found in Kentish hops exhibit significant antibacterial and anti-inflammatory properties. Ongoing biochemical research suggests that hop derivatives could inhibit the growth of certain bacterial strains, providing potential avenues for novel pharmaceutical applications.</p>
+            <p style="font-size: 1.1rem; font-weight: 500; color: var(--text-dark); margin-bottom: 8px;">By Kyal Sin (Jason) Ye Yint</p>
+            <p style="font-size: 13px; color: #666;">Chemistry &nbsp;|&nbsp; 10 min read &nbsp;|&nbsp; The Worthgate School, CATS Insights</p>
             
-            <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
+            <hr style="border: 0; border-top: 1px solid #ddd; margin-bottom: 0;">
+        </header>
 
-            <!-- References & Editorial Note -->
-            <h3>References</h3>
-            <ol style="margin-left: 20px; margin-bottom: 30px; font-size: 14px; line-height: 1.8;">
-                <li>Briggs, D. E. (1998). <i>Hops</i>. Chapman & Hall. DOI: [Placeholder DOI]</li>
-                <li>Khatib, A., et al. (2006). "Isomerization of Alpha-Acids during the Brewing Process." <i>Journal of Agricultural and Food Chemistry</i>. DOI: [Placeholder DOI]</li>
-                <li>Neve, R. A. (1991). <i>Hops: Botany, Genetics, and Production</i>. Springer. DOI: [Placeholder DOI]</li>
-                <li>Zanoli, P., & Zavatti, M. (2008). "Pharmacognostic and pharmacological profile of Humulus lupulus L." <i>Journal of Ethnopharmacology</i>. DOI: [Placeholder DOI]</li>
-            </ol>
+        <!-- Article Body -->
+        <article class="article-body">
 
-            <div class="bg-light" style="padding: 15px; border-radius: 8px; font-size: 14px;">
-                <strong>Editorial Note:</strong> This article has passed the CATS Insights Quality Assurance Pipeline. Turnitin Similarity index: 2%. GPTZero scan: Human verified. All sources cite peer-reviewed literature using Oxford referencing standards.
+            <!-- Cover Image -->
+            <div class="figure-container" style="margin-top: 0;">
+                <img src="images/Figure 1.jpg" alt="Traditional oast houses on the Kent landscape near Bishopsbourne, Canterbury">
+                <p class="figure-caption">Figure 1. Traditional oast houses on the Kent landscape near Bishopsbourne, Canterbury. The conical kilns were designed to channel heated air through freshly picked hops, reducing their moisture content from approximately 80% to 6% before packing.</p>
+                <p class="figure-source">Source: Oast House Archive / Geograph, CC BY-SA 2.0.</p>
+            </div>
+            
+            <p>Kent has been called the Garden of England for centuries, but its most celebrated crop was never a flower. It was <i>Humulus lupulus</i> (the hop). From the first recorded English hop garden at Westbere, near Canterbury, in 1520<sup><a href="#bib-2" id="ref-2">2</a></sup> to the vast sea of bines that once covered over 43,000 acres of Kentish soil<sup><a href="#bib-1" id="ref-1">1</a></sup>, this climbing plant shaped the county's economy, its landscape, and its cultural identity. By the late nineteenth century, Kent accounted for approximately 60% of England's total hop acreage<sup><a href="#bib-1" id="ref-1">1</a></sup>, drawing over 80,000 seasonal pickers<sup><a href="#bib-3" id="ref-3">3</a></sup> from London every September in a mass migration the Victorians called 'hopping down in Kent'.<sup><a href="#bib-1" id="ref-1">1</a></sup></p>
+
+            <p>But behind the heritage and the hop gardens lies a body of chemistry as rich as any in the series. The bitterness of beer, the aroma of a freshly poured pint, the shelf life of an India Pale Ale shipped across oceans, all of these are determined at the molecular level, inside the tiny lupulin glands of the female hop cone. This article traces that chemistry from &alpha;-acid isomerisation to terpene volatility and from mediaeval brewing to modern antimicrobial research. The hop, it turns out, is a chemistry lesson hiding in a pint glass.</p>
+
+            <h2>I. The Hop Garden: A Brief History of Kent’s Favourite Crop</h2>
+            <p>Wild hops are thought to have been introduced to Britain by the Romans.<sup><a href="#bib-2" id="ref-2">2</a></sup> Archaeobotanical evidence of <i>Humulus lupulus</i> seeds was recovered from the Graveney Boat, an Anglo-Saxon vessel dated to approximately AD 900, unearthed from the estuary mud at Seasalter in 1970.<sup><a href="#bib-2" id="ref-2">2</a></sup> However, the deliberate cultivation of hops for brewing did not begin in England until Flemish weavers and refugees introduced the practice in the fifteenth and early sixteenth centuries. The traditional English beverage was spiced ale, brewed from malt without hops, and the addition of this new bittering agent initially met considerable resistance.<sup><a href="#bib-2" id="ref-2">2</a></sup></p>
+
+            <div class="figure-container">
+                <img src="images/Figure 2.jpeg" alt="Female hop cones (Humulus lupulus)">
+                <p class="figure-caption">Figure 2. Female hop cones (<i>Humulus lupulus</i>). The tiny lupulin glands, visible as golden-yellow resinous deposits at the base of each bract, contain the &alpha;-acids responsible for beer bitterness and the terpene-rich essential oils that produce hop aroma.</p>
+                <p class="figure-source">Source: Jean-Pol Grandmont / Wikimedia Commons, CC BY 3.0.</p>
             </div>
 
-        </div>
-    </article>
+            <p>Kent’s advantages were geographical, agricultural, and economic. The county’s fertile loam soils, mild maritime climate, established enclosed field system, and abundant supply of sweet chestnut coppice for poles and charcoal made it ideally suited to hop cultivation.<sup><a href="#bib-2" id="ref-2">2</a></sup> Kent farmers were also among the most prosperous of their time, able to absorb the high initial capital outlay, approximately £125 per acre in 1857, compared to £10-12 for arable crops.<sup><a href="#bib-1" id="ref-1">1</a></sup> By 1655, Kent was responsible for producing one third of the national crop.<sup><a href="#bib-1" id="ref-1">1</a>, <a href="#bib-2" id="ref-2">2</a></sup> Daniel Defoe, writing in his <i>Tour thro’ the Whole Island of Great Britain</i> (1724–1726), described the area near Maidstone as ‘the Mother of Hop Grounds in England’, noting that the region had been the first in England where hops were planted in any quantity.<sup><a href="#bib-13" id="ref-13">13</a></sup> In 1574, Reginald Scot of Smeeth, near Ashford, published <i>A Perfite Platforme of a Hoppe Garden</i>, one of the earliest English language manuals on hop cultivation, a text that remains a landmark in English agricultural history.<sup><a href="#bib-1" id="ref-1">1</a>, <a href="#bib-2" id="ref-2">2</a></sup></p>
+
+            <h2>II. The Bitter Truth: Alpha-Acid Isomerisation</h2>
+            <p>The bitterness of beer is not inherent in the raw hop. It is created by a chemical transformation that occurs during wort boiling, and understanding this reaction is central to understanding why hops matter at all.</p>
+
+            <div class="figure-container">
+                <img src="images/Figure 3.png" alt="Lupulin glands on the bracteoles of a female hop cone">
+                <p class="figure-caption">Figure 3. Lupulin glands (glandular trichomes) on the bracteoles of a female hop cone. These secretory structures biosynthesise and accumulate the &alpha;-acids, &beta;-acids, and terpenes discussed in this article.</p>
+                <p class="figure-source">Source: Adapted from Mishra et al. (2020), CC BY 4.0.</p>
+            </div>
+
+            <p>The hop cone’s lupulin glands contain soft resins composed primarily of alpha-acids (&alpha;-acids), a family of prenylated phloroglucinol derivatives (a group of natural chemical compounds found in plants known for antioxidant and anti-inflammatory effects). The three major analogues are humulone (35–70% of total &alpha;-acids), cohumulone (20–65%), and adhumulone (10–15%). In their native form, &alpha;-acids are poorly soluble in water and virtually tasteless. It is only when the brewer boils hops in the wort that the critical conversion occurs.<sup><a href="#bib-4" id="ref-4">4</a>, <a href="#bib-5" id="ref-5">5</a></sup></p>
+
+            <p>During wort boiling (typically at 100°C for 60–90 minutes), &alpha;-acids undergo thermal isomerisation to form iso-&alpha;-acids via an acyloin-type ring contraction. The mechanism, first elucidated by De Keukeleire and Verzele in 1971, proceeds in three steps: (1) deprotonation of the &beta;-tricarbonyl system to form the required anion, (2) stereoselective ketonisation of the remaining enol function within the six-membered ring, and (3) an &alpha;-ketol rearrangement that contracts the ring from six to five members, yielding the iso-&alpha;-acid product.<sup><a href="#bib-5" id="ref-5">5</a></sup></p>
+
+            <div class="figure-container">
+                <img src="images/Figure 4.png" alt="Thermal isomerisation of humulone">
+                <p class="figure-caption">Figure 4. Thermal isomerisation of humulone to <i>cis</i>- and <i>trans</i>-iso-humulone during wort boiling. The acyloin-type ring contraction converts the six-membered ring of the native alpha-acid into the five-membered ring of the iso-alpha-acid, producing the bitter compounds responsible for beer bitterness. Under standard wort conditions (pH 5.0–5.5), the <i>cis</i>-isomer predominates at approximately 68:32.</p>
+                <p class="figure-source">Source: Diagram: K.S. Ye Yint, CATS Insights, 2026.</p>
+            </div>
+
+            <p>Each parent &alpha;-acid produces two diastereomeric iso-&alpha;-acids: a <i>cis</i>-isomer and a <i>trans</i>-isomer. Under standard wort conditions (pH 5.0–5.5), the ratio favours the <i>cis</i>-compounds at approximately 68:32.<sup><a href="#bib-5" id="ref-5">5</a></sup> This preference arises primarily from the stereoselectivity of the ketonisation step under brewing conditions, though the <i>cis</i>-isomers are also thermodynamically more stable, an unusual case where kinetic and thermodynamic products coincide. The reaction follows first-order kinetics with an experimentally determined activation energy of 98.6 kJ mol⁻¹ for isomerisation and 108.0 kJ mol⁻¹ for the subsequent degradation of iso-&alpha;-acids to non-bitter products.<sup><a href="#bib-6" id="ref-6">6</a></sup></p>
+
+            <p>In traditional brewing, only 25–35% of the original &alpha;-acids are converted into iso-&alpha;-acids, the rest are lost to trub formation, poor solubility, and thermal degradation.<sup><a href="#bib-4" id="ref-4">4</a></sup> This low utilisation rate is not merely a technical footnote. It is the reason brewers have spent centuries developing new hopping technologies: pelletised hops, pre-isomerised extracts, and supercritical CO<sub>2</sub> extraction methods, all designed to squeeze more bitterness from each gram of precious lupulin.</p>
+
+            <h2>III. The Shelf-Life Problem: Beta-Acids and Oxidation</h2>
+            <p>Alongside the &alpha;-acids, hop resins contain a second family of bitter compounds: the beta-acids (&beta;-acids). The principal &beta;-acid analogues are lupulone (<i>n</i>-lupulone), colupulone, and adlupulone, structurally related to their &alpha;-acid counterparts but differing in the number and position of prenyl side chains. Unlike &alpha;-acids, &beta;-acids do not isomerise significantly during wort boiling and contribute little to beer bitterness directly.<sup><a href="#bib-4" id="ref-4">4</a>, <a href="#bib-7" id="ref-7">7</a></sup></p>
+
+            <p>Their importance lies instead in oxidative degradation. During hop storage, &beta;-acids undergo autoxidation through free-radical pathways, producing a cascade of transformation products, including hulupones, that can contribute bitterness and off-character notes to aged beer, though contemporary research indicates that hulupone concentrations in most beers remain below their sensory threshold of approximately 7–8 mg/L.<sup><a href="#bib-7" id="ref-7">7</a></sup> This oxidative susceptibility explains why hop storage conditions (cold, anaerobic, and vacuum-sealed) are so critical to brewing quality and why the Kentish oast houses, those iconic conical-roofed structures visible across the county’s skyline, were designed specifically to dry hops rapidly and thoroughly, minimising moisture-driven degradation before the product reached the brewer.<sup><a href="#bib-7" id="ref-7">7</a></sup></p>
+
+            <p>There is, however, a useful side to this chemistry. The <i>trans</i>-iso-&alpha;-acids formed during wort boiling are significantly less stable than their <i>cis</i>-counterparts, meaning the bitterness profile of a beer shifts over time as the <i>trans</i>-isomers degrade preferentially. This differential stability has practical consequences: beers intended for long-distance transport, such as the heavily hopped ales traditionally understood to have been shipped from England to the colonies, retained their bitterness precisely because the <i>cis</i>-iso-&alpha;-acids survived the voyage intact, though the historical record surrounding the origins of India Pale Ale remains contested among brewing historians.<sup><a href="#bib-5" id="ref-5">5</a></sup></p>
+
+            <h2>IV. The Organic Chemistry of Aroma: Terpenes in Hops</h2>
+            <p>Bitterness is only half the story. The aroma of hops, the floral, citrus, herbal, and resinous notes that define different beer styles, arises from a complex mixture of volatile compounds produced within the same lupulin glands. Hop essential oil is a remarkably diverse mixture: over 400 individual compounds have been identified, though three classes dominate the sensory profile.<sup><a href="#bib-8" id="ref-8">8</a></sup></p>
+
+            <p>Myrcene (&beta;-myrcene, C<sub>10</sub>H<sub>16</sub>) is the most abundant monoterpene in hop oil, typically comprising 50% or more of total oil content at harvest. It is an acyclic, unsaturated hydrocarbon biosynthesised from geranyl pyrophosphate (GPP) via the methylerythritol phosphate (MEP) pathway. Myrcene carries resinous, herbaceous, and distinctly ‘hoppy’ aroma notes and possesses the lowest odour threshold of all major hop oil hydrocarbons at approximately 13 parts per billion (ppb) in water<sup><a href="#bib-14" id="ref-14">14</a></sup>, making it among the most potent aromatic compounds in the hop cone, though its threshold is considerably higher in beer matrices owing to matrix suppression effects.<sup><a href="#bib-8" id="ref-8">8</a></sup> However, myrcene is extremely volatile (boiling point 167°C), meaning it is almost entirely lost during traditional wort boiling.<sup><a href="#bib-8" id="ref-8">8</a></sup> Late-addition hopping and dry-hopping techniques were developed specifically to preserve myrcene in the finished beer.</p>
+
+            <p>Linalool (C<sub>10</sub>H<sub>18</sub>O) is a terpene alcohol closely related to myrcene, contributing floral and citrus aroma notes. Although it constitutes only a small fraction of total hop oils<sup><a href="#bib-8" id="ref-8">8</a></sup>, linalool is considered one of the most significant aroma-active compounds in dry-hopped and late-hopped beers because it is less volatile than myrcene and more likely to survive into the finished product. The (<i>R</i>)-enantiomer, which constitutes approximately 95% of hop-derived linalool, possesses a notably low sensory threshold in beer, meaning trace quantities produce perceptible floral impact.<sup><a href="#bib-8" id="ref-8">8</a>, <a href="#bib-9" id="ref-9">9</a></sup></p>
+
+            <p>Geraniol (C<sub>10</sub>H<sub>18</sub>O) contributes rose-like and citrus aromas. Its significance extends beyond direct sensory contribution: during fermentation, yeast enzymes can convert geraniol into &beta;-citronellol, an oxygenated terpene with woody, fresh, and citrus notes. The reduction is catalysed primarily by the NADPH oxidoreductase OYE2 (Old Yellow Enzyme 2), while &beta;-glucosidases release glycosidically bound terpene precursors from hop material. This biotransformation, a chemical conversion driven by microbial metabolism, means the aroma profile of a finished beer is not simply a reflection of the hop’s original terpene composition but an emergent property of the interaction between hop chemistry and yeast biochemistry.<sup><a href="#bib-9" id="ref-9">9</a></sup></p>
+
+            <p>This interplay between volatile chemistry and brewing process is what gives different beer styles their characteristic aromatic identities, and it is what makes hop selection an art as much as a science. The Kent-bred variety East Kent Goldings, prized for its refined, delicate aroma, owes that character to its specific terpene profile, a profile shaped as much by Kent’s terroir as by the plant’s genetics.</p>
+
+            <h2>V. Beyond the Pint Glass: Hops in Modern Pharmaceutical Research</h2>
+            <p>In recent decades, researchers have turned their attention to a compound that brewers largely overlooked: xanthohumol (XN). Xanthohumol is a prenylated chalcone, a type of flavonoid, found in the hard resin fraction of hop cones. Its structure was first identified in 1957, but its pharmacological properties went unrecognised until the 1990s, when a series of studies revealed a surprisingly broad spectrum of biological activity.<sup><a href="#bib-10" id="ref-10">10</a></sup></p>
+
+            <div class="figure-container">
+                <img src="images/Figure 5.png" alt="Structure of xanthohumol">
+                <p class="figure-caption">Figure 5. Structure of xanthohumol, a prenylated chalcone found in hop lupulin glands. Xanthohumol has demonstrated antimicrobial activity against Clostridioides difficile with MIC values of 15–107 &mu;g/mL, as well as anti-inflammatory and chemopreventive properties in preclinical models.</p>
+                <p class="figure-source">Source: Diagram: K.S. Ye Yint, CATS Insights, 2026.</p>
+            </div>
+
+            <p>Research published in the journal APMIS demonstrated that purified xanthohumol exhibits potent antimicrobial activity against clinically relevant anaerobic bacteria, including <i>Clostridium difficile</i>, with minimum inhibitory concentration (MIC) values of 15–107 &mu;g/mL, values approaching those of conventional antibiotics against resistant strains.<sup><a href="#bib-11" id="ref-11">11</a></sup> Subsequent in vivo studies using rat models confirmed that both xanthohumol and hop beta-acids significantly reduced <i>C. difficile</i> bacterial load and improved local inflammatory markers in the large intestine, with the xanthohumol effect being more pronounced.<sup><a href="#bib-12" id="ref-12">12</a></sup></p>
+
+            <p>Beyond antimicrobial properties, xanthohumol has demonstrated anti-inflammatory, antioxidant, and chemopreventive activity across multiple preclinical models, making it one of the most pharmacologically promising natural products currently under investigation.<sup><a href="#bib-10" id="ref-10">10</a></sup></p>
+
+            <p>The broader hop bitter acids, particularly the iso-&alpha;-acids, have long been recognised for their selective antimicrobial properties against Gram-positive bacteria. This selectivity is, historically, the reason that heavily hopped beers preserved better during long sea voyages. What modern research has done is formalise this folk knowledge into quantifiable pharmacological data, opening the door to potential applications in food preservation, wound care, and the development of novel antibiotic adjuncts at a time when antimicrobial resistance represents one of the most pressing challenges in global public health.<sup><a href="#bib-12" id="ref-12">12</a></sup></p>
+
+            <h2>VI. The Garden, Revisited</h2>
+            <p>Kent’s hop gardens have shrunk dramatically from their nineteenth-century peak. The 43,614 acres recorded in 1875<sup><a href="#bib-1" id="ref-1">1</a></sup> have dwindled to a fraction, and most of the county’s iconic oast houses have been converted into private homes. But the chemistry of the hop, the isomerisation that creates bitterness, the terpenes that sculpt aroma, and the flavonoids that fight infection continue to drive research and industry worldwide.</p>
+
+            <p>The next time you see an oast house on the Kent skyline or pass through Canterbury on the road to Dover, remember that you are travelling through the landscape that gave England its brewing heritage. And the chemistry behind that heritage, from &alpha;-acid ring contractions to xanthohumol’s MIC values, is as alive in the modern laboratory as it ever was in the hop garden.</p>
+
+            <p>That, and to try a local ale. Make it Kentish.</p>
+
+            <!-- Bibliography Section -->
+            <h2>Bibliography</h2>
+            <div class="bib-list" style="font-size: 15px; color: #444; line-height: 1.6;">
+                <p id="bib-1">[1] Tann, P., 'A Brief History of the Hop Industry in Kent', <i>Brewery History</i>, no. 118, 2005, pp. 21–26. <a href="https://www.breweryhistory.com/journal/archive/118/bh-118-021.html" target="_blank" style="color: var(--primary);">https://www.breweryhistory.com/journal/archive/118/bh-118-021.html</a> <a href="#ref-1" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-2">[2] Kent Archives Service, 'Hops in Kent', Kent Archives Service, 2020. <a href="https://www.kentarchives.org.uk/hops-in-kent/" target="_blank" style="color: var(--primary);">https://www.kentarchives.org.uk/hops-in-kent/</a> <a href="#ref-2" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-3">[3] British Hop Association, 'Kent and the South East', British Hop Association, n.d. <a href="https://www.britishhops.org.uk/hops/history/kent-south-east/" target="_blank" style="color: var(--primary);">https://www.britishhops.org.uk/hops/history/kent-south-east/</a> <a href="#ref-3" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-4">[4] Kostrzewa, D., Dobrzyńska-Inger, A., Rój, E., Grzęda, K. and Kozłowski, K., 'Isomerization of Hop Extract &alpha;-Acids', <i>Journal of the Institute of Brewing</i>, vol. 122, no. 3, 2016, pp. 493–499. doi: <a href="https://doi.org/10.1002/jib.349" target="_blank" style="color: var(--primary);">https://doi.org/10.1002/jib.349</a> <a href="#ref-4" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-5">[5] Jaskula-Goiris, B., Aerts, G. and De Cooman, L., 'Hop &alpha;-Acids Isomerisation and Utilisation: An Experimental Review', <i>Cerevisia</i>, vol. 35, no. 3, 2010, pp. 57–70. doi: <a href="https://doi.org/10.1016/j.cervis.2010.09.004" target="_blank" style="color: var(--primary);">https://doi.org/10.1016/j.cervis.2010.09.004</a> <a href="#ref-5" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-6">[6] Malowicki, M.G. and Shellhammer, T.H., 'Isomerization and Degradation Kinetics of Hop (Humulus lupulus) Acids in a Model Wort-Boiling System', <i>Journal of Agricultural and Food Chemistry</i>, vol. 53, no. 11, 2005, pp. 4434–4439. doi: <a href="https://doi.org/10.1021/jf0481296" target="_blank" style="color: var(--primary);">https://doi.org/10.1021/jf0481296</a> <a href="#ref-6" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-7">[7] Briggs, D.E., Boulton, C.A., Brookes, P.A. and Stevens, R., <i>Brewing Science and Practice</i> (Cambridge: Woodhead Publishing, 2004). <a href="#ref-7" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-8">[8] Dietz, C., Cook, D., Huismann, M., Wilson, C. and Ford, R., 'The Multisensory Perception of Hop Essential Oil: A Review', <i>Journal of the Institute of Brewing</i>, vol. 126, no. 4, 2020, pp. 320–342. doi: <a href="https://doi.org/10.1002/jib.622" target="_blank" style="color: var(--primary);">https://doi.org/10.1002/jib.622</a> <a href="#ref-8" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-9">[9] Takoi, K., Itoga, Y., Koie, K., Kosugi, T., Shimase, M., Katayama, Y. et al., 'The Contribution of Geraniol Metabolism to the Citrus Flavour of Beer: Synergy of Geraniol and &beta;-Citronellol under Coexistence with Excess Linalool', <i>Journal of the Institute of Brewing</i>, vol. 116, no. 3, 2010, pp. 251–260. doi: <a href="https://doi.org/10.1002/j.2050-0416.2010.tb00428.x" target="_blank" style="color: var(--primary);">https://doi.org/10.1002/j.2050-0416.2010.tb00428.x</a> <a href="#ref-9" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-10">[10] Liu, M., Hansen, P.E., Wang, G., Qiu, L., Dong, J., Yin, H. et al., 'Pharmacological Profile of Xanthohumol, a Prenylated Flavonoid from Hops (Humulus lupulus)', <i>Molecules</i>, vol. 20, no. 1, 2015, pp. 754–779. doi: <a href="https://doi.org/10.3390/molecules20010754" target="_blank" style="color: var(--primary);">https://doi.org/10.3390/molecules20010754</a> <a href="#ref-10" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-11">[11] Cermak, P., Olsovska, J., Mikyska, A., Dusek, M., Kadleckova, Z., Vanicek, J. et al., 'Strong Antimicrobial Activity of Xanthohumol and Other Derivatives from Hops (Humulus lupulus L.) on Gut Anaerobic Bacteria', <i>APMIS</i>, vol. 125, no. 11, 2017, pp. 1033–1038. doi: <a href="https://doi.org/10.1111/apm.12747" target="_blank" style="color: var(--primary);">https://doi.org/10.1111/apm.12747</a> <a href="#ref-11" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-12">[12] Sleha, R., Radochova, V., Mikyska, A., Houska, M., Bolehovska, R., Janovska, S. et al., 'Strong Antimicrobial Effects of Xanthohumol and Beta-Acids from Hops against Clostridioides difficile Infection In Vivo', <i>Antibiotics</i>, vol. 10, no. 4, 2021, p. 392. doi: <a href="https://doi.org/10.3390/antibiotics10040392" target="_blank" style="color: var(--primary);">https://doi.org/10.3390/antibiotics10040392</a> <a href="#ref-12" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-13">[13] Defoe, D., <i>A Tour thro' the Whole Island of Great Britain</i> (1724–1726), Letter 2, Part 1. <a href="https://www.visionofbritain.org.uk/travellers/Defoe/6" target="_blank" style="color: var(--primary);">https://www.visionofbritain.org.uk/travellers/Defoe/6</a> <a href="#ref-13" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-14">[14] 'Myrcene', in G. Oliver (ed.), <i>The Oxford Companion to Beer</i> (Oxford: Oxford University Press, 2011). <a href="https://www.beerandbrewing.com/dictionary/kzazjsY3RA" target="_blank" style="color: var(--primary);">https://www.beerandbrewing.com/dictionary/kzazjsY3RA</a> <a href="#ref-14" style="color: var(--primary); text-decoration: none;">↑</a></p>
+                <p id="bib-15">[15] Oast House Archive, Unconverted Oast House at Lenhall Farm, Bishopsbourne, Kent [photograph], 2009, Geograph / Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:Unconverted_Oast_House_at_Lenhall_Farm,_Crows_Camp_Road,_Bishopsbourne,_Kent_-_geograph.org.uk_-_1385549.jpg" target="_blank" style="color: var(--primary);">https://commons.wikimedia.org/wiki/File:Unconverted_Oast_House_at_Lenhall_Farm,_Crows_Camp_Road,_Bishopsbourne,_Kent_-_geograph.org.uk_-_1385549.jpg</a>.</p>
+                <p id="bib-16">[16] Grandmont, J.-P., Humulus lupulus — Houblon — Amay [photograph], Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:0_Humulus_lupulus_-_Houblon_-_Amay.JPG" target="_blank" style="color: var(--primary);">https://commons.wikimedia.org/wiki/File:0_Humulus_lupulus_-_Houblon_-_Amay.JPG</a>.</p>
+                <p id="bib-17">[17] Mishra, A.K., Kocábek, T., Nath, V.S. et al., 'Dissection of Dynamic Transcriptome Landscape of Leaf, Bract, and Lupulin Gland in Hop (Humulus lupulus L.)', <i>International Journal of Molecular Sciences</i>, vol. 21, no. 1, 2020, p. 233, Figure 1. doi: <a href="https://doi.org/10.3390/ijms21010233" target="_blank" style="color: var(--primary);">https://doi.org/10.3390/ijms21010233</a></p>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 40px 0;">
+
+            <!-- Article Footer Block -->
+            <div style="background-color: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; flex-shrink: 0;">
+                    KS
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 5px; font-size: 1.2rem;">Kyal Sin (Jason) Ye Yint</h4>
+                    <p style="margin: 0; font-size: 14px; color: #666;">Founder & President, CATS Insights | The Worthgate School</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 40px; padding: 0 10px;">
+                <p style="font-size: 13px; color: #666; margin: 0;">Published in CATS Insights | The Worthgate School, Canterbury, Kent &nbsp;&nbsp;<span class="badge" style="background-color: var(--primary); color: white; display: inline-block; padding: 2px 8px; font-size: 11px;">Chemistry</span></p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <a href="chemistry-of-kent.html" class="btn" style="background-color: #f0f0f0; color: #333; text-decoration: none;">&larr; Back to Blog</a>
+                <button class="btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');" style="background-color: var(--secondary); color: var(--text-dark); border: none; cursor: pointer;">Share</button>
+            </div>
+            <div style="margin-top: 50px; text-align: center; border-top: 2px solid #eee; padding-top: 30px;">
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">Want to read this article offline or see the original formatting?</p>
+                <a href="assets/articles/kentish-hops.pdf" download class="btn" style="background-color: var(--secondary); color: var(--text-dark); padding: 12px 25px; font-weight: bold;">Download Original Article (PDF)</a>
+            </div>
+        </article>
+    </main>
 
     <!-- Footer -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
             <p style="margin: 0;">CATS Insights &copy; 2026 | The Worthgate School, Canterbury, Kent</p>
             <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
@@ -109,6 +234,344 @@
         </div>
     </footer>
 
+    <!-- Glossary Structure Placeholders -->
+    <!-- Glossary Button & Overlay -->
+    <button id="glossary-btn" aria-label="Toggle Glossary" title="Open glossary">📖 Glossary</button>
+    <div id="glossary-overlay"></div>
+    
+    <!-- Glossary Panel Start -->
+    <div id="glossary-panel">
+        <div class="glossary-header">
+            <h2>Article Glossary</h2>
+            <button class="glossary-close-btn" aria-label="Close glossary">✕</button>
+        </div>
+        <div class="glossary-search-container">
+            <input type="text" id="glossary-search" placeholder="Search glossary…" autocomplete="off">
+        </div>
+        <div class="glossary-content">
+
+            <!-- Section: Introduction -->
+            <div class="glossary-section" data-section="Introduction">
+                <div class="glossary-section-title">Introduction</div>
+                <div class="glossary-term-group">
+                    <p class="glossary-term">Humulus lupulus</p>
+                    <p class="glossary-def">The scientific (Latin) name for the hop plant. Humulus is the genus (the broader family group) and lupulus is the species. Scientists use Latin names so that every researcher worldwide refers to the same organism unambiguously, regardless of language.</p>
+                    <p class="glossary-term">Bines</p>
+                    <p class="glossary-def">Hop plants climb by wrapping their stems around a support in a spiral. These climbing stems are called bines. They differ from vines, which climb using tendrils or suckers. Hop bines can grow up to six metres in a single season.</p>
+                    <p class="glossary-term">Lupulin glands</p>
+                    <p class="glossary-def">Tiny, bright yellow, resin-filled sacs found at the base of the petals in a female hop cone. They are visible to the naked eye as a golden powder. Lupulin glands contain the alpha-acids that produce bitterness and the essential oils that produce aroma — essentially, everything that makes hops useful in brewing.</p>
+                    <p class="glossary-term">Alpha-acid isomerisation</p>
+                    <p class="glossary-def">A chemical reaction in which alpha-acids (the bitter compounds in raw hops) are rearranged into a new molecular shape called iso-alpha-acids during boiling. The atoms stay the same, but their arrangement changes, and this new shape is what actually tastes bitter in beer. Think of it as folding the same piece of paper into a different shape — same paper, new form, different properties.</p>
+                    <p class="glossary-term">Terpene volatility</p>
+                    <p class="glossary-def">Terpenes are aromatic compounds responsible for the smell of hops (and many other plants, including lavender and citrus fruits). 'Volatility' means how easily a substance evaporates into the air. Highly volatile terpenes evaporate quickly during boiling, which is why brewers add hops late in the process to preserve their aroma.</p>
+                </div>
+            </div>
+
+            <!-- Section I: The Hop Garden — History -->
+            <div class="glossary-section" data-section="Section I: The Hop Garden — History">
+                <div class="glossary-section-title">Section I: The Hop Garden</div>
+                <div class="glossary-term-group">
+                    <p class="glossary-term">Archaeobotanical evidence</p>
+                    <p class="glossary-def">Evidence about past human activity derived from the study of ancient plant remains. In this article, it refers to hop seeds recovered from a historical site, which tell us that hops were present in Britain over a thousand years ago.</p>
+                    <p class="glossary-term">The Graveney Boat</p>
+                    <p class="glossary-def">An Anglo-Saxon merchant vessel discovered buried in estuary mud at Seasalter, Kent, in 1970. Dated to approximately AD 900, it contained hop seeds — some of the earliest evidence of hops in Britain.</p>
+                    <p class="glossary-term">Flemish weavers and refugees</p>
+                    <p class="glossary-def">Skilled craftspeople and displaced populations from Flanders (modern-day Belgium and the Netherlands) who migrated to England in the fifteenth and sixteenth centuries. They brought with them the practice of adding hops to beer, which was a continental European tradition.</p>
+                    <p class="glossary-term">Spiced ale</p>
+                    <p class="glossary-def">The traditional English alcoholic drink before hops were introduced. It was brewed from malted grain and flavoured with a mixture of herbs and spices called 'gruit', rather than with hops. The distinction between 'ale' (no hops) and 'beer' (with hops) was a real and important one in mediaeval England.</p>
+                    <p class="glossary-term">Loam soils</p>
+                    <p class="glossary-def">A type of fertile soil containing a balanced mixture of sand, silt, and clay. Loam retains moisture well while still draining adequately, making it ideal for hop cultivation. Kent's soils are predominantly loam-based.</p>
+                    <p class="glossary-term">Maritime climate</p>
+                    <p class="glossary-def">A climate moderated by proximity to the sea. Maritime climates have milder winters, cooler summers, and more consistent rainfall than inland areas. Kent's position between the English Channel and the Thames Estuary gives it this advantage.</p>
+                    <p class="glossary-term">Enclosed field system</p>
+                    <p class="glossary-def">A method of agricultural land management where open communal fields were divided into individually owned, hedged or fenced plots. Kent adopted this system earlier than most English counties, which gave farmers greater control over their land and made investment in specialist crops like hops more practical.</p>
+                    <p class="glossary-term">Sweet chestnut coppice</p>
+                    <p class="glossary-def">A woodland management technique where sweet chestnut trees are cut back to ground level on a regular cycle (typically every 10–15 years). The trees regrow multiple straight poles from the stump. These poles were used to support hop bines in the garden, and the wood was also converted to charcoal for drying hops.</p>
+                    <p class="glossary-term">Capital outlay</p>
+                    <p class="glossary-def">The upfront money required to start or invest in something. Hop cultivation was extremely expensive to establish — roughly ten times more per acre than ordinary arable farming — which meant only wealthy farmers could afford to enter the market.</p>
+                </div>
+            </div>
+            <!-- Section II: The Bitter Truth — Alpha-Acid Isomerisation -->
+            <div class="glossary-section" data-section="Section II: The Bitter Truth — Alpha-Acid Isomerisation">
+                <div class="glossary-section-title">Section II: The Bitter Truth</div>
+                <div class="glossary-term-group">
+                    <p class="glossary-term">Wort</p>
+                    <p class="glossary-def">The sugary liquid extracted from malted grain (usually barley) during the brewing process, before yeast is added to begin fermentation. Wort is essentially unfermented beer. Hops are boiled in the wort to extract bitterness and preserve the final product.</p>
+                    <p class="glossary-term">Soft resins</p>
+                    <p class="glossary-def">The soluble, chemically reactive fraction of hop lupulin. Soft resins dissolve in wort during boiling and contain the alpha-acids and beta-acids that contribute to bitterness. They are distinguished from 'hard resins', which are less soluble and less relevant to brewing bitterness.</p>
+                    <p class="glossary-term">Alpha-acids (α-acids)</p>
+                    <p class="glossary-def">A family of chemical compounds found in hop lupulin glands. They are the primary source of beer bitterness, but only after they have been chemically transformed by heat during wort boiling. In their raw, unboiled form, alpha-acids are nearly tasteless.</p>
+                    <p class="glossary-term">Prenylated phloroglucinol derivatives</p>
+                    <p class="glossary-def">A chemical classification describing the molecular family to which alpha-acids belong. Phloroglucinol is a simple ring-shaped molecule (three carbon atoms alternating with three hydroxyl groups). Prenylated means that small branching hydrocarbon chains (prenyl groups) have been attached to this ring. These side chains are what give the different alpha-acids their distinct properties.</p>
+                    <p class="glossary-term">Analogues</p>
+                    <p class="glossary-def">In chemistry, analogues are compounds that share the same core molecular structure but differ in small, specific ways — typically the length or position of a side chain. Humulone, cohumulone, and adhumulone are all alpha-acid analogues: same basic skeleton, slightly different attachments.</p>
+                    <p class="glossary-term">Humulone</p>
+                    <p class="glossary-def">The most abundant alpha-acid in most hop varieties, making up 35–70% of total alpha-acids. It is the primary precursor to the bitter compounds in beer.</p>
+                    <p class="glossary-term">Cohumulone</p>
+                    <p class="glossary-def">The second most abundant alpha-acid (20–65% of total). Beers high in cohumulone-derived bitterness are sometimes described as having a harsher, less refined bitter quality, though this is debated among brewing scientists.</p>
+                    <p class="glossary-term">Adhumulone</p>
+                    <p class="glossary-def">The least abundant of the three major alpha-acids (10–15% of total). It contributes to overall bitterness but is present in smaller quantities than humulone or cohumulone.</p>
+                    <p class="glossary-term">Thermal isomerisation</p>
+                    <p class="glossary-def">A chemical rearrangement caused by heat ('thermal'). 'Isomerisation' means converting a molecule into an isomer — a different structural arrangement of the same atoms. When alpha-acids are boiled, heat causes their molecular rings to rearrange, producing iso-alpha-acids that taste bitter.</p>
+                    <p class="glossary-term">Iso-α-acids (iso-alpha-acids)</p>
+                    <p class="glossary-def">The chemically rearranged forms of alpha-acids, produced during wort boiling. These are the actual bitter-tasting compounds in beer. The prefix 'iso-' means 'same composition, different structure'.</p>
+                    <p class="glossary-term">Acyloin-type ring contraction</p>
+                    <p class="glossary-def">The specific chemical mechanism by which alpha-acids rearrange into iso-alpha-acids. An 'acyloin rearrangement' is a known type of organic chemistry reaction. 'Ring contraction' means that a six-membered carbon ring in the original molecule shrinks to a five-membered ring in the product. This is the key structural change that makes the molecule bitter.</p>
+                    <p class="glossary-term">Deprotonation</p>
+                    <p class="glossary-def">The removal of a hydrogen ion (H⁺, also called a proton) from a molecule. In this reaction, a hydrogen is removed from the alpha-acid to create a negatively charged intermediate (an anion), which is necessary for the next step of the reaction to proceed.</p>
+                    <p class="glossary-term">β-tricarbonyl system</p>
+                    <p class="glossary-def">A specific arrangement within the alpha-acid molecule where three carbonyl groups (C=O, a carbon atom double-bonded to an oxygen atom) are positioned near each other. This arrangement makes the hydrogen atoms nearby more acidic and easier to remove (see deprotonation above).</p>
+                    <p class="glossary-term">Anion</p>
+                    <p class="glossary-def">An atom or molecule carrying a negative electrical charge, formed by gaining one or more electrons. In this reaction, removing a hydrogen ion leaves behind a negatively charged species that is more reactive and can undergo the next step of the rearrangement.</p>
+                    <p class="glossary-term">Stereoselective ketonisation</p>
+                    <p class="glossary-def">Ketonisation is the conversion of an enol (a molecule with an –OH group on a carbon–carbon double bond) into a ketone (a molecule with a C=O group). Stereoselective means the reaction preferentially produces one particular three-dimensional arrangement of atoms over another. Not all possible shapes are equally favoured — the reaction is biased.</p>
+                    <p class="glossary-term">Enol function</p>
+                    <p class="glossary-def">A structural feature in a molecule where a hydroxyl group (–OH) is attached to a carbon that is also part of a carbon–carbon double bond (C=C). Enols are generally unstable and tend to rearrange into the more stable ketone form.</p>
+                    <p class="glossary-term">α-ketol rearrangement</p>
+                    <p class="glossary-def">A specific type of molecular rearrangement where a molecule containing both a ketone group (C=O) and a hydroxyl group (–OH) on adjacent carbons undergoes internal reorganisation. In this case, it causes the six-membered ring to contract to five members.</p>
+                    <p class="glossary-term">Diastereomeric</p>
+                    <p class="glossary-def">Diastereomers are molecules that have the same atoms connected in the same order, but differ in the three-dimensional arrangement of those atoms at one or more points. Unlike mirror-image isomers (enantiomers), diastereomers are not mirror images of each other and have different physical and chemical properties — including different levels of bitterness and stability.</p>
+                    <p class="glossary-term">cis-isomer and trans-isomer</p>
+                    <p class="glossary-def">Two labels describing how groups are arranged in three-dimensional space around a rigid part of a molecule. Cis means 'on the same side'; trans means 'on opposite sides'. In iso-alpha-acids, the cis and trans forms have different stability and bitterness characteristics. The cis form is more stable and predominates in beer.</p>
+                    <p class="glossary-term">pH 5.0–5.5</p>
+                    <p class="glossary-def">pH is a scale measuring how acidic or alkaline a solution is, running from 0 (very acidic) to 14 (very alkaline), with 7 being neutral. Wort has a pH of 5.0–5.5, making it mildly acidic — roughly comparable to black coffee. This mild acidity affects which chemical reactions are favoured during boiling.</p>
+                    <p class="glossary-term">Thermodynamic vs. kinetic products</p>
+                    <p class="glossary-def">In chemistry, a reaction can sometimes produce more than one possible product. The kinetic product is the one that forms fastest. The thermodynamic product is the one that is most stable (lowest energy). Usually these are different, and the reaction conditions determine which one predominates. The article notes that for iso-alpha-acids, the cis-isomer is both the fastest to form and the most stable — an unusual coincidence.</p>
+                    <p class="glossary-term">First-order kinetics</p>
+                    <p class="glossary-def">A description of how fast a chemical reaction proceeds. In first-order kinetics, the rate of the reaction is directly proportional to the concentration of one reactant. If you double the amount of alpha-acid, the reaction proceeds twice as fast. This is the simplest type of reaction rate law.</p>
+                    <p class="glossary-term">Activation energy</p>
+                    <p class="glossary-def">The minimum amount of energy required to start a chemical reaction. Think of it as the energy needed to push a boulder over the top of a hill — once it's over, the reaction proceeds on its own. The values given (98.6 kJ mol⁻¹ and 108.0 kJ mol⁻¹) tell us that the isomerisation reaction requires less energy to start than the degradation reaction, which is why useful bitterness is created before it is destroyed.</p>
+                    <p class="glossary-term">kJ mol⁻¹</p>
+                    <p class="glossary-def">Kilojoules per mole — a standard unit for measuring energy per quantity of substance in chemistry. A 'mole' is a specific number of molecules (6.02 × 10²³), and 'kilojoules' are units of energy. This notation allows chemists to compare the energy requirements of different reactions on a like-for-like basis.</p>
+                    <p class="glossary-term">Trub</p>
+                    <p class="glossary-def">The solid sediment that forms during wort boiling, consisting of coagulated proteins, hop debris, and other insoluble material. Trub settles to the bottom of the vessel and is removed before fermentation. Alpha-acids that bind to trub are lost and never converted to bitter iso-alpha-acids.</p>
+                    <p class="glossary-term">Pelletised hops</p>
+                    <p class="glossary-def">Hops that have been dried, milled into powder, and compressed into small pellets. Pelletisation breaks open the lupulin glands, increasing the surface area exposed to the wort and improving the efficiency of alpha-acid extraction.</p>
+                    <p class="glossary-term">Pre-isomerised extracts</p>
+                    <p class="glossary-def">Commercial hop products in which the alpha-acids have already been chemically converted to iso-alpha-acids before being added to the beer. This bypasses the inefficient boiling step entirely, allowing brewers to add precise amounts of bitterness with minimal waste.</p>
+                    <p class="glossary-term">Supercritical CO₂ extraction</p>
+                    <p class="glossary-def">An industrial technique that uses carbon dioxide heated and pressurised beyond its 'critical point' (31.1°C, 73.8 bar) — a state where it behaves as both a liquid and a gas simultaneously. In this state, CO₂ is an excellent solvent for extracting hop resins and oils cleanly, without leaving chemical residues.</p>
+                </div>
+            </div>
+            <!-- Section IV: The Organic Chemistry of Aroma — Terpenes in Hops -->
+            <div class="glossary-section" data-section="Section IV: The Organic Chemistry of Aroma — Terpenes in Hops">
+                <div class="glossary-section-title">Section IV: The Organic Chemistry of Aroma</div>
+                <div class="glossary-term-group">
+                    <p class="glossary-term">Terpenes</p>
+                    <p class="glossary-def">A large and diverse class of organic compounds produced by many plants, responsible for distinctive aromas and flavours. They are built from repeating five-carbon units called isoprene. Terpenes are what make lemons smell citrusy, pine trees smell resinous, and hops smell floral or herbal.</p>
+                    <p class="glossary-term">Hop essential oil</p>
+                    <p class="glossary-def">The volatile, aromatic fraction extracted from hop lupulin glands. It is a complex mixture of hundreds of individual compounds — over 400 have been identified — and it is responsible for the aroma (as opposed to the bitterness) of hops.</p>
+                    <p class="glossary-term">Monoterpene</p>
+                    <p class="glossary-def">A terpene molecule built from two isoprene units (10 carbon atoms). Monoterpenes are generally small, lightweight molecules that evaporate easily, which is why they are so important for aroma. Myrcene, linalool, and geraniol are all monoterpenes.</p>
+                    <p class="glossary-term">Myrcene (β-myrcene, C₁₀H₁₆)</p>
+                    <p class="glossary-def">The most abundant monoterpene in hop oil, responsible for the characteristically 'hoppy', resinous, herbaceous smell. It has an exceptionally low odour threshold (approximately 13 parts per billion in water), meaning trace amounts are enough to produce a noticeable smell. However, it evaporates easily during boiling.</p>
+                    <p class="glossary-term">Acyclic</p>
+                    <p class="glossary-def">A molecule that does not contain a ring structure. Myrcene is an open-chain (non-ring) molecule, which contributes to its high volatility compared to ring-containing terpenes.</p>
+                    <p class="glossary-term">Geranyl pyrophosphate (GPP)</p>
+                    <p class="glossary-def">A biological molecule that serves as the starting material (precursor) from which plants build monoterpenes. The hop plant's biochemical machinery converts GPP into myrcene and other terpenes through enzymatic reactions.</p>
+                    <p class="glossary-term">Methylerythritol phosphate (MEP) pathway</p>
+                    <p class="glossary-def">One of two biochemical pathways that living organisms use to build terpenes. The MEP pathway operates in the chloroplasts (the photosynthesis compartments) of plant cells and is the route hops use to produce their terpene-rich essential oils. The other pathway (the mevalonate pathway) operates in animals and fungi.</p>
+                    <p class="glossary-term">Odour threshold</p>
+                    <p class="glossary-def">The lowest concentration of a substance at which its smell can be detected. A lower odour threshold means the compound is more potent — you need less of it to notice it. Myrcene's threshold of ~13 parts per billion means you could detect it in a swimming pool if only a few drops were added.</p>
+                    <p class="glossary-term">Parts per billion (ppb)</p>
+                    <p class="glossary-def">A unit of concentration. One part per billion is equivalent to one microgram of substance in one kilogram of solution, or approximately one drop in an Olympic swimming pool. It is used for substances that are effective at extremely low concentrations.</p>
+                    <p class="glossary-term">Matrix suppression effects</p>
+                    <p class="glossary-def">The phenomenon where the complex mixture of compounds in a real product (the 'matrix' — in this case, beer) interferes with the detection of a specific compound. A terpene that is highly aromatic in pure water may be harder to detect in beer because other flavour compounds compete for the same smell and taste receptors.</p>
+                    <p class="glossary-term">Dry-hopping</p>
+                    <p class="glossary-def">A brewing technique where hops are added to the beer after fermentation, rather than during boiling. Because the beer is cool, volatile aromatic compounds like myrcene are preserved rather than boiled off. This technique produces intensely aromatic beers and is central to modern craft brewing styles such as India Pale Ales.</p>
+                    <p class="glossary-term">Late-addition hopping</p>
+                    <p class="glossary-def">Adding hops in the final minutes of the wort boil (typically the last 5–15 minutes, or at 'flame-out'). This preserves more volatile aroma compounds than a full 60–90 minute boil, while still extracting some bitterness.</p>
+                    <p class="glossary-term">Linalool (C₁₀H₁₈O)</p>
+                    <p class="glossary-def">A terpene alcohol found in hops (and in lavender, coriander, and many other plants). It contributes floral and citrus aroma notes. Although present in small quantities, it is one of the most sensorially important compounds in dry-hopped beers because it is less volatile than myrcene and more likely to survive into the finished product.</p>
+                    <p class="glossary-term">Enantiomer</p>
+                    <p class="glossary-def">One of two mirror-image forms of a molecule that cannot be superimposed on each other — like a left hand and a right hand. Enantiomers have identical chemical compositions but different three-dimensional orientations. In biology, different enantiomers of the same compound often have very different smells, tastes, or biological effects. The (R)-enantiomer of linalool, which predominates in hops, has a distinctly floral scent.</p>
+                    <p class="glossary-term">Geraniol (C₁₀H₁₈O)</p>
+                    <p class="glossary-def">A monoterpene alcohol with a rose-like, citrus aroma. It is found in hops, roses, and citronella. Its significance in brewing extends beyond its own aroma: yeast enzymes can convert geraniol into β-citronellol during fermentation, meaning the aroma profile of the finished beer differs from the aroma of the raw hops.</p>
+                    <p class="glossary-term">β-citronellol</p>
+                    <p class="glossary-def">A terpene alcohol with woody, fresh, and citrus notes, produced when yeast enzymes chemically reduce geraniol during fermentation. It is not present in raw hops — it is created by microbial metabolism, making it an example of biotransformation.</p>
+                    <p class="glossary-term">Biotransformation</p>
+                    <p class="glossary-def">A chemical conversion carried out by a living organism (in this case, yeast). During fermentation, yeast does not merely produce alcohol — it also chemically modifies hop compounds, converting them into new aromatic molecules that were not present in the original hops.</p>
+                    <p class="glossary-term">NADPH oxidoreductase OYE2 (Old Yellow Enzyme 2)</p>
+                    <p class="glossary-def">A specific enzyme found in brewer's yeast (Saccharomyces cerevisiae). Enzymes are biological catalysts — proteins that speed up specific chemical reactions. OYE2 uses a helper molecule called NADPH to catalyse the reduction of geraniol to β-citronellol. 'Old Yellow Enzyme' is its historical name, dating from its discovery in the 1930s as one of the first enzymes ever isolated; it appeared yellow in solution.</p>
+                    <p class="glossary-term">β-glucosidases</p>
+                    <p class="glossary-def">Enzymes that break the chemical bond between a sugar molecule (glucose) and another compound. In hops, some terpenes are stored in an inactive, odourless form bound to a sugar molecule (a glycoside). β-glucosidases from yeast cleave this bond during fermentation, releasing the free, aromatic terpene.</p>
+                    <p class="glossary-term">Glycosidically bound terpene precursors</p>
+                    <p class="glossary-def">Terpene molecules that are chemically attached to a sugar molecule (a glycosidic bond). In this bound form, the terpene has no aroma. The sugar acts like a molecular lock. When yeast enzymes (β-glucosidases) cut the bond, the aromatic terpene is released — like uncorking a bottle of perfume.</p>
+                    <p class="glossary-term">Terroir</p>
+                    <p class="glossary-def">A French term (pronounced 'tehr-WAHR') borrowed from viticulture (winemaking) that describes how a specific place's climate, soil, topography, and farming traditions collectively shape the character of a crop. The article uses it to explain why East Kent Goldings hops grown in Kent taste and smell different from hops of the same variety grown elsewhere.</p>
+                    <p class="glossary-term">East Kent Goldings</p>
+                    <p class="glossary-def">A heritage English hop variety prized for its delicate, refined, and gently spicy aroma. It is considered one of the classic 'noble'-style English hops and is closely associated with Kent, where it has been cultivated for centuries.</p>
+                </div>
+            </div>
+
+            <!-- Section V: Beyond the Pint Glass — Hops in Pharmaceutical Research -->
+            <div class="glossary-section" data-section="Section V: Beyond the Pint Glass — Hops in Pharmaceutical Research">
+                <div class="glossary-section-title">Section V: Beyond the Pint Glass</div>
+                <div class="glossary-term-group">
+                    <p class="glossary-term">Xanthohumol (XN)</p>
+                    <p class="glossary-def">A prenylated chalcone (a type of flavonoid — see below) found in the hard resin fraction of hop cones. It is the most abundant prenylated flavonoid in hops. First identified in 1957, its potential medical properties were not recognised until the 1990s. It has since been shown to have antimicrobial, anti-inflammatory, antioxidant, and chemopreventive properties in laboratory studies.</p>
+                    <p class="glossary-term">Prenylated chalcone</p>
+                    <p class="glossary-def">A specific type of molecular structure. A chalcone is an organic compound consisting of two aromatic rings joined by a three-carbon chain with a double bond and a ketone group (an α,β-unsaturated ketone). Prenylated means a prenyl group (a small hydrocarbon side chain) has been attached. This prenyl group often enhances the compound's biological activity.</p>
+                    <p class="glossary-term">Flavonoid</p>
+                    <p class="glossary-def">A large class of plant-derived compounds known for their antioxidant, anti-inflammatory, and colour-producing properties. Flavonoids are found in fruits, vegetables, tea, wine, and hops. They are structurally based on a 15-carbon skeleton and include subclasses such as flavones, flavonols, and chalcones. Xanthohumol is a chalcone-type flavonoid.</p>
+                    <p class="glossary-term">Hard resin fraction</p>
+                    <p class="glossary-def">The portion of hop lupulin that is insoluble in wort under normal brewing conditions. Unlike the 'soft resins' (which contain the alpha- and beta-acids), hard resins contain compounds like xanthohumol that were historically discarded by brewers but are now recognised as pharmacologically interesting.</p>
+                    <p class="glossary-term">Antimicrobial activity</p>
+                    <p class="glossary-def">The ability of a substance to kill or inhibit the growth of microorganisms such as bacteria, fungi, or viruses. Xanthohumol and other hop compounds have demonstrated antimicrobial activity against several types of bacteria in laboratory studies.</p>
+                    <p class="glossary-term">Clinically relevant anaerobic bacteria</p>
+                    <p class="glossary-def">Bacteria that cause disease in humans and that grow in the absence of oxygen. The article specifically mentions Clostridium difficile (now reclassified as Clostridioides difficile), a bacterium that causes severe intestinal infections, particularly in hospital patients who have been treated with broad-spectrum antibiotics.</p>
+                    <p class="glossary-term">Clostridium difficile (C. difficile)</p>
+                    <p class="glossary-def">A species of spore-forming, anaerobic bacterium that infects the large intestine, causing symptoms ranging from diarrhoea to life-threatening inflammation of the colon. It is a major cause of hospital-acquired infection worldwide, and many strains are resistant to conventional antibiotics, making new treatments an urgent priority.</p>
+                    <p class="glossary-term">Minimum inhibitory concentration (MIC)</p>
+                    <p class="glossary-def">The lowest concentration of an antimicrobial substance needed to prevent visible growth of a specific bacterium in a laboratory test. It is a standard measure of how potent an antimicrobial agent is. Lower MIC values indicate greater potency. The article reports MIC values of 15–107 μg/mL for xanthohumol against C. difficile, which approaches the effectiveness of some conventional antibiotics.</p>
+                    <p class="glossary-term">μg/mL</p>
+                    <p class="glossary-def">Micrograms per millilitre — a unit of concentration. One microgram is one-millionth of a gram. This is a standard unit used in pharmacology to describe drug concentrations in solution.</p>
+                    <p class="glossary-term">In vivo</p>
+                    <p class="glossary-def">Latin for 'in the living'. Refers to experiments conducted in whole, living organisms (in this case, rats), as opposed to in vitro ('in glass'), which refers to experiments in test tubes or petri dishes. In vivo results are generally considered more clinically meaningful because they account for the complexity of a living body.</p>
+                    <p class="glossary-term">Inflammatory markers</p>
+                    <p class="glossary-def">Measurable biological indicators that the body's immune system is responding to infection or injury. These can include specific proteins, immune cells, or chemical signals in blood or tissue. A reduction in inflammatory markers suggests that a treatment is reducing the harmful effects of infection.</p>
+                    <p class="glossary-term">Chemopreventive</p>
+                    <p class="glossary-def">Describing a substance that may help prevent cancer. Chemopreventive compounds typically work by neutralising carcinogens (cancer-causing agents), reducing oxidative damage to DNA, or inhibiting the early stages of tumour development. Xanthohumol has shown chemopreventive activity in laboratory and animal studies, but this has not yet been confirmed in human clinical trials.</p>
+                    <p class="glossary-term">Preclinical models</p>
+                    <p class="glossary-def">Experimental systems used to study diseases and test potential treatments before human trials. These include cell cultures (in vitro), animal models (in vivo), and computer simulations (in silico). A compound showing promise in preclinical models may or may not prove effective in humans.</p>
+                    <p class="glossary-term">Gram-positive bacteria</p>
+                    <p class="glossary-def">One of the two major classifications of bacteria, based on a laboratory staining technique developed by Hans Christian Gram in 1884. Gram-positive bacteria have a thick cell wall made of peptidoglycan, which retains the purple crystal violet stain. Examples include Staphylococcus aureus and Clostridium difficile. Hop bitter acids are selectively active against Gram-positive bacteria because these compounds disrupt the function of the thick cell wall and membrane.</p>
+                    <p class="glossary-term">Antimicrobial resistance (AMR)</p>
+                    <p class="glossary-def">The ability of bacteria, viruses, fungi, or parasites to survive exposure to drugs that were previously effective against them. AMR is driven by the overuse and misuse of antibiotics and is recognised by the World Health Organisation as one of the most serious threats to global public health. The article positions hop-derived compounds as potential contributors to the fight against AMR.</p>
+                    <p class="glossary-term">Antibiotic adjuncts</p>
+                    <p class="glossary-def">Substances that are not antibiotics themselves but enhance the effectiveness of existing antibiotics when used alongside them. Hop-derived compounds could potentially serve as adjuncts — boosting the potency of conventional drugs or helping them overcome bacterial resistance.</p>
+                </div>
+            </div>
+
+            <!-- General Chemistry Terms Used Throughout -->
+            <div class="glossary-section" data-section="General Chemistry Terms Used Throughout">
+                <div class="glossary-section-title">General Chemistry Terms</div>
+                <div class="glossary-term-group">
+                    <p class="glossary-term">Isomer</p>
+                    <p class="glossary-def">A molecule with the same chemical formula as another molecule but a different arrangement of atoms. Isomers can have very different properties despite containing identical atoms. The conversion of alpha-acids to iso-alpha-acids is an isomerisation — same atoms, rearranged.</p>
+                    <p class="glossary-term">Molecular formula (e.g., C₁₀H₁₆)</p>
+                    <p class="glossary-def">A notation showing the type and number of atoms in a molecule. C₁₀H₁₆ means ten carbon atoms and sixteen hydrogen atoms. It tells you what is in the molecule but not how the atoms are connected.</p>
+                    <p class="glossary-term">Hydrocarbon</p>
+                    <p class="glossary-def">A molecule composed exclusively of carbon and hydrogen atoms. Myrcene (C₁₀H₁₆) is a hydrocarbon. Many terpenes are hydrocarbons, while others contain oxygen and are classified as oxygenated terpenes (e.g., linalool, geraniol).</p>
+                    <p class="glossary-term">Enzyme</p>
+                    <p class="glossary-def">A protein that acts as a biological catalyst — it speeds up a specific chemical reaction without being consumed in the process. Enzymes are essential to all living organisms. In brewing, yeast enzymes convert sugars to alcohol and transform hop terpenes into new aromatic compounds.</p>
+                    <p class="glossary-term">Catalyst</p>
+                    <p class="glossary-def">A substance that increases the rate of a chemical reaction without itself being permanently changed. Enzymes are biological catalysts. The hop isomerisation reaction during boiling is not catalysed — it is driven purely by heat (thermal energy).</p>
+                    <p class="glossary-term">Solubility</p>
+                    <p class="glossary-def">The ability of a substance to dissolve in a given solvent (usually water, in brewing). Alpha-acids have poor water solubility, which is one reason why the conversion to iso-alpha-acids during boiling is inefficient — much of the alpha-acid never dissolves in the wort.</p>
+                    <p class="glossary-term">Oxidation / Oxidative degradation</p>
+                    <p class="glossary-def">In broad terms, a chemical reaction involving the loss of electrons or the gain of oxygen by a molecule. In the context of hop chemistry, oxidative degradation refers to the slow breakdown of hop compounds (particularly beta-acids) through reaction with atmospheric oxygen, producing undesirable flavour compounds.</p>
+                    <p class="glossary-term">Fermentation</p>
+                    <p class="glossary-def">The metabolic process by which yeast converts sugars into alcohol (ethanol) and carbon dioxide. In brewing, fermentation transforms sweet wort into beer. Yeast also modifies hop-derived compounds during this process, contributing to the final flavour and aroma profile.</p>
+                </div>
+            </div>
+
+        </div> <!-- End glossary-content -->
+        <div class="glossary-footer">
+            Glossary compiled by CATS Insights as a companion to the Chemistry of Kent series.
+        </div>
+    </div>
+    <!-- Glossary JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Glossary Script: Initializing...');
+            
+            const btn = document.getElementById('glossary-btn');
+            const panel = document.getElementById('glossary-panel');
+            const overlay = document.getElementById('glossary-overlay');
+            const closeBtn = document.querySelector('.glossary-close-btn');
+            const searchInput = document.getElementById('glossary-search');
+            
+            // Check for required elements
+            if (!btn || !panel || !overlay) {
+                console.error('Glossary Error: Core elements missing!', { btn, panel, overlay });
+                return;
+            }
+            
+            console.log('Glossary Status: Core elements found, setting up listeners.');
+            
+            // Toggle panel
+            const toggleGlossary = () => {
+                panel.classList.toggle('open');
+                overlay.classList.toggle('active');
+                if (panel.classList.contains('open')) {
+                    console.log('Glossary: Panel opened.');
+                } else {
+                    console.log('Glossary: Panel closed.');
+                }
+            };
+            
+            btn.addEventListener('click', toggleGlossary);
+            if (closeBtn) closeBtn.addEventListener('click', toggleGlossary);
+            overlay.addEventListener('click', toggleGlossary);
+            
+            // Accordion sections
+            const sectionTitles = document.querySelectorAll('.glossary-section-title');
+            if (sectionTitles.length > 0) {
+                sectionTitles.forEach(title => {
+                    title.addEventListener('click', () => {
+                        title.classList.toggle('collapsed');
+                        const group = title.nextElementSibling;
+                        if (group && group.classList.contains('glossary-term-group')) {
+                            group.classList.toggle('collapsed');
+                        }
+                    });
+                });
+            }
+            
+            // Search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const sections = document.querySelectorAll('.glossary-section');
+                    
+                    sections.forEach(section => {
+                        const terms = section.querySelectorAll('.glossary-term');
+                        const defs = section.querySelectorAll('.glossary-def');
+                        let sectionHasMatch = false;
+                        
+                        for (let i = 0; i < terms.length; i++) {
+                            const termText = terms[i].textContent.toLowerCase();
+                            const defText = defs[i].textContent.toLowerCase();
+                            
+                            if (!query) {
+                                terms[i].style.display = 'block';
+                                defs[i].style.display = 'block';
+                                sectionHasMatch = true;
+                                continue;
+                            }
+                            
+                            const isMatch = termText.includes(query) || defText.includes(query);
+                            if (isMatch) {
+                                terms[i].style.display = 'block';
+                                defs[i].style.display = 'block';
+                                sectionHasMatch = true;
+                            } else {
+                                terms[i].style.display = 'none';
+                                defs[i].style.display = 'none';
+                            }
+                        }
+                        
+                        if (sectionHasMatch) {
+                            section.style.display = 'block';
+                            if (query) {
+                                const title = section.querySelector('.glossary-section-title');
+                                const group = section.querySelector('.glossary-term-group');
+                                if (title) title.classList.remove('collapsed');
+                                if (group) group.classList.remove('collapsed');
+                            }
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            console.log('Glossary Status: Initialization complete.');
+        });
+    </script>
+
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -25,10 +25,26 @@
             </button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="about.html" class="nav-link active">About</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="about/what-we-are.html">What Is CATS Insights?</a></li>
+                        <li><a href="about/our-model.html">Our Model</a></li>
+                        <li><a href="about/values.html">Values & Objectives</a></li>
+                        <li><a href="about/why-it-matters.html">Why It Matters</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html" class="nav-link">Publications</a></li>
                 <li><a href="resources.html" class="nav-link">Resources</a></li>
                 <li><a href="chemistry-of-kent.html" class="nav-link">Blog</a></li>
-                <li><a href="impact-report.html" class="nav-link">Impact Report</a></li>
+                <li><a href="digital-outreach.html" class="nav-link">Digital Outreach</a></li>
+                <li class="nav-dropdown">
+                    <a href="impact-report.html" class="nav-link">Impact Report</a>
+                    <ul class="dropdown-menu" style="display:none;list-style:none;margin:0;padding:8px 0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background-color:#0C2340;min-width:180px;border-radius:0 0 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,0.2);z-index:1001;">
+                        <li><a href="workshop.html">Workshop</a></li>
+                        <li><a href="mentoring.html">Mentoring</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
@@ -37,7 +53,7 @@
     <header class="hero fade-in" style="padding: 80px 0;">
         <div class="container text-center">
             <h1>About CATS Insights</h1>
-            <p style="font-size: 1.5rem; color: #ddd;">The story behind a student-built institution.</p>
+            <p style="font-size: 1.5rem; color: #ddd;">A student-built institution. An academic publication with a mission.</p>
             <div style="margin-top: 25px; font-style: italic; opacity: 0.9; font-size: 1.1rem; color: #eee;">
                 "We know what we are, but know not what we may be." — William Shakespeare
             </div>
@@ -52,30 +68,91 @@
             <p style="font-weight: 500; font-size: 1.1rem; margin: 30px 0; color: var(--primary);">So rather than wait for one to appear, we built it from scratch.</p>
             
             <p>CATS Insights is a student-run academic publication, founded and operated entirely by students. Every role carries real responsibility. Writers research and draft original articles on topics they choose. Editors provide structured feedback that teaches contributors to think more clearly and argue more precisely. Designers translate finished work into a publication that looks as serious as the scholarship inside it. And the entire operation runs on a set of frameworks, guides, and training programmes developed specifically to ensure that no student needs prior experience to contribute, only curiosity, determination and a willingness to learn.</p>
-            
+        </div>
+    </section>
+
+    <!-- Navigation Cards Section -->
+    <section class="section bg-light">
+        <div class="container fade-in">
+            <h2 class="text-center" style="margin-bottom: 50px;">Explore the Organisation</h2>
+            <div class="card-grid">
+                <!-- Card 1: What Is CATS Insights? -->
+                <div class="card fade-in">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">The Foundation</div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">What Is CATS Insights?</h3>
+                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">Understand what CATS Insights is, where it came from, and the problem it was built to solve.</p>
+                    <a href="about/what-we-are.html" class="btn btn-primary" style="display: block; text-align: center; font-size: 0.9rem;">Read More</a>
+                </div>
+
+                <!-- Card 2: Our Model & How We Work -->
+                <div class="card fade-in">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">The Framework</div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Our Model & How We Work</h3>
+                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">Our organisational structure, publication workflow, quality assurance procedures, and operational systems.</p>
+                    <a href="about/our-model.html" class="btn btn-primary" style="display: block; text-align: center; font-size: 0.9rem;">Read More</a>
+                </div>
+
+                <!-- Card 3: Our Values & Objectives -->
+                <div class="card fade-in">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">The Purpose</div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Our Values & Objectives</h3>
+                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">The five core objectives that govern every decision we make, and the principles that underpin them.</p>
+                    <a href="about/values.html" class="btn btn-primary" style="display: block; text-align: center; font-size: 0.9rem;">Read More</a>
+                </div>
+
+
+                <!-- Card 5: Why It Matters -->
+                <div class="card fade-in">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">The Case</div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Why It Matters</h3>
+                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">The concrete benefits for students, the school, and CATS Global Schools — including university applications.</p>
+                    <a href="about/why-it-matters.html" class="btn btn-primary" style="display: block; text-align: center; font-size: 0.9rem;">Read More</a>
+                </div>
+
+                <!-- Card 6: Social Impact -->
+                <div class="card fade-in">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">The Citizen</div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Social Impact</h3>
+                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">Our contribution to the wider community through charity fundraisers, school events, and model citizenship.</p>
+                    <a href="#social-impact" class="btn btn-primary" style="display: block; text-align: center; font-size: 0.9rem;">View Impact</a>
+                </div>
+
+                <!-- Card 7: Succession & Legacy -->
+                <div class="card fade-in">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--secondary); letter-spacing: 1px; margin-bottom: 10px; font-weight: bold;">The Legacy</div>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;">Succession & Legacy</h3>
+                    <p style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">The "Succession Test" and the 48+ core documents ensuring the organisation thrives beyond any single cohort.</p>
+                    <a href="#succession-legacy" class="btn btn-primary" style="display: block; text-align: center; font-size: 0.9rem;">View Legacy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of existing section (Objectives etc.) -->
+    <section class="section">
+        <div class="container fade-in" style="max-width: 900px; margin: 0 auto; line-height: 1.8;">
             <h2 style="margin-top: 50px; margin-bottom: 20px;">Our Core Objectives</h2>
             <p>The organisation is governed by five core objectives that inform every decision we make:</p>
             
-            <div style="margin-top: 30px;">
                 <div style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid var(--secondary);">
-                    <strong>Academic excellence and intellectual curiosity</strong>
-                    <p style="margin-top: 5px;">We publish work that meets a standard our contributors would genuinely want to read, not essays manufactured for a credential.</p>
+                    <strong>Academic Excellence and Intellectual Curiosity</strong>
+                    <p style="margin-top: 5px;">To publish high quality, peer reviewed student research and articles that demonstrates rigorous academic scholarship that meets university-level academic standards. Contributors must produce work they themselves would read and learn from, rather than merely submitting unsubstantive essays for impressive sounding credentials for university applications. Quality assurance protocols will ensure scholarly integrity while preserving student voice and creative ideas.</p>
                 </div>
                 <div style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid var(--secondary);">
-                    <strong>Accessible leadership and skill development</strong>
-                    <p style="margin-top: 5px;">Every student, regardless of experience or academic standing, has a genuine opportunity to develop real skills through real work.</p>
+                    <strong>Accessible Student Leadership & Skill Development Opportunity</strong>
+                    <p style="margin-top: 5px;">To provide all interested students with genuine opportunities to develop research, writing, editorial, organisation, leadership and project management skills regardless of prior experience or academic standing. This objective democratises super-curricular engagement while offering invaluable leadership roles with real decision-making authority and responsibilities that will cultivate and foster transferable skills for academic and professional life. Leadership opportunities will be designated for mentorship and collaborative growth rather than aggrandisement.</p>
                 </div>
                 <div style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid var(--secondary);">
-                    <strong>Intellectual exploration and interest discovery</strong>
-                    <p style="margin-top: 5px;">Our members pursue topics beyond the syllabus, free from examination pressure. The goal is intrinsic curiosity, learning something new for the joy of understanding it, not because it will be tested.</p>
+                    <strong>Intellectual Exploration & Interest Discovery Platform</strong>
+                    <p style="margin-top: 5px;">To empower students to pursue STEM topics or fields of academic study that genuinely fascinate and interest them and this includes areas beyond the classroom syllabus or examination requirements. This objective seeks to nurture curiosity driven learning which will be free from examination grade pressure to encourage exploration of recent research, emerging technologies and interdisciplinary learning on foreign and new academic fields which students might not be familiar on. My goal is intrinsic intellectual proactivity, to learn new things for the joy of it rather than staying in one’s comfort zone and studying only in the most basic scope like it is a menial chore.</p>
                 </div>
                 <div style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid var(--secondary);">
-                    <strong>Legacy and sustainable impact</strong>
-                    <p style="margin-top: 5px;">Everything we build is documented, systematised, and designed to outlast the people who created it. Future students inherit a functioning institution, not a memory of one.</p>
+                    <strong>Legacy & Sustainable Impact</strong>
+                    <p style="margin-top: 5px;">To develop institutional frameworks, documentation and organisation systems that ensure CATS Insights benefits students long after I graduate. This is based on my commitment to collective impact for my fellow students rather than for my own individual gain. Through long-term thinking, my goal is to embed comprehensive operational manuals, tutorials and templates, lessons and protocols into the constitution of CATS Insights and its student culture. This will ensure that future generations can continue to benefit from my endeavour sustainably. I wish to build something that will endure and matter beyond my tenure.</p>
                 </div>
                 <div style="margin-bottom: 25px; padding-left: 20px; border-left: 4px solid var(--secondary);">
-                    <strong>Community impact and social responsibility</strong>
-                    <p style="margin-top: 5px;">Intellectual achievement and social responsibility are inseparable. As CATS Insights matures, we intend to extend academic access to underprivileged students through workshops, mentorship, and freely available educational resources.</p>
+                    <strong>Community Impact & Social Responsibility</strong>
+                    <p style="margin-top: 5px;">To extend STEM and academic access to underprivileged students and peoples through structured charitable initiatives. These could include virtual workshops or hands-on workshops inspired by published articles, mentorship programmes and the development and donation of accessible educational resources to schools and community centres. It is my conviction that intellectual achievement and social responsibility go hand in hand. Scholarship cannot exist for just one’s benefit but must rather cause tangible societal good. Once operational stability is achieved, CATS Insights will propose further charitable initiatives sustainably to create meaningful action and impact.</p>
                 </div>
             </div>
             
@@ -118,56 +195,46 @@
         </div>
     </section>
 
-    <!-- Organisational Structure & Governance -->
+    <!-- Editorial & QA Pipeline -->
     <section class="section">
         <div class="container fade-in">
-            <h2>Organisational Structure & Governance</h2>
-            <p>Our robust operational framework ensures sustainability beyond a single cohort. We operate on a 3-tier system:</p>
+            <h2 style="text-align: center; margin-bottom: 20px;">The Editorial & Quality Assurance Pipeline</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px;">Every article in CATS Insights follows a fixed, non-negotiable multi-stage pipeline. No article reaches the design team without completing all editorial stages and clearing strict academic audits.</p>
             
-            <div class="workflow">
-                <div class="workflow-step fade-in">
-                    <h3>1. Strategic Tier</h3>
-                    <p>The Senior Editorial Board establishes wide-reaching policies, sets the publication agenda, and handles quality assurance pipelines.</p>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+                <!-- Editorial Pipeline -->
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px;">1. The Editorial Pipeline</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: #444;">
+                        <li><strong>Draft Submission:</strong> Initial structured drafts submitted by Writers.</li>
+                        <li><strong>Edit 1 (Structural Edit):</strong> Big-picture review focusing on argument logic, logical fallacies, and thesis clarity.</li>
+                        <li><strong>Writer Revision:</strong> Mandatory writer responses to structural feedback.</li>
+                        <li><strong>Edit 2 (Line Edit):</strong> Sentence-level review focusing on academic tone, clarity, and hedging language.</li>
+                        <li><strong>Lead Edit:</strong> Final editorial review for cross-publication consistency.</li>
+                    </ul>
                 </div>
-                <div class="workflow-step fade-in">
-                    <h3>2. Operational Tier</h3>
-                    <p>Lead Writers and Section Editors manage specific topics, act as mentors to Junior Writers, and ensure consistent tone and accuracy.</p>
+                
+                <!-- QA Protocols -->
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px;">2. Quality Assurance Protocols</h3>
+                    <p style="color: #444; margin-bottom: 15px;">Following Lead Edit sign-off, articles enter the QA Gate to guarantee academic integrity:</p>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: #444;">
+                        <li><strong>Plagiarism Audit:</strong> Submissions must pass Turnitin similarity checks (strict &lt;20% threshold).</li>
+                        <li><strong>Authorship Verification:</strong> Due to the unreliability of automated AI detectors, we rely on rigorous manual editorial judgement and require verifiable proof of human drafting (e.g., Google Docs version history) rather than trusting automated scans.</li>
+                        <li><strong>Citation Validation:</strong> Verification of Tier 1/Tier 2 source credibility and precise formatting.</li>
+                        <li><strong>Ready for Design (RFD):</strong> Only upon passing all audits is an article cleared for the visual design phase.</li>
+                    </ul>
                 </div>
-                <div class="workflow-step fade-in">
-                    <h3>3. Execution Tier</h3>
-                    <p>Writers and Researchers draft content, conduct peer reviews, and source accurate chemistry literature.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 40px;">
-                <h3>Governance</h3>
-                <p>Our operations are standardised across <strong>48 documents</strong> organised into <strong>7 distinct suites</strong> (e.g., Editorial Guidelines, Onboarding, External Communications). This deep institutional knowledge prevents skill loss when senior members graduate.</p>
             </div>
         </div>
     </section>
 
-    <!-- Quality Assurance & Succession Planning -->
-    <section class="section bg-light">
+    <!-- Breakout Quote -->
+    <section class="section bg-light" style="padding: 40px 0;">
         <div class="container fade-in">
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
-                <div>
-                    <h2>Quality Assurance Pipeline</h2>
-                    <p>Every piece of evidence and article goes through our strict 4-stage audit to guarantee academic integrity:</p>
-                    <ul style="margin-left: 20px; line-height: 1.8;">
-                        <li><strong>Stage 1:</strong> Peer Review (Content & Chemistry Accuracy)</li>
-                        <li><strong>Stage 2:</strong> Senior Editorial Review (Style & Formatting)</li>
-                        <li><strong>Stage 3:</strong> Plagiarism & AI Checks (Turnitin <15% threshold, GPTZero scan)</li>
-                        <li><strong>Stage 4:</strong> Citation Audit (Oxford Referencing standard validation)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Succession Planning</h2>
-                    <p>Longevity is built into our core framework:</p>
-                    <ul style="margin-left: 20px; line-height: 1.8;">
-                        <li><strong>The Deputy System:</strong> Every key leadership role must have a trained deputy.</li>
-                        <li><strong>The Succession Test:</strong> Upon graduation, knowledge transfer must be complete enough that incoming leaders can immediately take over without disruption.</li>
-                    </ul>
-                </div>
+            <div class="quote-card" style="max-width: 850px; margin: 0 auto; font-size: 1.25rem; font-style: italic; color: var(--primary); padding: 40px; text-align: center; border-left: 8px solid var(--secondary); background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                "CATS Insights is an organization that supports young creatives, providing resources to produce high-quality articles and providing the opportunity to express their creative self."
+                <span class="quote-author" style="display: block; margin-top: 15px; font-style: normal; font-weight: 500; font-size: 1rem; color: #555;">- Elain, Year 12</span>
             </div>
         </div>
     </section>
@@ -404,6 +471,41 @@
                     <div style="background-color: #888; color: white; border-radius: 50%; width: 80px; height: 80px; line-height: 80px; font-size: 24px; font-weight: bold; margin: 0 auto 15px;">HN</div>
                     <h3 style="font-size: 16px; margin-bottom: 5px;">Huu Gia Bao Nguyen (Bao)</h3>
                     <div style="font-size: 13px; color: #666; margin-top: 5px;">Member</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Impact Section -->
+    <section id="social-impact" class="section">
+        <div class="container fade-in">
+            <h2 class="text-center" style="margin-bottom: 40px;">Social Impact & Model Citizenship</h2>
+            <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: #444;">
+                <p>CATS Insights is committed to being more than just an academic publication; we aim to produce students who are model citizens. This commitment is evidenced by our ongoing engagement with school events and charitable initiatives.</p>
+                <div class="card" style="margin-top: 30px; border-left: 5px solid var(--secondary); background: #fafafa; padding: 25px;">
+                    <h3 style="color: var(--primary); margin-bottom: 10px;">Charity & School Impact</h3>
+                    <p>Through our digital outreach and school presence, we have coordinated and supported multiple initiatives that raise money for very good causes. Our members are encouraged to see their academic passion as a tool for public good, using the visibility of CATS Insights to raise awareness for social issues and support charitable fundraising efforts within The Worthgate School community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Succession & Legacy Section -->
+    <section id="succession-legacy" class="section bg-light">
+        <div class="container fade-in">
+            <h2 class="text-center" style="margin-bottom: 40px;">Succession & Institutional Legacy</h2>
+            <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: #444;">
+                <p>A core challenge for any student-run organisation is the "cycle of graduation." To prevent CATS Insights from disappearing when its founders leave, we have institutionalised every piece of knowledge required to run it.</p>
+                
+                <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div class="card" style="background: white; padding: 25px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">The Succession Test</h4>
+                        <p style="font-size: 0.9rem;">"If every current member left tomorrow, could a new team publish Edition 1 within 6 months using only our documents?" This is the standard to which our 48+ core foundational documents are held, ensuring the organisation's "DNA" is preserved.</p>
+                    </div>
+                    <div class="card" style="background: white; padding: 25px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">The Deputy System</h4>
+                        <p style="font-size: 0.9rem;">Our tiered leadership structure ensures that every leader has a trained successor ready to step into their role. This approach prevents leadership voids and ensures professional continuity across academic years.</p>
+                    </div>
                 </div>
             </div>
         </div>
