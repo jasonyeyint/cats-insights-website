@@ -3,13 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pfizer at Sandwich | CATS Insights</title>
+    <title>Six Scientists, Seven Drugs: The Pfizer Sandwich Story | CATS Insights</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-body { max-width: 720px; margin: 0 auto; padding: 40px 20px; font-size: 17px; line-height: 1.7; color: var(--text-dark); }
+        .article-body h2 { font-size: 1.8rem; font-weight: 700; margin-top: 40px; margin-bottom: 20px; color: var(--text-dark); }
+        .article-body h3 { font-size: 1.4rem; font-weight: 600; margin-top: 30px; margin-bottom: 15px; color: var(--text-dark); }
+        .article-body p { margin-bottom: 20px; }
+        .article-body sup a { color: var(--secondary); text-decoration: none; font-weight: 600; padding: 0 2px; }
+        .article-body sup a:hover { text-decoration: underline; }
+        .pull-quote { margin: 30px 0; padding: 20px 25px; border-left: 4px solid var(--primary); background-color: #fafafa; font-style: italic; color: var(--text-dark); }
+        .pull-quote p { margin-bottom: 10px; font-size: 1.1rem; }
+        .pull-quote span { font-size: 0.95rem; color: #777; font-style: normal; }
+        .figure-container { margin: 40px 0; text-align: center; }
+        .figure-container img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea; }
+        .figure-placeholder { background-color: #f5f5f5; border: 2px dashed #ccc; padding: 40px 20px; text-align: center; margin: 30px 0 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .figure-caption { font-style: italic; text-align: center; margin-bottom: 5px; font-size: 0.9em; }
+        .figure-source { text-align: center; color: #777; font-size: 0.85em; margin-bottom: 30px; }
+        .notes-list li { margin-bottom: 10px; }
+        .bib-list p { margin-bottom: 15px; padding-left: 20px; text-indent: -20px; }
+    </style>
+
+<style>
+/* Pfizer Glossary Sidebar Base */
+.pfizer-glossary-sidebar {
+    position: fixed;
+    z-index: 1000;
+    background-color: #F7F7F7;
+    transition: all 0.3s ease-in-out;
+    box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Base styles / Desktop */
+@media (min-width: 1101px) {
+    body {
+        margin-right: 48px; /* For collapsed tab */
+    }
+    .pfizer-glossary-mobile-toggle { display: none; }
+    
+    .pfizer-glossary-sidebar {
+        top: 0;
+        right: 0;
+        height: 100vh;
+        border-left: 1px solid #ddd;
+    }
+    .pfizer-glossary-sidebar.collapsed {
+        width: 48px;
+        transform: translateX(0);
+    }
+    .pfizer-glossary-sidebar.expanded {
+        width: 320px;
+    }
+    .pfizer-glossary-toggle-tab {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 48px;
+        height: 120px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #89764B;
+        border-radius: 8px 0 0 8px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+    .pfizer-glossary-sidebar.expanded .pfizer-glossary-toggle-tab { display: none; }
+    .pfizer-glossary-toggle-tab span {
+        transform: rotate(90deg);
+        color: #FFFFFF;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
+        white-space: nowrap;
+    }
+    
+    .pfizer-glossary-inner {
+        display: none;
+        flex-direction: column;
+        height: 100%;
+        width: 320px;
+    }
+    .pfizer-glossary-sidebar.expanded .pfizer-glossary-inner {
+        display: flex;
+    }
+}
+
+/* Mobile */
+@media (max-width: 1100px) {
+    .pfizer-glossary-mobile-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #0C2340;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 24px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        cursor: pointer;
+        z-index: 1000;
+    }
+    .pfizer-glossary-sidebar {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateY(100%);
+        z-index: 1001; /* Above toggle */
+    }
+    .pfizer-glossary-sidebar.expanded {
+        transform: translateY(0);
+    }
+    .pfizer-glossary-toggle-tab { display: none; }
+    
+    .pfizer-glossary-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.pfizer-glossary-header-row {
+    background-color: #0C2340;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.pfizer-glossary-header-row h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin: 0;
+}
+.pfizer-glossary-badge-main {
+    background-color: #89764B;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+.pfizer-glossary-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+.pfizer-glossary-search-container {
+    padding: 15px 20px;
+    flex-shrink: 0;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #ddd;
+}
+#pfizer-glossary-search {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.pfizer-glossary-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 20px 20px;
+    background-color: #F7F7F7;
+}
+.pfizer-glossary-section {
+    margin-top: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+}
+.pfizer-glossary-section-toggle {
+    background-color: #0C2340;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+}
+.pfizer-glossary-section-toggle .chevron {
+    margin-right: 8px;
+    font-size: 12px;
+}
+.pfizer-glossary-section-content {
+    padding: 0 15px;
+}
+.pfizer-glossary-entry {
+    padding: 15px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.pfizer-glossary-entry:last-child {
+    border-bottom: none;
+}
+.pfizer-glossary-term {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #0C2340;
+    margin-bottom: 6px;
+}
+.pfizer-glossary-def {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #1A1A1A;
+    line-height: 1.6;
+}
+.pfizer-glossary-footer {
+    padding: 15px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    background-color: #F7F7F7;
+    flex-shrink: 0;
+}
+</style>
+
 </head>
-<body>
+<body class="bg-light">
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -18,7 +260,9 @@
                 <img src="images/LOGO.jpg" alt="CATS Insights Logo" class="brand-logo">
                 CATS Insights
             </a>
-            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <button class="hamburger" aria-label="Toggle navigation">
+                ☰
+            </button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-dropdown">
@@ -45,72 +289,171 @@
         </div>
     </nav>
 
-    <!-- Article Header -->
-    <header class="section bg-light" style="padding-bottom: 20px;">
-        <div class="container fade-in">
-            <a href="chemistry-of-kent.html" style="display: inline-block; margin-bottom: 20px;">&larr; Back to Articles</a>
-            <span class="badge">History of Chemistry</span>
-            <h1 style="font-size: 42px; margin-bottom: 10px;">Pfizer at Sandwich</h1>
-            <p style="font-size: 20px; color: #555; margin-bottom: 15px;">Pharmaceutical Giants in our Backyard</p>
-            <div style="display: flex; gap: 20px; font-weight: 500; color: var(--primary);">
-                <span>By CATS Insights Editorial Team</span>
-                <span>|</span>
-                <span>November 2025</span>
-            </div>
+    <main style="background-color: white; padding-bottom: 60px;">
+        <!-- Breadcrumb -->
+        <div style="max-width: 720px; margin: 0 auto; padding: 30px 20px 0; font-size: 14px; color: #666;">
+            <a href="index.html" style="color: #666; text-decoration: none;">Home</a> > <a href="chemistry-of-kent.html" style="color: #666; text-decoration: none;">Blog</a> > Six Scientists, Seven Drugs: The Pfizer Sandwich Story
         </div>
-    </header>
 
-    <!-- Article Content -->
-    <article class="section" style="padding-top: 20px;">
-        <div class="container fade-in" style="max-width: 800px;">
+        <!-- Header Block -->
+        <header style="max-width: 720px; margin: 0 auto; padding: 20px; margin-top: 10px;">
+            <span class="badge" style="background-color: var(--primary); color: white; margin-bottom: 15px; display: inline-block;">Chemistry</span>
+            <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-dark); line-height: 1.3;">Six Scientists, Seven Drugs: The Pfizer Sandwich Story</h1>
+            <p style="font-size: 1.1rem; font-weight: 500; color: var(--text-dark); margin-bottom: 8px;">By Kyal Sin (Jason) Ye Yint</p>
+            <p style="font-size: 13px; color: #666;">Chemistry &nbsp;|&nbsp; 10 min read &nbsp;|&nbsp; The Worthgate School, CATS Insights</p>
             
-            <div class="card-image" style="height: 300px; margin: 30px 0;">
-                [ Placeholder Image: Pfizer Sandwich Facility ]
+            <div style="background-color: #fafafa; border-left: 4px solid var(--primary); padding: 20px; margin-top: 30px; margin-bottom: 30px;">
+                <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 10px;">Abstract</p>
+                <p style="margin: 0; font-size: 15px; line-height: 1.6;">Between 1957 and 2011, a single pharmaceutical research facility in Sandwich, Kent, produced seven major medicines that collectively transformed the treatment of fungal infections, cardiovascular disease, erectile dysfunction, pulmonary hypertension, and HIV. This article traces the scientific and institutional history of Pfizer's European research headquarters, from a team of six scientists to a campus employing over 3,500 and examines the chemistry underpinning two of its most significant discoveries: fluconazole (Diflucan&reg;), the antifungal that has saved millions of immunocompromised patients, and sildenafil (Viagra&reg;), the PDE5 inhibitor whose serendipitous clinical journey remains one of the most cited examples of drug repositioning in pharmaceutical history. The article concludes by considering the site's transformation into Discovery Park, a science and innovation campus that continues Kent's pharmaceutical legacy.</p>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #ddd; margin-bottom: 0;">
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+
+            <div class="figure-container">
+                <img src="images/pfizer-cover.jpg" alt="Figure 1. The Pfizer research campus viewed from the banks of the River Stour, Sandwich, Kent">
+                <div class="figure-caption">Figure 1. The Pfizer research campus viewed from the banks of the River Stour, Sandwich, Kent. For over five decades, this site on the outskirts of a mediaeval Cinque Port served as the European research headquarters of one of the world's largest pharmaceutical companies, producing seven major medicines including fluconazole and sildenafil. The campus has since been redeveloped as Discovery Park.</div>
+                <div class="figure-source">Source: Nick Smith / Geograph, <a href="https://commons.wikimedia.org/wiki/File:View_of_the_Pfizer_pharmaceutical_site_on_the_banks_of_the_Stour_-_geograph.org.uk_-_1586951.jpg">CC BY-SA 2.0</a></div>
             </div>
 
-            <h2>Introduction</h2>
-            <p>For over six decades, the town of Sandwich in East Kent was home to one of the largest and most productive pharmaceutical research facilities in the world. The Pfizer Sandwich site stands as a testament to British scientific ingenuity, where countless chemical compounds were synthesized leading to global medical breakthroughs.</p>
+            <h2>1. Introduction: A Quiet Town, a Global Laboratory</h2>
 
-            <h2>Origins (1952-1971)</h2>
-            <p>Pfizer established its Sandwich site in 1954, initially as a manufacturing plant for antibiotics like Terramycin (oxytetracycline) to supply post-war Europe. By 1971, the site had expanded into a massive dedicated Research and Development campus. This transition from manufacturing to pure chemical research marked the beginning of Sandwich's golden era in drug discovery.</p>
-
-            <h2>Fluconazole: Defeating Fungal Infections</h2>
-            <p>In the late 1970s, chemists at Sandwich undertook the monumental task of finding a safe, systemic antifungal agent. After synthesising hundreds of triazole derivatives, the team discovered fluconazole (marketed as Diflucan) in 1981. This breakthrough molecule—C₁₃H₁₂F₂N₆O—revolutionised the treatment of severe fungal infections, particularly saving the lives of many immunocompromised patients during the HIV/AIDS epidemic.</p>
-
-            <h2>Sildenafil: The Unexpected Blockbuster</h2>
-            <p>Perhaps the most famous molecule synthesised in Kent is sildenafil (C₂₂H₃₀N₆O₄S). Originally developed in Sandwich in 1989 as a treatment for hypertension and angina pectoris, clinical trials revealed a remarkable side effect. The compound was a potent inhibitor of cGMP-specific phosphodiesterase type 5 (PDE5). It was repurposed and launched in 1998 as Viagra, becoming one of the most commercially successful prescribed medications in history.</p>
-
-            <h2>Full Portfolio</h2>
-            <p>Beyond these two giants, the Sandwich site discovered numerous other vital medicines, including amlodipine (Norvasc, for high blood pressure), voriconazole (Vfend, a second-generation antifungal), and doxazosin (Cardura). At its peak, the facility employed over 2,400 scientists and staff.</p>
-
-            <h2>Discovery Park Today</h2>
-            <p>In 2011, Pfizer announced the substantial downsizing of its R&D operations at Sandwich. However, the site was rapidly transformed into 'Discovery Park', a thriving enterprise zone. Today, Discovery Park hosts over 160 companies, including many biotech startups, ensuring that Kent remains a hub for cutting-edge chemical and biological research.</p>
-
-            <h2>Conclusion</h2>
-            <p>The legacy of Pfizer at Sandwich proves that world-class chemistry happens everywhere, not just in traditional university cities. The molecules synthesised on the Kentish coast have genuinely altered the course of modern medicine.</p>
-            
-            <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
-
-            <!-- References & Editorial Note -->
-            <h3>References</h3>
-            <ol style="margin-left: 20px; margin-bottom: 30px; font-size: 14px; line-height: 1.8;">
-                <li>Sneader, W. (2005). <i>Drug Discovery: A History</i>. Wiley. DOI: [Placeholder DOI]</li>
-                <li>Richardson, K., et al. (1990). "Discovery of fluconazole, a novel antifungal agent." <i>Reviews of Infectious Diseases</i>. DOI: [Placeholder DOI]</li>
-                <li>Terrett, N. K., et al. (1996). "Sildenafil (VIAGRA), a potent and selective inhibitor of type 5 cGMP phosphodiesterase." <i>Bioorganic & Medicinal Chemistry Letters</i>. DOI: [Placeholder DOI]</li>
-                <li>Pfizer Inc. (2014). <i>Pfizer in the UK: A History of Innovation</i>. Corporate Archive. DOI: [Placeholder DOI]</li>
-                <li>Discovery Park Enterprise Zone (2023). <i>Annual Impact Report</i>. DOI: [Placeholder DOI]</li>
-                <li>Ghoorah, A. (2018). "The evolution of the Sandwich science park." <i>Kent Business Review</i>. DOI: [Placeholder DOI]</li>
-            </ol>
-
-            <div class="bg-light" style="padding: 15px; border-radius: 8px; font-size: 14px;">
-                <strong>Editorial Note:</strong> This article has passed the CATS Insights Quality Assurance Pipeline. Turnitin Similarity index: 6%. GPTZero scan: Human verified. All sources cite peer-reviewed literature using Oxford referencing standards.
+            <div class="figure-container">
+                <img src="images/pfizer-fig2.jpeg" alt="Figure 2. The Barbican, a mediaeval gatehouse on the River Stour in Sandwich, Kent">
+                <div class="figure-caption">Figure 2. The Barbican, a mediaeval gatehouse on the River Stour in Sandwich, Kent. Sandwich's heritage as a Cinque Port town dates to the eleventh century, but it was the establishment of Pfizer's research campus on the town's outskirts in 1954 that transformed this quiet corner of East Kent into an unlikely centre of global pharmaceutical innovation.</div>
+                <div class="figure-source">Source: Nilfanion / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Barbican,_Sandwich,_Kent.JPG">CC BY-SA 3.0</a></div>
             </div>
 
-        </div>
-    </article>
+            <p>Sandwich is a mediaeval town in the Dover District of East Kent, better known for its Cinque Ports heritage than for pharmaceutical innovation. Yet for over five decades, a research campus on its outskirts served as the European headquarters of Pfizer, one of the world's largest pharmaceutical companies. The medicines discovered there, spanning antifungals, antihypertensives, and antiretrovirals, have been prescribed to hundreds of millions of patients worldwide.</p>
+            <p>The story of Pfizer Sandwich is, at its core, a story about what happens when sustained institutional investment meets scientific curiosity. It is also, inescapably, a story about Kent: about the infrastructure, talent, and geography that made a small English town the unlikely birthplace of blockbuster medicines. For students of chemistry, the site offers something rarer still, a case study in how fundamental concepts from the textbook, enzyme inhibition, structure activity relationships, and pharmacokinetics become medicines in the clinic.</p>
+
+            <h2>2. Origins: From Folkestone to Sandwich (1952–1971)</h2>
+            <p>Pfizer's presence in Kent began in 1952, when the company established a compounding operation in Folkestone to convert base compounds into medicines suitable for the British market.<sup><a href="#id-1">1</a></sup> Two years later, Pfizer acquired an 80-acre site on the outskirts of Sandwich to expand its Kent-based activities.<sup><a href="#id-1">1</a></sup> The campus would eventually grow to encompass over 390 acres.<sup><a href="#id-2">2</a></sup> An animal-feed plant was established in 1955, followed by an Agricultural Division in 1957, the same year that research activities commenced at the site with a team of just six scientists.<sup><a href="#id-2">2</a></sup></p>
+            <p>The scale of ambition grew rapidly. In 1964, Pfizer acquired adjacent land known as the 'West Site', and by 1971, Pfizer Central Research had been formally established at Sandwich with a mandate to discover new pharmaceutical, chemical, and agricultural products for Pfizer's worldwide operations.<sup><a href="#id-1">1</a></sup> The site would eventually expand to employ over 3,500 people across 2.2 million square feet of research and development space, making it one of the largest pharmaceutical R&D campuses in Europe.<sup><a href="#id-2">2</a></sup></p>
+
+            <h2>3. Fluconazole: Redesigning the Antifungal Arsenal</h2>
+            <h3>3.1 The Clinical Need</h3>
+            <p>In the late 1970s, the treatment of serious fungal infections was severely limited. The two principal agents available, amphotericin B and flucytosine, each carried significant drawbacks. Amphotericin B, while effective, required intravenous administration and was associated with severe nephrotoxicity. Flucytosine was orally active but possessed a narrow spectrum and was susceptible to resistance.<sup><a href="#id-3">3</a></sup> For immunocompromised patients, particularly those with HIV/AIDS, a population that would expand dramatically through the 1980s, the need for a safe, broad-spectrum, orally bioavailable antifungal was acute.</p>
+
+            <h3>3.2 The Chemistry of Discovery</h3>
+            <p>In 1978, a research programme was initiated at Pfizer's Sandwich laboratories, led by Dr Ken Richardson, with the objective of developing a new antifungal agent suitable for both oral and intravenous use. The team selected azole derivatives as their starting point, owing to their established tolerability and selective mechanism of action: inhibition of fungal sterol C-14 demethylation.<sup><a href="#id-4">4</a></sup>,<sup><a href="#id-3">3</a></sup></p>
+            <p>The target enzyme, lanosterol 14&alpha;-demethylase, is a cytochrome P450 enzyme (CYP51) that catalyses an essential step in the biosynthesis of <i>ergosterol</i>, the principal sterol in fungal cell membranes, functionally analogous to cholesterol in mammalian cells. By inhibiting this enzyme, azole antifungals disrupt ergosterol production, compromising membrane integrity and ultimately causing fungal cell death.</p>
+            <p>Initial investigations focused on imidazole derivatives, but the team soon redirected their attention to triazole analogues. The rationale was pharmacokinetic: triazoles demonstrated reduced susceptibility to metabolic breakdown compared to imidazoles, potentially enabling better oral bioavailability and a longer half-life.<sup><a href="#id-4">4</a></sup> The researchers further emphasised polar derivatives, hypothesising that increased polarity would facilitate higher blood levels and further reduce metabolic degradation.</p>
+
+            <div class="figure-container">
+                <img src="images/pfizer-fig3.png" alt="Figure 3. Structure of fluconazole, a 1,3-bis-triazole antifungal discovered at Pfizer Sandwich">
+                <div class="figure-caption">Figure 3. Structure of fluconazole, a 1,3-bis-triazole antifungal discovered at Pfizer Sandwich. The two triazole rings (blue) provide metabolic stability and selective inhibition of fungal lanosterol 14&alpha;-demethylase (CYP51). The 2,4-difluorophenyl group (orange) and central hydroxyl group confer the water solubility that distinguished fluconazole from all competing analogues, enabling formulation for both oral and intravenous administration.</div>
+                <div class="figure-source">Source: Diagram: K.S. Ye Yint, CATS Insights, 2026.</div>
+            </div>
+
+            <p>This strategy yielded a series of novel 1,3-bis-triazole-2-arylpropan-2-ol derivatives with promising activity across multiple models of fungal infection. Among these, the 2,4-difluorophenyl analogue stood out: it was the only derivative that was water-soluble, enabling formulation for both oral and intravenous administration, a critical advantage that none of the competing analogues offered. This compound was designated fluconazole and selected for clinical development on the basis of its optimal combination of antifungal efficacy, pharmacokinetic profile, aqueous solubility, and safety.<sup><a href="#id-3">3</a></sup></p>
+
+            <h3>3.3 Clinical Impact</h3>
+            <p>Fluconazole was launched commercially as Diflucan&reg; in 1988. In the United States, the FDA granted it fast-track treatment, approving it for use in just nine months, a reflection of the urgency created by the HIV/AIDS epidemic.<sup><a href="#id-5">5</a></sup> The drug proved effective against a wide range of fungal infections in immunocompromised patients, including transplant recipients, burn survivors, and individuals undergoing chemotherapy. Pfizer UK received the Queen's Award for Technological Achievement in 1991 in recognition of the discovery.<sup><a href="#id-1">1</a></sup> Dr Richardson himself was appointed an Officer of the Order of the British Empire (OBE) in 1997 and was inducted into the United States National Inventors Hall of Fame in 2008, one of only two Pfizer scientists to receive this honour.<sup><a href="#id-5">5</a></sup></p>
+            <p>Richardson's personal story carries its own significance. He left school at sixteen to work as a laboratory assistant, earning his chemistry degree through evening classes at Trent Polytechnic before completing a doctorate at the University of Nottingham.<sup><a href="#id-5">5</a></sup> His trajectory from evening-class student to National Inventors Hall of Fame inductee illustrates a principle worth noting: access to scientific careers need not depend on conventional academic pathways nor any other limitations.</p>
+
+            <h2>4. Sildenafil: Serendipity and the Art of Repositioning</h2>
+            <h3>4.1 The Cardiovascular Hypothesis</h3>
+            <p>By the mid-1980s, the cardiovascular research programme at Sandwich was generating significant results. The site had already contributed to the development of doxazosin (Cardura&reg;) and amlodipine (Norvasc&reg;/Istin&reg;), antihypertensive agents that would become widely prescribed. Researchers began exploring the therapeutic potential of modulating intracellular levels of cyclic guanosine monophosphate (cGMP), building on the established clinical use of nitrates for angina pectoris.<sup><a href="#id-6">6</a></sup></p>
+
+            <div class="figure-container">
+                <img src="images/pfizer-fig4.png" alt="Figure 4. The nitric oxide (NO)/cGMP signalling pathway and the mechanism of action of sildenafil">
+                <div class="figure-caption">Figure 4. The nitric oxide (NO)/cGMP signalling pathway and the mechanism of action of sildenafil. During sexual stimulation, nitric oxide released from cavernous nerves activates soluble guanylate cyclase (sGC), which converts GTP to cGMP. Elevated cGMP causes smooth muscle relaxation and vasodilation in the corpus cavernosum. Phosphodiesterase type 5 (PDE5) normally hydrolyses cGMP to terminate the signal. Sildenafil selectively inhibits PDE5 (IC<sub>50</sub> = 3.5 nM), prolonging cGMP accumulation and enhancing the natural erectile response.</div>
+                <div class="figure-source">Source: Diagram: K.S. Ye Yint, CATS Insights, 2026.</div>
+            </div>
+
+            <p>The scientific rationale was grounded in the nitric oxide (NO)/cGMP signalling pathway. Nitric oxide, released by endothelial cells, activates soluble guanylate cyclase (sGC), which converts guanosine triphosphate (GTP) to cGMP.<sup><a href="#id-7">7</a></sup> Elevated cGMP induces smooth muscle relaxation and vasodilation. The duration of this vasodilatory signal is regulated by phosphodiesterase type 5 (PDE5), the enzyme responsible for hydrolysing cGMP back to its inactive form, GMP.<sup><a href="#id-7">7</a></sup> The Pfizer team hypothesised that selective inhibition of PDE5 would prolong the vasodilatory effect of endogenous NO, offering a potential treatment for angina.</p>
+            <p>It is worth placing this work in a broader scientific context. The discovery of nitric oxide as a signalling molecule in the cardiovascular system was recognised with the 1998 Nobel Prize in Physiology or Medicine, awarded to Robert Furchgott, Louis Ignarro, and Ferid Murad.<sup><a href="#id-8">8</a></sup> Sildenafil's mechanism of action is directly built upon their foundational research.</p>
+
+            <h3>4.2 Synthesis and Preclinical Profile</h3>
+            <div class="figure-container">
+                <img src="images/pfizer-fig5.png" alt="Figure 5. Structure of sildenafil (UK-92,480), a pyrazolopyrimidinone PDE5 inhibitor discovered at Pfizer Sandwich">
+                <div class="figure-caption">Figure 5. Structure of sildenafil (UK-92,480), a pyrazolopyrimidinone PDE5 inhibitor discovered at Pfizer Sandwich. The fused pyrazolopyrimidinone core (blue) binds selectively to the active site of PDE5. The compound was originally synthesised as a potential treatment for angina but was repositioned for erectile dysfunction after unexpected clinical observations during Phase I trials. Sildenafil was approved by the FDA on 27 March 1998 as the first oral treatment for erectile dysfunction.</div>
+                <div class="figure-source">Source: Diagram: K.S. Ye Yint, CATS Insights, 2026.</div>
+            </div>
+
+            <p>In 1989, a team of medicinal chemists working within a programme led by Simon Campbell synthesised a novel pyrazolopyrimidinone compound designated UK-92,480.<sup><a href="#id-6">6</a></sup> The discovery team included Nicholas Terrett, Andrew Bell, David Brown, and Peter Ellis, whose foundational work was published in 1996.<sup><a href="#id-9">9</a></sup> Peter Dunn and Albert Wood subsequently developed the scaleable manufacturing process that enabled commercial production of the compound.<sup><a href="#id-10">10</a></sup> UK-92,480 demonstrated potent and selective inhibition of PDE5, with a half-maximal inhibitory concentration (IC<sub>50</sub>) of 3.5 nM against PDE5 derived from human <i>corpus cavernosum</i>, approximately tenfold more selective than its inhibition of PDE6 and over 700-fold more selective than for PDE3.<sup><a href="#id-9">9</a></sup> Preclinical studies confirmed vasodilatory effects and inhibition of platelet aggregation, and UK-92,480 was selected for clinical development.</p>
+
+            <h3>4.3 The Clinical Pivot</h3>
+            <p>Phase I clinical trials, conducted at Morriston Hospital in Swansea under the direction of Dr Ian Osterloh, produced results that were, from a cardiovascular perspective, disappointing. Sildenafil showed limited efficacy against angina. However, trial participants reported a consistent and unexpected side effect: marked penile erections.<sup><a href="#id-6">6</a></sup></p>
+            <p>This observation coincided with emerging research demonstrating that nitric oxide is the principal neurotransmitter released from cavernous nerves during sexual stimulation and that the corpus cavernosum is particularly enriched with PDE5.<sup><a href="#id-7">7</a></sup> The Pfizer team recognised that a selective PDE5 inhibitor could enhance the natural erectile response by prolonging cGMP-mediated smooth muscle relaxation in penile tissue but only during sexual stimulation, when NO release is elevated. This mechanism offered a physiologically targeted approach to treating erectile dysfunction, unlike the existing invasive therapies: injectable prostaglandins, vacuum devices, and surgical implants.</p>
+            <p>Pfizer repositioned the compound, now named sildenafil. Clinical trials for erectile dysfunction commenced in 1993.<sup><a href="#id-11">11</a></sup> The drug was patented in 1996, and on 27 March 1998, the United States Food and Drug Administration approved sildenafil (Viagra&reg;) as the first oral treatment for erectile dysfunction.<sup><a href="#id-11">11</a></sup> In the first two weeks on the American market, an estimated 150,000 prescriptions were written; within a year, annual sales surpassed one billion dollars.<sup><a href="#id-12">12</a></sup> The story did not end there. Sildenafil was subsequently approved for the treatment of pulmonary arterial hypertension (marketed as Revatio&reg;), exploiting the same PDE5 inhibitory mechanism to reduce pulmonary vascular resistance.<sup><a href="#id-7">7</a></sup> The drug's journey from angina candidate to erectile dysfunction treatment to pulmonary hypertension therapy represents a textbook example of <i>drug repositioning</i>, the process by which a compound developed for one indication is redirected to another based on observed pharmacological effects.</p>
+
+            <h2>5. The Broader Sandwich Portfolio</h2>
+            <p>Fluconazole and sildenafil are the most widely known products of the Sandwich site, but they represent only part of a broader portfolio. Other medicines discovered or significantly developed at the facility include amlodipine (Istin&reg;/Norvasc&reg;), a calcium channel blocker for hypertension; doxazosin (Cardura&reg;), an alpha-adrenergic blocker; voriconazole (Vfend&reg;), a second-generation triazole antifungal building on the fluconazole platform; and maraviroc (Celsentri&reg;), the first orally administered CCR5 antagonist for the treatment of HIV, representing yet another 'first' from the Sandwich laboratories.<sup><a href="#id-2">2</a></sup></p>
+            <p>The site received six Queen's Awards across its operational history: for Technological Achievement in 1979 (for oxamniquine) and 1991 (for fluconazole), Export Achievement in 1993, International Trade in 1997 and 2000, and Enterprise in 2001 (for the discovery and development of Viagra).<sup><a href="#id-1">1</a></sup> At its peak, the Sandwich facility employed over 3,500 people and constituted one of the largest pharmaceutical research operations of any American company outside the United States.<sup><a href="#id-2">2</a></sup></p>
+
+            <h2>6. Discovery Park: Continuity and Reinvention</h2>
+            <div class="figure-container">
+                <img src="images/pfizer-fig6.jpg" alt="Figure 6. Buildings on the former Pfizer west site, now part of Discovery Park, Sandwich, Kent">
+                <div class="figure-caption">Figure 6. Buildings on the former Pfizer west site, now part of Discovery Park, Sandwich, Kent. Since Pfizer's withdrawal in 2011, the campus has been redeveloped as one of the United Kingdom's leading science and innovation hubs, hosting over 180 companies and more than 3,000 people across life sciences, biotechnology, and technology.</div>
+                <div class="figure-source">Source: David Anstiss / Geograph, <a href="https://commons.wikimedia.org/wiki/File:Buildings_on_the_Pfizer_west_site_-_geograph.org.uk_-_2588143.jpg">CC BY-SA 2.0</a></div>
+            </div>
+
+            <p>On 1 February 2011, Pfizer announced the closure of the Sandwich R&D facility as part of a global restructuring programme, placing approximately 2,400 jobs at risk.<sup><a href="#id-2">2</a></sup> The announcement represented a significant economic shock to East Kent.</p>
+            <p>However, the site's story did not end with Pfizer's withdrawal. The campus was acquired and redeveloped as Discovery Park, which has since grown into one of the United Kingdom's leading science and innovation hubs. As of 2026, the site hosts over 180 companies and more than 3,000 people, working across life sciences, biotechnology, and technology.<sup><a href="#id-13">13</a></sup> Pfizer itself maintains a significant presence at the site, focused on mid- to late-stage pharmaceutical development.<sup><a href="#id-13">13</a></sup> Other tenants include Asymchem (a Chinese CDMO that inaugurated its first European facility at the site in 2024), Viatris, Concept Life Sciences, and Canterbury Christ Church University, which operates laboratory facilities on the campus.<sup><a href="#id-13">13</a></sup></p>
+            <p>Discovery Park holds Enterprise Zone status and is one of only seven Life Science Opportunity Zones in the United Kingdom.<sup><a href="#id-13">13</a></sup> Perhaps most relevant to the readership of this publication, a new science specialist sixth form, Carbon 6 Academy of Science, is due to open at the site in September 2026, designed for students aged 16–18 with a focus on science and mathematics.<sup><a href="#id-13">13</a></sup> The physical infrastructure that produced fluconazole and sildenafil is, in a meaningful sense, being repurposed to train the next generation of scientists.</p>
+
+            <h2>7. Conclusion: What Sandwich Teaches Us</h2>
+            <p>The Pfizer Sandwich story offers several insights that extend beyond its specific institutional history. First, it demonstrates the relationship between sustained research investment and transformative outcomes: the fluconazole programme ran for over a decade from inception to clinical launch, and the sildenafil journey from cardiovascular hypothesis to erectile dysfunction approval spanned nearly as long. Breakthrough medicines are not produced quickly.</p>
+            <p>Second, the sildenafil case illustrates the importance of serendipity and scientific alertness. The compound's unexpected side effect in clinical trials could have been dismissed as a curiosity. Instead, the research team recognised its therapeutic potential, connected it to emerging basic science, and executed a successful repositioning. This required both the intellectual flexibility to abandon the original indication and the institutional willingness to invest in an entirely new clinical programme.</p>
+            <p>Third, the Discovery Park transformation suggests that scientific infrastructure, once established, can outlast the institutions that built it. The laboratories, the talent pipeline, and the geographical advantages that attracted Pfizer to Sandwich in 1954 continue to attract innovators today.</p>
+            <p>For students in Kent studying chemistry, the legacy is not abstract. It is twenty minutes down the road.</p>
+
+            <!-- Bibliography Section -->
+            <h2>Bibliography</h2>
+            <div class="bib-list" style="font-size: 15px; color: #444; line-height: 1.6;">
+                <p id="id-1">1. Pfizer UK, 'Our History and Achievements in the UK', <a href="https://www.pfizer.co.uk/science/pfizer-in-the-uk/our-history">https://www.pfizer.co.uk/science/pfizer-in-the-uk/our-history</a></p>
+                <p id="id-2">2. Pharmaceutical Technology, 'Pfizer European R&D Headquarters, Sandwich, Kent', 2010. <a href="https://www.pharmaceutical-technology.com/projects/pfizersandwichsite/">https://www.pharmaceutical-technology.com/projects/pfizersandwichsite/</a></p>
+                <p id="id-3">3. Richardson, K., Brammer, K.W., Marriott, M.S. and Troke, P.F., 'Discovery of fluconazole, a novel antifungal agent', <i>Reviews of Infectious Diseases</i>, vol. 12, Supplement 3, 1990, pp. S267–S271. doi: <a href="https://doi.org/10.1093/clinids/12.supplement_3.s267">10.1093/clinids/12.supplement_3.s267</a>.</p>
+                <p id="id-4">4. Richardson, K., 'The discovery and profile of fluconazole', <i>Journal of Chemotherapy</i>, vol. 2, no. 1, 1990, pp. 51–54. doi: <a href="https://doi.org/10.1080/1120009X.1990.11738981">10.1080/1120009X.1990.11738981</a>.</p>
+                <p id="id-5">5. National Inventors Hall of Fame, 'Ken Richardson: Fluconazole', 2008. <a href="https://www.invent.org/inductees/ken-richardson">https://www.invent.org/inductees/ken-richardson</a></p>
+                <p id="id-6">6. Osterloh, I.H., 'The discovery and development of Viagra&reg; (sildenafil citrate)', in U. Dunzendorfer (ed.), <i>Sildenafil. Milestones in Drug Therapy</i>, Basel, Birkh&auml;user, 2004. doi: <a href="https://doi.org/10.1007/978-3-0348-7945-3_1">10.1007/978-3-0348-7945-3_1</a>.</p>
+                <p id="id-7">7. Andersson, K.-E., 'PDE5 inhibitors &ndash; pharmacology and clinical applications 20 years after sildenafil discovery', <i>British Journal of Pharmacology</i>, vol. 175, no. 13, 2018, pp. 2554–2565. doi: <a href="https://doi.org/10.1111/bph.14205">10.1111/bph.14205</a>.</p>
+                <p id="id-8">8. The Nobel Prize, 'The Nobel Prize in Physiology or Medicine 1998'. <a href="https://www.nobelprize.org/prizes/medicine/1998/summary/">https://www.nobelprize.org/prizes/medicine/1998/summary/</a></p>
+                <p id="id-9">9. Terrett, N.K., Bell, A.S., Brown, D. and Ellis, P., 'Sildenafil (Viagra&trade;), a potent and selective inhibitor of type 5 cGMP phosphodiesterase with utility for the treatment of male erectile dysfunction', <i>Bioorganic & Medicinal Chemistry Letters</i>, vol. 6, no. 15, 1996, pp. 1819–1824. doi: <a href="https://doi.org/10.1016/0960-894X(96)00323-X">10.1016/0960-894X(96)00323-X</a>.</p>
+                <p id="id-10">10. Dunn, P.J., Dale, D.J., Golightly, C., Hughes, M.L., Levett, P.C., Pearce, A.K., Searle, P.M., Ward, G. and Wood, A.S., 'The chemical development of the commercial route to sildenafil: a case history', <i>Organic Process Research & Development</i>, vol. 4, no. 1, 2000, pp. 17–22. doi: <a href="https://doi.org/10.1021/op9900683">10.1021/op9900683</a>.</p>
+                <p id="id-11">11. Goldstein, I., Lue, T.F., Padma-Nathan, H., Rosen, R.C., Steers, W.D. and Wicker, P.A., 'Oral sildenafil in the treatment of erectile dysfunction', <i>New England Journal of Medicine</i>, vol. 338, no. 20, 1998, pp. 1397–1404. doi: <a href="https://doi.org/10.1056/NEJM199805143382001">10.1056/NEJM199805143382001</a>.</p>
+                <p id="id-12">12. Agence France-Presse, 'Viagra turns 20: chronicle of a global success', 27 March 2018. <a href="https://www.rappler.com/science/199020-viagra-chronicle-global-success/">https://www.rappler.com/science/199020-viagra-chronicle-global-success/</a></p>
+                <p id="id-13">13. Discovery Park, 'About Discovery Park'. <a href="https://discovery-park.co.uk/">https://discovery-park.co.uk/</a></p>
+                <p id="id-14">14. Smith, N., View of the Pfizer pharmaceutical site on the banks of the Stour [photograph], 2010, Geograph / Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:View_of_the_Pfizer_pharmaceutical_site_on_the_banks_of_the_Stour_-_geograph.org.uk_-_1586951.jpg">CC BY-SA 2.0</a>.</p>
+                <p id="id-15">15. Nilfanion, Barbican, Sandwich, Kent [photograph], Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:Barbican,_Sandwich,_Kent.JPG">CC BY-SA 3.0</a>.</p>
+                <p id="id-16">16. Anstiss, D., Buildings on the Pfizer west site [photograph], 2011, Geograph / Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:Buildings_on_the_Pfizer_west_site_-_geograph.org.uk_-_2588143.jpg">CC BY-SA 2.0</a>.</p>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 40px 0;">
+
+            <!-- Article Footer Block -->
+            <div style="background-color: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; flex-shrink: 0;">
+                    KY
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 5px; font-size: 1.2rem;">Kyal Sin (Jason) Ye Yint</h4>
+                    <p style="margin: 0; font-size: 14px; color: #666;">CATS Insights, The Worthgate School</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 40px; padding: 0 10px;">
+                <p style="font-size: 13px; color: #666; margin: 0;">Published in CATS Insights | The Worthgate School, Canterbury, Kent &nbsp;&nbsp;<span class="badge" style="background-color: var(--primary); color: white; display: inline-block; padding: 2px 8px; font-size: 11px;">Chemistry</span></p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <a href="chemistry-of-kent.html" class="btn" style="background-color: #f0f0f0; color: #333; text-decoration: none;">&larr; Back to Blog</a>
+                <button class="btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');" style="background-color: var(--secondary); color: var(--text-dark); border: none; cursor: pointer;">Share</button>
+            </div>
+            <div style="margin-top: 50px; text-align: center; border-top: 2px solid #eee; padding-top: 30px;">
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">Want to read this article offline or see the original formatting?</p>
+                <a href="assets/articles/pfizer-sandwich.pdf" download class="btn" style="background-color: var(--secondary); color: var(--text-dark); padding: 12px 25px; font-weight: bold;">Download Original Article (PDF)</a>
+            </div>
+        </article>
+    </main>
 
     <!-- Footer -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
             <p style="margin: 0;">CATS Insights &copy; 2026 | The Worthgate School, Canterbury, Kent</p>
             <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
@@ -126,6 +469,755 @@
         </div>
     </footer>
 
+    <!-- JS -->
     <script src="script.js"></script>
+
+<!-- Pfizer Glossary Sidebar -->
+<button id="pfizer-glossary-mobile-toggle" class="pfizer-glossary-mobile-toggle" onclick="togglePfizerGlossary()">Glossary</button>
+
+<aside id="pfizer-glossary-sidebar" class="pfizer-glossary-sidebar collapsed">
+    <div class="pfizer-glossary-toggle-tab" onclick="togglePfizerGlossary()">
+        <span>GLOSSARY</span>
+    </div>
+    <div class="pfizer-glossary-inner">
+        <div class="pfizer-glossary-header-row">
+            <h2 style="display:flex; align-items:center; gap:10px;">Glossary <span class="pfizer-glossary-badge-main">75+ terms</span></h2>
+            <button class="pfizer-glossary-close" onclick="togglePfizerGlossary()">&times;</button>
+        </div>
+        <div class="pfizer-glossary-search-container">
+            <input type="text" id="pfizer-glossary-search" placeholder="Search terms..." onkeyup="filterPfizerGlossary()">
+        </div>
+        <div class="pfizer-glossary-content">
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9662;</span> Abstract & Introduction
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: block;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Antiretroviral</div>
+                        <div class="pfizer-glossary-def">A medicine designed to treat infections caused by retroviruses, most notably HIV (human immunodeficiency virus). Antiretrovirals work by interfering with different stages of the virus's life cycle, preventing it from replicating inside human cells.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Blockbuster medicine</div>
+                        <div class="pfizer-glossary-def">An informal pharmaceutical industry term for a drug that generates more than $1 billion in annual sales revenue. Blockbuster status reflects both widespread clinical need and commercial success.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Cardiovascular disease</div>
+                        <div class="pfizer-glossary-def">Any disease affecting the heart or blood vessels. This includes conditions such as high blood pressure (hypertension), coronary artery disease, heart attacks, and strokes. It is the leading cause of death globally.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Drug repositioning (also: drug repurposing)</div>
+                        <div class="pfizer-glossary-def">The process of finding a new medical use for an existing drug that was originally developed or approved for a different condition. This approach can save years of development time because the drug's safety profile is already established. Sildenafil is a classic example: developed for angina, repositioned for erectile dysfunction, then repositioned again for pulmonary hypertension.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Enzyme inhibition</div>
+                        <div class="pfizer-glossary-def">The process of blocking or reducing the activity of an enzyme (a biological catalyst that speeds up chemical reactions in the body). Many drugs work by inhibiting specific enzymes involved in disease processes. By blocking the enzyme, the drug disrupts the biological pathway that causes or worsens the disease.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Erectile dysfunction</div>
+                        <div class="pfizer-glossary-def">A medical condition in which a person is unable to achieve or maintain a penile erection sufficient for sexual intercourse. It can have physical causes (such as impaired blood flow) or psychological causes, or a combination of both.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Fluconazole (Diflucan®)</div>
+                        <div class="pfizer-glossary-def">An antifungal medicine discovered at Pfizer Sandwich and launched in 1988. It treats fungal infections by blocking an enzyme essential for fungal cell survival. It was particularly important for patients with weakened immune systems, such as those with HIV/AIDS.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Fungal infection</div>
+                        <div class="pfizer-glossary-def">An infection caused by a fungus (a type of organism that includes yeasts, moulds, and mushrooms). Fungal infections can range from minor skin conditions (such as athlete's foot) to life-threatening systemic infections in patients with weakened immune systems.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">HIV (Human Immunodeficiency Virus)</div>
+                        <div class="pfizer-glossary-def">A virus that attacks the body's immune system, specifically the CD4+ T-cells that help fight infection. If untreated, HIV progressively weakens the immune system, eventually leading to AIDS (Acquired Immunodeficiency Syndrome), a condition in which the body can no longer defend itself against opportunistic infections.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Immunocompromised</div>
+                        <div class="pfizer-glossary-def">Having a weakened immune system, meaning the body's natural defences against infection are reduced. This can result from diseases (such as HIV/AIDS), medical treatments (such as chemotherapy or organ transplant drugs), or genetic conditions. Immunocompromised individuals are particularly vulnerable to infections that healthy immune systems would normally control.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">PDE5 inhibitor</div>
+                        <div class="pfizer-glossary-def">A class of drug that blocks the enzyme phosphodiesterase type 5 (PDE5). By blocking this enzyme, PDE5 inhibitors allow a signalling molecule called cGMP to accumulate, which causes smooth muscle relaxation and increased blood flow. Sildenafil (Viagra®) was the first PDE5 inhibitor approved for clinical use. See also: <i>Phosphodiesterase type 5 (PDE5)</i>, <i>cGMP</i>.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Pharmaceutical</div>
+                        <div class="pfizer-glossary-def">Relating to the preparation, manufacture, and sale of medicinal drugs. A pharmaceutical company is one that researches, develops, produces, and markets medicines.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Pharmacokinetics</div>
+                        <div class="pfizer-glossary-def">The study of how a drug moves through the body over time. This includes four key processes: absorption (how the drug enters the bloodstream), distribution (how it spreads through the body), metabolism (how the body chemically breaks it down), and excretion (how it is eliminated). Understanding pharmacokinetics is essential for determining the correct dose and dosing frequency of a medicine.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Pulmonary hypertension</div>
+                        <div class="pfizer-glossary-def">Abnormally high blood pressure in the arteries of the lungs (the pulmonary arteries). This makes the right side of the heart work harder to pump blood through the lungs, and can eventually lead to heart failure. It is a different condition from ordinary high blood pressure (systemic hypertension).</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Sildenafil (Viagra® / Revatio®)</div>
+                        <div class="pfizer-glossary-def">A PDE5 inhibitor discovered at Pfizer Sandwich. Originally developed to treat angina (chest pain caused by reduced blood flow to the heart), it was repositioned after clinical trials revealed its effect on erectile function. It was approved in 1998 as Viagra® for erectile dysfunction and later as Revatio® for pulmonary arterial hypertension.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Structure–activity relationship (SAR)</div>
+                        <div class="pfizer-glossary-def">The relationship between a molecule's chemical structure and its biological activity. By systematically modifying parts of a molecule and testing the resulting compounds, chemists can identify which structural features are essential for the drug's effect and which can be changed to improve properties such as potency, selectivity, or safety.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> Section 2: Origins
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Animal-feed plant</div>
+                        <div class="pfizer-glossary-def">A manufacturing facility that produces food products for livestock. Pfizer's early presence in Sandwich included agricultural as well as pharmaceutical operations.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Cinque Ports</div>
+                        <div class="pfizer-glossary-def">A historical series of coastal towns in Kent and Sussex (originally Hastings, Romney, Hythe, Dover, and Sandwich) that were granted special privileges by the English Crown in exchange for providing ships for the king's fleet. The term comes from the Norman French for "five ports." The Cinque Ports were a major part of England's coastal defence from the 11th century onward.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Compounding operation</div>
+                        <div class="pfizer-glossary-def">A facility where base chemical compounds are converted into finished medicines suitable for patients. This can involve formulating raw active ingredients into tablets, capsules, solutions, or other dosage forms appropriate for a specific market.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">R&D (Research and Development)</div>
+                        <div class="pfizer-glossary-def">The activities a company undertakes to develop new products or improve existing ones. In the pharmaceutical industry, R&D encompasses everything from basic scientific research and drug discovery through to clinical trials and regulatory approval.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> 3.1 The Clinical Need
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Amphotericin B</div>
+                        <div class="pfizer-glossary-def">One of the earliest antifungal drugs, introduced in the 1950s. It is effective against a wide range of fungal infections but must be given intravenously (directly into a vein) and is associated with serious side effects, particularly kidney damage (nephrotoxicity). It was sometimes informally called "ampho-terrible" by clinicians due to its side-effect profile.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Broad-spectrum</div>
+                        <div class="pfizer-glossary-def">A term describing a drug that is effective against a wide range of different organisms or disease types. A broad-spectrum antifungal, for example, works against many different species of fungi, rather than just one or two. The opposite is "narrow-spectrum."</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Flucytosine</div>
+                        <div class="pfizer-glossary-def">An antifungal drug that can be taken orally but has a narrow spectrum (works against only a limited range of fungi) and is prone to drug resistance. It is sometimes used in combination with amphotericin B.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Intravenous administration</div>
+                        <div class="pfizer-glossary-def">The delivery of a drug directly into a vein through a needle or catheter. This allows the drug to enter the bloodstream immediately, bypassing the digestive system. It is necessary for drugs that cannot survive passage through the stomach or that need to reach high blood levels quickly, but it requires medical supervision and equipment.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Narrow spectrum</div>
+                        <div class="pfizer-glossary-def">A term describing a drug that is effective against only a limited range of organisms. A narrow-spectrum antifungal works against few fungal species, limiting its clinical usefulness.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Nephrotoxicity</div>
+                        <div class="pfizer-glossary-def">Toxicity (poisoning or damage) to the kidneys. Some drugs, including amphotericin B, can cause kidney damage as a side effect, which limits their use or requires careful monitoring of kidney function during treatment.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Oral bioavailability</div>
+                        <div class="pfizer-glossary-def">The proportion of a drug that, when taken by mouth, reaches the bloodstream in an active form. A drug with high oral bioavailability can be taken as a tablet or capsule rather than requiring injection. This is a major advantage for patient convenience, treatment cost, and the ability to treat patients outside hospital settings.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Resistance (drug resistance)</div>
+                        <div class="pfizer-glossary-def">The ability of a microorganism (such as a fungus or bacterium) to survive exposure to a drug that would normally kill it or stop its growth. Resistance can develop through genetic mutations or other mechanisms, making the drug less effective or completely ineffective over time.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> 3.2 The Chemistry of Discovery
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Analogue (chemical analogue)</div>
+                        <div class="pfizer-glossary-def">A compound that has a similar chemical structure to another compound but differs in one or more specific structural features. In drug discovery, chemists synthesise many analogues of a promising compound to find the version with the best combination of effectiveness, safety, and pharmacokinetic properties.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Azole derivatives</div>
+                        <div class="pfizer-glossary-def">A family of chemical compounds containing a five-membered ring with at least one nitrogen atom. In antifungal medicine, azole drugs work by inhibiting an enzyme essential for fungal cell membrane production. The two main subclasses are imidazoles (two nitrogen atoms) and triazoles (three nitrogen atoms).</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Cholesterol</div>
+                        <div class="pfizer-glossary-def">A waxy, fat-like substance found in all animal cells. It is an essential component of mammalian cell membranes, helping to maintain their structure and fluidity. Cholesterol in human cell membranes plays a similar structural role to ergosterol in fungal cell membranes.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Cytochrome P450 enzyme (CYP51)</div>
+                        <div class="pfizer-glossary-def">A member of the cytochrome P450 superfamily, which is a large group of enzymes found across all living organisms that catalyse oxidation reactions. CYP51, also known as lanosterol 14α-demethylase, is the specific enzyme in fungi that fluconazole targets. Cytochrome P450 enzymes in the human liver are also responsible for metabolising (breaking down) many drugs, which is relevant to drug interactions.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">2,4-Difluorophenyl analogue</div>
+                        <div class="pfizer-glossary-def">The specific chemical variant of the bis-triazole series that became fluconazole. "Difluorophenyl" means the compound contains a phenyl ring (a six-carbon aromatic ring) with two fluorine atoms attached at positions 2 and 4. The fluorine atoms contributed to the compound's unique water solubility.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Ergosterol</div>
+                        <div class="pfizer-glossary-def">The principal sterol (a type of lipid or fat molecule) found in fungal cell membranes. It plays the same structural role in fungi that cholesterol plays in human cells. Because ergosterol is essential for fungal membrane integrity but absent from human cells, the enzymes that produce it are attractive drug targets.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Half-life (pharmacological)</div>
+                        <div class="pfizer-glossary-def">The time it takes for the concentration of a drug in the bloodstream to fall to half its peak level. A longer half-life means the drug stays active in the body for longer, which can allow less frequent dosing. Triazoles have longer half-lives than imidazoles because they are more resistant to metabolic breakdown.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Imidazole</div>
+                        <div class="pfizer-glossary-def">A type of azole compound containing a five-membered ring with two nitrogen atoms. Earlier antifungal drugs such as ketoconazole were imidazoles. They were effective but were broken down more quickly by the body compared to triazoles, limiting their usefulness as oral medications.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Lanosterol 14α-demethylase</div>
+                        <div class="pfizer-glossary-def">The specific enzyme that azole antifungals target. It catalyses (speeds up) a critical chemical step in the production of ergosterol, the essential sterol in fungal cell membranes. When this enzyme is blocked, the fungus cannot produce ergosterol, and its cell membrane loses structural integrity, ultimately causing fungal cell death. The "14α-demethylase" part of the name refers to the specific chemical reaction it performs: removing a methyl group (-CH₃) from the 14α position of lanosterol.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Membrane integrity</div>
+                        <div class="pfizer-glossary-def">The structural wholeness and proper functioning of a cell membrane. Cell membranes control what enters and exits the cell. When membrane integrity is compromised (for example, by disrupting ergosterol production), the cell can no longer regulate its internal environment and dies.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Metabolic breakdown (metabolism of a drug)</div>
+                        <div class="pfizer-glossary-def">The chemical modification of a drug by the body's enzymes, primarily in the liver. Metabolic breakdown typically converts an active drug into inactive metabolites that can be excreted. If a drug is broken down too quickly, it will not remain in the body long enough to be effective.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Polar / Polarity (in chemistry)</div>
+                        <div class="pfizer-glossary-def">A measure of how unevenly electric charge is distributed in a molecule. Polar molecules have regions of slight positive and negative charge. In drug design, increased polarity generally improves water solubility and can enhance the drug's ability to reach high concentrations in the blood, because polar molecules tend to dissolve better in blood (which is water-based) and may be metabolised more slowly.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Sterol C-14 demethylation</div>
+                        <div class="pfizer-glossary-def">A specific chemical reaction in the biosynthesis of ergosterol, in which a methyl group is removed from carbon-14 of the sterol molecule. This reaction is catalysed by the enzyme lanosterol 14α-demethylase and is the step that azole antifungals block.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">1,3-Bis-triazole-2-arylpropan-2-ol derivatives</div>
+                        <div class="pfizer-glossary-def">The chemical class name for the series of compounds from which fluconazole was selected. Breaking this down: "1,3-bis-triazole" means the molecule contains two triazole rings attached at positions 1 and 3; "2-arylpropan-2-ol" describes the central carbon backbone with an aromatic ring (aryl group) and a hydroxyl group (-OH) attached. This is the molecular scaffold that the Pfizer team designed and optimised.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Triazole</div>
+                        <div class="pfizer-glossary-def">A type of azole compound containing a five-membered ring with three nitrogen atoms. Triazole-based antifungals (including fluconazole and voriconazole) are more resistant to metabolic breakdown than imidazoles, giving them better oral bioavailability and longer duration of action.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Water-soluble</div>
+                        <div class="pfizer-glossary-def">Able to dissolve in water. For a drug, water solubility is important because it enables formulation as both an oral medication and an intravenous solution. Fluconazole's water solubility was a critical advantage over competing compounds, which could only be given orally.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> 3.3 Clinical Impact
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Chemotherapy</div>
+                        <div class="pfizer-glossary-def">The treatment of cancer using chemical substances (drugs) that kill rapidly dividing cells. Because chemotherapy also kills some healthy immune cells, patients undergoing chemotherapy are often immunocompromised and susceptible to opportunistic infections, including fungal infections.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Fast-track treatment (FDA)</div>
+                        <div class="pfizer-glossary-def">A regulatory designation by the United States Food and Drug Administration (FDA) that accelerates the review and approval process for drugs that treat serious conditions where there is an unmet medical need. Fluconazole received this designation because of the urgent need for effective antifungal treatment during the HIV/AIDS epidemic.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">FDA (Food and Drug Administration)</div>
+                        <div class="pfizer-glossary-def">The United States government agency responsible for evaluating and approving new medicines, ensuring they are safe and effective before they can be sold to patients. FDA approval is one of the most important regulatory milestones for any pharmaceutical product.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">HIV/AIDS epidemic</div>
+                        <div class="pfizer-glossary-def">The global spread of HIV infection beginning in the early 1980s. The epidemic created a large population of immunocompromised patients vulnerable to opportunistic fungal infections, dramatically increasing the medical need for safe and effective antifungal drugs like fluconazole.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">National Inventors Hall of Fame</div>
+                        <div class="pfizer-glossary-def">An American institution that honours individuals who have created significant inventions contributing to society. Induction is considered one of the highest honours for an inventor in the United States.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">OBE (Officer of the Order of the British Empire)</div>
+                        <div class="pfizer-glossary-def">A level of appointment to the Order of the British Empire, a British honour awarded for distinguished contributions to the arts, sciences, public services, or charitable work. It is a recognition of significant achievement.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Queen's Award for Technological Achievement</div>
+                        <div class="pfizer-glossary-def">A prestigious UK award recognising outstanding innovation in technology by British businesses. It has since been renamed and restructured, but during the period covered in this article, it represented one of the highest honours the British government could bestow on a company.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Transplant recipient</div>
+                        <div class="pfizer-glossary-def">A patient who has received an organ transplant (such as a kidney, liver, or heart from a donor). Transplant recipients must take immunosuppressive drugs to prevent their body from rejecting the new organ, which weakens their immune system and makes them vulnerable to infections.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> 4.1 The Cardiovascular Hypothesis
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Amlodipine (Norvasc® / Istin®)</div>
+                        <div class="pfizer-glossary-def">A calcium channel blocker used to treat high blood pressure and angina. It was developed at Pfizer Sandwich and became one of the most widely prescribed antihypertensive medicines globally.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Angina pectoris</div>
+                        <div class="pfizer-glossary-def">Chest pain or discomfort caused by reduced blood flow to the heart muscle, usually due to narrowed coronary arteries. It typically occurs during physical exertion or stress and is relieved by rest. Sildenafil was originally being developed to treat this condition.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Antihypertensive</div>
+                        <div class="pfizer-glossary-def">A drug used to treat hypertension (high blood pressure). High blood pressure increases the risk of heart attack, stroke, and other cardiovascular complications.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">cGMP (cyclic guanosine monophosphate)</div>
+                        <div class="pfizer-glossary-def">A signalling molecule inside cells that causes smooth muscle relaxation and blood vessel widening (vasodilation). When nitric oxide activates an enzyme called guanylate cyclase, it converts GTP into cGMP. The level of cGMP is regulated by PDE5, which breaks it down. By inhibiting PDE5, sildenafil keeps cGMP levels elevated, prolonging vasodilation.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Doxazosin (Cardura®)</div>
+                        <div class="pfizer-glossary-def">An alpha-adrenergic blocker developed at Pfizer Sandwich, used to treat high blood pressure and benign prostatic hyperplasia (enlarged prostate). It works by blocking alpha-1 receptors on smooth muscle, causing blood vessels to relax and widen.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Endothelial cells</div>
+                        <div class="pfizer-glossary-def">The thin layer of cells lining the interior surface of blood vessels. These cells play a critical role in cardiovascular health, including the release of nitric oxide, which signals surrounding smooth muscle to relax and allows blood vessels to widen.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">GMP (guanosine monophosphate)</div>
+                        <div class="pfizer-glossary-def">The inactive breakdown product of cGMP. When PDE5 hydrolyses cGMP, it converts it to GMP, ending the vasodilatory signal.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">GTP (guanosine triphosphate)</div>
+                        <div class="pfizer-glossary-def">A high-energy molecule that serves as a precursor to cGMP. The enzyme guanylate cyclase converts GTP to cGMP when activated by nitric oxide.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Hydrolysing / Hydrolysis</div>
+                        <div class="pfizer-glossary-def">A chemical reaction in which a molecule is broken down by the addition of water. In this context, PDE5 hydrolyses cGMP (breaks it apart using water) to produce GMP, thereby terminating the cGMP signal.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Nitric oxide (NO)</div>
+                        <div class="pfizer-glossary-def">A small gaseous molecule that acts as a signalling molecule in the body. In the cardiovascular system, nitric oxide is released by endothelial cells and causes smooth muscle in blood vessel walls to relax, resulting in vasodilation (widening of blood vessels). The discovery of nitric oxide's role as a signalling molecule was awarded the 1998 Nobel Prize in Physiology or Medicine.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Nitrates (clinical use)</div>
+                        <div class="pfizer-glossary-def">A class of drugs used to treat angina by releasing nitric oxide in the body, which causes blood vessels to widen and improves blood flow to the heart. Glyceryl trinitrate (GTN) is the most familiar example.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Nobel Prize in Physiology or Medicine</div>
+                        <div class="pfizer-glossary-def">One of the Nobel Prizes established by Alfred Nobel, awarded annually for outstanding discoveries in the life sciences and medicine. The 1998 prize was awarded to Robert Furchgott, Louis Ignarro, and Ferid Murad for their discoveries concerning nitric oxide as a signalling molecule in the cardiovascular system — the very pathway that sildenafil acts upon.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">NO/cGMP signalling pathway</div>
+                        <div class="pfizer-glossary-def">The biological communication chain by which nitric oxide causes blood vessels to relax. The sequence is: nitric oxide (NO) → activates soluble guanylate cyclase (sGC) → which converts GTP to cGMP → cGMP causes smooth muscle relaxation → PDE5 breaks down cGMP to end the signal. Sildenafil works by blocking the final step.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Phosphodiesterase type 5 (PDE5)</div>
+                        <div class="pfizer-glossary-def">An enzyme responsible for breaking down cGMP in certain tissues, including blood vessels and the corpus cavernosum of the penis. By hydrolysing cGMP, PDE5 limits the duration of smooth muscle relaxation and vasodilation. Sildenafil inhibits PDE5, allowing cGMP to accumulate and prolonging the vasodilatory effect.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Smooth muscle</div>
+                        <div class="pfizer-glossary-def">A type of involuntary muscle found in the walls of blood vessels, the digestive tract, the airways, and other internal organs. Unlike skeletal muscle (which you consciously control), smooth muscle contracts and relaxes automatically. Relaxation of smooth muscle in blood vessel walls causes the vessels to widen (vasodilation).</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Soluble guanylate cyclase (sGC)</div>
+                        <div class="pfizer-glossary-def">An enzyme inside smooth muscle cells that is activated by nitric oxide. When activated, it converts GTP to cGMP, initiating the signalling cascade that leads to smooth muscle relaxation and vasodilation.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Vasodilation / Vasodilatory</div>
+                        <div class="pfizer-glossary-def">The widening of blood vessels, resulting in increased blood flow and decreased blood pressure. "Vasodilatory" describes something that causes or promotes vasodilation.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> 4.2 Synthesis and Preclinical Profile
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Corpus cavernosum</div>
+                        <div class="pfizer-glossary-def">One of two sponge-like regions of erectile tissue within the penis that fill with blood during an erection. The corpus cavernosum is particularly rich in PDE5 enzyme, which is why PDE5 inhibitors like sildenafil have a pronounced effect on erectile function.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">IC₅₀ (half-maximal inhibitory concentration)</div>
+                        <div class="pfizer-glossary-def">The concentration of a drug required to inhibit (block) 50% of the target enzyme's activity. A lower IC₅₀ means the drug is more potent — it takes less of the drug to achieve significant inhibition. Sildenafil's IC₅₀ against PDE5 was 3.5 nM, meaning it was effective at very low concentrations.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">nM (nanomolar)</div>
+                        <div class="pfizer-glossary-def">A unit of concentration equal to one billionth of a mole per litre. It is used to express extremely low concentrations. An IC₅₀ of 3.5 nM indicates that sildenafil is effective at inhibiting PDE5 at very low doses.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">PDE3 / PDE6</div>
+                        <div class="pfizer-glossary-def">Other members of the phosphodiesterase enzyme family. PDE3 is involved in heart muscle contraction and platelet function; inhibiting it can cause dangerous cardiovascular side effects. PDE6 is found in the retina and is involved in vision; its inhibition can cause visual disturbances. Sildenafil's selectivity for PDE5 over PDE3 (>700-fold) and PDE6 (~10-fold) is what makes it relatively safe for its intended use.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Platelet aggregation</div>
+                        <div class="pfizer-glossary-def">The clumping together of platelets (small cell fragments in the blood that help form blood clots). While necessary for wound healing, excessive platelet aggregation can cause dangerous blood clots. Sildenafil showed some ability to inhibit platelet aggregation in preclinical studies.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Preclinical studies</div>
+                        <div class="pfizer-glossary-def">Laboratory and animal testing conducted before a drug is tested in humans. Preclinical studies assess a drug's safety, toxicity, pharmacokinetics, and mechanism of action, and are a mandatory step before clinical trials can begin.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Pyrazolopyrimidinone</div>
+                        <div class="pfizer-glossary-def">The core chemical scaffold (structural framework) of sildenafil. It is a fused bicyclic ring system containing both pyrazole and pyrimidinone rings. This structure was designed to bind selectively to the active site of the PDE5 enzyme.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Selectivity (drug selectivity)</div>
+                        <div class="pfizer-glossary-def">The ability of a drug to act on its intended biological target without significantly affecting other targets. High selectivity means fewer side effects. Sildenafil's approximately 700-fold selectivity for PDE5 over PDE3 meant it could affect blood vessels without dangerously altering heart function.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">UK-92,480</div>
+                        <div class="pfizer-glossary-def">The internal Pfizer compound code for sildenafil during its development phase, before it received its generic drug name. Pharmaceutical companies assign alphanumeric codes to compounds during research to identify them before they receive formal names.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> 4.3 The Clinical Pivot
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Cavernous nerves</div>
+                        <div class="pfizer-glossary-def">The nerves that supply the erectile tissue of the penis. During sexual stimulation, these nerves release nitric oxide, which initiates the signalling cascade leading to erection. Sildenafil enhances this natural process by preventing the breakdown of cGMP.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Clinical trials</div>
+                        <div class="pfizer-glossary-def">Structured studies in human volunteers or patients designed to evaluate the safety and effectiveness of a new treatment. They proceed through defined phases: Phase I (safety and dosage in a small number of healthy volunteers), Phase II (effectiveness in a larger group of patients), and Phase III (large-scale confirmation of effectiveness and monitoring of side effects).</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Neurotransmitter</div>
+                        <div class="pfizer-glossary-def">A chemical messenger that transmits signals between nerve cells or from nerve cells to other types of cells (such as muscle cells). In the context of erectile function, nitric oxide acts as the neurotransmitter released from cavernous nerves during sexual stimulation.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Phase I clinical trial</div>
+                        <div class="pfizer-glossary-def">The first stage of testing a new drug in humans. Phase I trials typically involve a small number of healthy volunteers and are primarily designed to assess safety, determine safe dosage ranges, and identify side effects. It was during Phase I trials of sildenafil that the unexpected erectile effects were observed.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Prostaglandins (injectable)</div>
+                        <div class="pfizer-glossary-def">A group of naturally occurring signalling molecules. Before sildenafil, one treatment option for erectile dysfunction involved injecting prostaglandin E1 directly into the penis to induce an erection — an invasive and uncomfortable procedure that sildenafil replaced.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Pulmonary arterial hypertension (PAH)</div>
+                        <div class="pfizer-glossary-def">A specific type of pulmonary hypertension in which the small arteries in the lungs become narrowed, stiffened, or blocked, increasing the resistance to blood flow and forcing the right side of the heart to work harder. Sildenafil (marketed as Revatio® for this condition) reduces pulmonary vascular resistance by the same PDE5 inhibition mechanism that underlies its erectile dysfunction indication.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Pulmonary vascular resistance</div>
+                        <div class="pfizer-glossary-def">The resistance to blood flow through the blood vessels of the lungs. In pulmonary arterial hypertension, this resistance is abnormally high. By causing the smooth muscle in pulmonary blood vessel walls to relax, sildenafil reduces this resistance and eases the workload on the heart.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> Section 5: The Broader Sandwich Portfolio
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Alpha-adrenergic blocker</div>
+                        <div class="pfizer-glossary-def">A type of drug that blocks alpha-adrenergic receptors on smooth muscle cells, causing blood vessels to relax and widen. Doxazosin (Cardura®) is an example. These drugs are used to treat high blood pressure and enlarged prostate.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Calcium channel blocker</div>
+                        <div class="pfizer-glossary-def">A type of drug that prevents calcium from entering the muscle cells of the heart and blood vessel walls. By blocking calcium channels, these drugs cause blood vessels to relax and widen, reducing blood pressure. Amlodipine (Istin®/Norvasc®) is a calcium channel blocker discovered at Sandwich.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">CCR5 antagonist</div>
+                        <div class="pfizer-glossary-def">A drug that blocks the CCR5 receptor on the surface of human immune cells. HIV uses the CCR5 receptor as a doorway to enter and infect immune cells. By blocking this receptor, CCR5 antagonists prevent HIV from entering the cell, reducing viral replication. Maraviroc (Celsentri®) was the first orally administered CCR5 antagonist and was discovered at Pfizer Sandwich.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Maraviroc (Celsentri®)</div>
+                        <div class="pfizer-glossary-def">An antiretroviral drug discovered at Pfizer Sandwich for the treatment of HIV infection. It works by blocking the CCR5 receptor that HIV uses to enter human immune cells. It was the first drug of its class (CCR5 antagonist) to be approved for clinical use.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Voriconazole (Vfend®)</div>
+                        <div class="pfizer-glossary-def">A second-generation triazole antifungal drug developed at Pfizer Sandwich, building on the fluconazole platform. It has a broader spectrum of antifungal activity than fluconazole and is used to treat serious fungal infections, particularly aspergillosis.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> Section 6: Discovery Park
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">CDMO (Contract Development and Manufacturing Organisation)</div>
+                        <div class="pfizer-glossary-def">A company that provides drug development and manufacturing services to pharmaceutical companies on a contract basis. Rather than building their own manufacturing facilities, pharmaceutical companies can outsource production to a CDMO. Asymchem, mentioned in the article, is a Chinese CDMO that opened its first European facility at Discovery Park.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Enterprise Zone</div>
+                        <div class="pfizer-glossary-def">A designated geographical area in the United Kingdom that offers financial incentives (such as tax relief and simplified planning regulations) to encourage business investment and job creation. Discovery Park holds Enterprise Zone status.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Life Science Opportunity Zone</div>
+                        <div class="pfizer-glossary-def">A UK government designation for sites with particular potential for life sciences research and development. The designation comes with support for infrastructure, investment, and regulatory facilitation. Discovery Park is one of only seven in the UK.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> Section 7: Conclusion
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Drug repositioning</div>
+                        <div class="pfizer-glossary-def">See entry under <i>Abstract & Introduction</i>. The conclusion revisits this concept as a key lesson from the sildenafil story.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Serendipity (in science)</div>
+                        <div class="pfizer-glossary-def">A fortunate and unexpected discovery made while investigating something else. In science, serendipity is not merely luck — it requires the scientific alertness to recognise the significance of an unexpected observation and the institutional willingness to pursue it. The discovery of sildenafil's effect on erectile function is one of the most frequently cited examples of serendipity in pharmaceutical history.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pfizer-glossary-section">
+                <button class="pfizer-glossary-section-toggle" onclick="togglePfizerSection(this)">
+                    <span class="chevron">&#9656;</span> General Scientific Terms Used Throughout
+                </button>
+                <div class="pfizer-glossary-section-content" style="display: none;">
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Biosynthesis</div>
+                        <div class="pfizer-glossary-def">The production of complex molecules within living organisms through multi-step, enzyme-catalysed chemical reactions. For example, the biosynthesis of ergosterol in fungi involves a chain of enzymatic reactions, one of which is blocked by fluconazole.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Catalyst / Catalyse</div>
+                        <div class="pfizer-glossary-def">A substance that increases the speed of a chemical reaction without being consumed in the reaction itself. Enzymes are biological catalysts. When an enzyme "catalyses" a reaction, it speeds up a chemical transformation that would otherwise occur too slowly to be useful in living systems.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Clinical development</div>
+                        <div class="pfizer-glossary-def">The phase of drug development in which a compound is tested in human patients through clinical trials (Phases I, II, and III). Clinical development follows preclinical testing and precedes regulatory approval.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Compound</div>
+                        <div class="pfizer-glossary-def">In chemistry, a substance made up of two or more different chemical elements bonded together in a fixed ratio. In pharmaceutical contexts, "compound" often refers specifically to a chemical entity being investigated as a potential drug.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Derivative</div>
+                        <div class="pfizer-glossary-def">A chemical compound that is structurally related to a parent compound, having been modified by chemical reaction. In drug design, derivatives are created by making small changes to a known molecule to improve its drug-like properties.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Dosage form / Formulation</div>
+                        <div class="pfizer-glossary-def">The physical form in which a drug is prepared for administration to patients — for example, a tablet, capsule, injection solution, cream, or inhaler. A drug's formulation determines how it is administered and how it is absorbed by the body.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Efficacy</div>
+                        <div class="pfizer-glossary-def">The ability of a drug to produce the desired therapeutic effect under controlled conditions (such as in a clinical trial). High efficacy means the drug works well at treating the target condition.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Indication</div>
+                        <div class="pfizer-glossary-def">The specific disease or medical condition for which a drug is approved or being investigated. A single drug can have multiple indications — for example, sildenafil has indications for both erectile dysfunction and pulmonary arterial hypertension.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">In vitro / In vivo</div>
+                        <div class="pfizer-glossary-def">"In vitro" means experiments conducted outside a living organism (e.g., in a test tube or petri dish). "In vivo" means experiments conducted within a living organism (e.g., in animal models or human patients). Drug development typically progresses from in vitro studies to in vivo animal studies to human clinical trials.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Mechanism of action</div>
+                        <div class="pfizer-glossary-def">The specific biochemical process through which a drug produces its therapeutic effect. For example, fluconazole's mechanism of action is the inhibition of lanosterol 14α-demethylase, which disrupts ergosterol biosynthesis in fungi.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Potency</div>
+                        <div class="pfizer-glossary-def">A measure of how much of a drug is needed to produce a given effect. A more potent drug achieves the same effect at a lower dose. Potency is often expressed as an IC₅₀ value — the lower the IC₅₀, the more potent the drug.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Selectivity</div>
+                        <div class="pfizer-glossary-def">See entry under <i>Section 4.2</i>.</div>
+                    </div>
+
+                    <div class="pfizer-glossary-entry">
+                        <div class="pfizer-glossary-term">Therapeutic</div>
+                        <div class="pfizer-glossary-def">Relating to the treatment or healing of a disease or medical condition. A "therapeutic effect" is the beneficial medical outcome produced by a drug.</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="pfizer-glossary-footer">
+            Glossary compiled by CATS Insights &copy; 2026
+        </div>
+    </div>
+</aside>
+
+
+<script>
+let pfizerGlossaryOpen = false;
+
+function togglePfizerGlossary() {
+    const sidebar = document.getElementById('pfizer-glossary-sidebar');
+    pfizerGlossaryOpen = !pfizerGlossaryOpen;
+    if (pfizerGlossaryOpen) {
+        sidebar.classList.remove('collapsed');
+        sidebar.classList.add('expanded');
+    } else {
+        sidebar.classList.remove('expanded');
+        sidebar.classList.add('collapsed'); // Will move off screen totally on mobile via css
+    }
+}
+
+function togglePfizerSection(btn) {
+    const content = btn.nextElementSibling;
+    const chevron = btn.querySelector('.chevron');
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        chevron.innerHTML = '&#9662;'; // expanded
+    } else {
+        content.style.display = 'none';
+        chevron.innerHTML = '&#9656;'; // collapsed
+    }
+}
+
+function filterPfizerGlossary() {
+    const query = document.getElementById('pfizer-glossary-search').value.toLowerCase();
+    const sections = document.querySelectorAll('.pfizer-glossary-section');
+    
+    sections.forEach(section => {
+        const entries = section.querySelectorAll('.pfizer-glossary-entry');
+        let sectionHasVisible = false;
+        
+        entries.forEach(entry => {
+            const term = entry.querySelector('.pfizer-glossary-term').innerText.toLowerCase();
+            const def = entry.querySelector('.pfizer-glossary-def').innerText.toLowerCase();
+            
+            if (term.includes(query) || def.includes(query)) {
+                entry.style.display = 'block';
+                sectionHasVisible = true;
+            } else {
+                entry.style.display = 'none';
+            }
+        });
+        
+        if (query.trim() === '') {
+            // If empty search, we can leave headers visible, but maybe not expanded if they were closed.
+            section.style.display = 'block';
+        } else {
+            section.style.display = sectionHasVisible ? 'block' : 'none';
+            if (sectionHasVisible) {
+                const btn = section.querySelector('.pfizer-glossary-section-toggle');
+                const content = section.querySelector('.pfizer-glossary-section-content');
+                const chevron = btn.querySelector('.chevron');
+                content.style.display = 'block';
+                chevron.innerHTML = '&#9662;';
+            }
+        }
+    });
+}
+
+document.addEventListener('click', function(e) {
+    const sidebar = document.getElementById('pfizer-glossary-sidebar');
+    const toggleBtn = document.getElementById('pfizer-glossary-mobile-toggle');
+    if (pfizerGlossaryOpen) {
+        if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+            togglePfizerGlossary();
+        }
+    }
+});
+</script>
+
 </body>
 </html>

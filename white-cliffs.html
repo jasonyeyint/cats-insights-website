@@ -3,13 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The White Cliffs of Dover | CATS Insights</title>
+    <title>Written in White: The Chemistry of Dover's White Cliffs | CATS Insights</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-body { max-width: 720px; margin: 0 auto; padding: 40px 20px; font-size: 17px; line-height: 1.7; color: var(--text-dark); }
+        .article-body h2 { font-size: 1.8rem; font-weight: 700; margin-top: 40px; margin-bottom: 20px; color: var(--text-dark); }
+        .article-body h3 { font-size: 1.4rem; font-weight: 600; margin-top: 30px; margin-bottom: 15px; color: var(--text-dark); }
+        .article-body p { margin-bottom: 20px; }
+        .article-body sup a { color: var(--secondary); text-decoration: none; font-weight: 600; padding: 0 2px; }
+        .article-body sup a:hover { text-decoration: underline; }
+        .pull-quote { margin: 30px 0; padding: 20px 25px; border-left: 4px solid var(--primary); background-color: #fafafa; font-style: italic; color: var(--text-dark); }
+        .pull-quote p { margin-bottom: 10px; font-size: 1.1rem; }
+        .pull-quote span { font-size: 0.95rem; color: #777; font-style: normal; }
+        .figure-container { margin: 40px 0; text-align: center; }
+        .figure-container img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eaeaea; }
+        .figure-placeholder { background-color: #f5f5f5; border: 2px dashed #ccc; padding: 40px 20px; text-align: center; margin: 30px 0 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .figure-caption { font-style: italic; text-align: center; margin-bottom: 5px; font-size: 0.9em; }
+        .figure-source { text-align: center; color: #777; font-size: 0.85em; margin-bottom: 30px; }
+        .notes-list li { margin-bottom: 10px; }
+        .bib-list p { margin-bottom: 15px; padding-left: 20px; text-indent: -20px; }
+        .math-equation { text-align: center; font-style: italic; margin: 20px 0; }
+    </style>
+
+<style>
+/* Glossary Sidebar Base */
+.glossary-sidebar {
+    position: fixed;
+    z-index: 1000;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    body {
+        margin-right: 48px; /* So content isn't hidden by collapsed sidebar */
+    }
+    .glossary-sidebar {
+        top: 0;
+        right: 0;
+        height: 100vh;
+        border-left: 3px solid #0C2340;
+    }
+    .glossary-sidebar.collapsed {
+        width: 48px;
+        transform: translateX(0);
+    }
+    .glossary-sidebar.expanded {
+        width: 360px;
+    }
+    .glossary-toggle-tab {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 48px;
+        height: 120px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .glossary-sidebar.expanded .glossary-toggle-tab { display: none; }
+    .glossary-toggle-tab span {
+        transform: rotate(90deg);
+        color: #89764B;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
+        white-space: nowrap;
+    }
+    .glossary-mobile-handle { display: none; }
+    
+    .glossary-inner {
+        display: none;
+        flex-direction: column;
+        height: 100%;
+        width: 360px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .glossary-sidebar.expanded .glossary-inner {
+        display: flex;
+    }
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+    .glossary-sidebar {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-top: 3px solid #0C2340;
+    }
+    .glossary-sidebar.collapsed {
+        height: 48px;
+        transform: translateY(0);
+    }
+    .glossary-sidebar.expanded {
+        height: 70vh;
+    }
+    .glossary-toggle-tab {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 48px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+    }
+    .glossary-sidebar.expanded .glossary-toggle-tab { display: none; }
+    .glossary-toggle-tab span {
+        color: #89764B;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .glossary-mobile-handle {
+        width: 40px;
+        height: 4px;
+        background-color: #CCCCCC;
+        border-radius: 2px;
+        margin: 10px auto;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    .glossary-sidebar.collapsed .glossary-mobile-handle { display: none; }
+    
+    .glossary-inner {
+        display: none;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 20px 20px 20px;
+        box-sizing: border-box;
+    }
+    .glossary-sidebar.expanded .glossary-inner {
+        display: flex;
+    }
+}
+
+.glossary-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+.glossary-header-row h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0C2340;
+    margin: 0;
+}
+.glossary-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #0C2340;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+.glossary-search-container {
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+#glossary-search {
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.glossary-content {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.glossary-section {
+    margin-bottom: 10px;
+}
+.glossary-section-toggle {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #89764B;
+    cursor: pointer;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.glossary-section-toggle .chevron {
+    margin-right: 8px;
+    font-size: 12px;
+}
+.glossary-section-toggle .badge {
+    background-color: #F0F0F0;
+    color: #333;
+    border-radius: 10px;
+    font-size: 11px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    font-weight: normal;
+}
+.glossary-entry {
+    padding: 12px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.glossary-term {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #0C2340;
+    margin-bottom: 4px;
+}
+.glossary-def {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.6;
+}
+</style>
+
 </head>
-<body>
+<body class="bg-light">
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -18,7 +251,9 @@
                 <img src="images/LOGO.jpg" alt="CATS Insights Logo" class="brand-logo">
                 CATS Insights
             </a>
-            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <button class="hamburger" aria-label="Toggle navigation">
+                ☰
+            </button>
             <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-dropdown">
@@ -45,71 +280,181 @@
         </div>
     </nav>
 
-    <!-- Article Header -->
-    <header class="section bg-light" style="padding-bottom: 20px;">
-        <div class="container fade-in">
-            <a href="chemistry-of-kent.html" style="display: inline-block; margin-bottom: 20px;">&larr; Back to Articles</a>
-            <span class="badge">History of Chemistry</span>
-            <h1 style="font-size: 42px; margin-bottom: 10px;">The White Cliffs of Dover</h1>
-            <p style="font-size: 20px; color: #555; margin-bottom: 15px;">The Calcium Carbonate Heritage of the Coast</p>
-            <div style="display: flex; gap: 20px; font-weight: 500; color: var(--primary);">
-                <span>By CATS Insights Editorial Team</span>
-                <span>|</span>
-                <span>October 2025</span>
-            </div>
+    <main style="background-color: white; padding-bottom: 60px;">
+        <!-- Breadcrumb -->
+        <div style="max-width: 720px; margin: 0 auto; padding: 30px 20px 0; font-size: 14px; color: #666;">
+            <a href="index.html" style="color: #666; text-decoration: none;">Home</a> > <a href="chemistry-of-kent.html" style="color: #666; text-decoration: none;">Blog</a> > Written in White: The Chemistry of Dover's White Cliffs
         </div>
-    </header>
 
-    <!-- Article Content -->
-    <article class="section" style="padding-top: 20px;">
-        <div class="container fade-in" style="max-width: 800px;">
+        <!-- Header Block -->
+        <header style="max-width: 720px; margin: 0 auto; padding: 20px; margin-top: 10px;">
+            <span class="badge" style="background-color: var(--primary); color: white; margin-bottom: 15px; display: inline-block;">Chemistry</span>
+            <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-dark); line-height: 1.3;">Written in White: The Chemistry of Dover's White Cliffs</h1>
+            <p style="font-size: 1.1rem; font-weight: 500; color: var(--text-dark); margin-bottom: 8px;">By Kyal Sin (Jason) Ye Yint</p>
+            <p style="font-size: 13px; color: #666;">Chemistry &nbsp;|&nbsp; 11 min read &nbsp;|&nbsp; The Worthgate School, CATS Insights</p>
             
-            <div class="card-image" style="height: 300px; margin: 30px 0;">
-                [ Placeholder Image: The White Cliffs ]
+            <div style="background-color: #fafafa; border-left: 4px solid var(--primary); padding: 20px; margin-top: 30px; margin-bottom: 30px;">
+                <p style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 10px;">Abstract</p>
+                <p style="margin: 0; font-size: 15px; line-height: 1.6;">Stand at the edge of the Dover cliffs on a clear morning, and the facade rising 110 metres from the English Channel is visible from the French coast, approximately 32 kilometres away.<sup><a href="#id-15">15</a></sup> But these are not merely a geological landmark or a national symbol. They are a chemical archive: one hundred million years of marine carbon cycling, compressed into a crystalline sedimentary record and left standing at the edge of a continent. Every square centimetre of this chalk contains the preserved remains of organisms that once dominated the Cretaceous ocean, and every winter storm that breaks against the cliff face enacts a reaction that connects atmospheric carbon dioxide to the dissolution of solid rock. This article traces the chemistry of the White Cliffs from the cellular machinery of ancient algae to the equilibrium equations that govern their modern destruction. The cliffs, it turns out, are a chemistry lecture written in calcium carbonate, and the lesson has not yet finished.</p>
             </div>
-
-            <h2>Introduction</h2>
-            <p>The White Cliffs of Dover are perhaps the most iconic symbol of Kent, rising dramatically from the English Channel. But beyond their cultural significance, they represent a fascinating study in large-scale inorganic chemistry.</p>
-
-            <h2>Formation: The Coccolithophore Legacy</h2>
-            <p>The cliffs are primarily composed of chalk, a soft, fine-grained, white limestone. This chalk consists almost entirely of calcium carbonate (CaCO₃). Around 70 million years ago, during the Late Cretaceous period, this region was submerged under a shallow, warm sea. Trillions of single-celled algae known as coccolithophores lived here. Upon dying, their calcium carbonate exoskeletons sank to the sea floor, slowly compressing over millions of years to form the massive chalk deposits we see today.</p>
-
-            <h2>Chemical Erosion</h2>
-            <p>The White Cliffs are retreating at an expanding rate due to both physical weathering and chemical erosion. Rainwater, which is naturally slightly acidic due to dissolved atmospheric carbon dioxide, reacts with the calcium carbonate.</p>
-            <div class="chem-eq">
-                CaCO₃(s) + H₂O(l) + CO₂(a) &rarr; Ca(HCO₃)₂(aq)
-            </div>
-            <p>This reaction forms calcium bicarbonate, which is highly soluble in water and is washed away into the sea, literally dissolving the cliffs over time.</p>
-
-            <h2>Thermal Decomposition</h2>
-            <p>From an industrial perspective, the chalk of the White Cliffs (and surrounding Kent quarries) has historically been mined to produce quicklime (calcium oxide, CaO). This is achieved through thermal decomposition by heating the calcium carbonate to temperatures above 840&deg;C in lime kilns.</p>
-            <div class="chem-eq">
-                CaCO₃(s) &rarr; CaO(s) + CO₂(g)
-            </div>
-            <p>This quicklime was essential for creating lime mortar, which built much of historical Kent and London.</p>
-
-            <h2>Environmental Significance & Kent Connection</h2>
-            <p>As average global temperatures rise, increased atmospheric CO₂ leads to more acidic rainfall, accelerating the dissolution of the cliffs. The study of the White Cliffs is not just local history; it is a live observation of the carbon cycle and ocean acidification.</p>
             
-            <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
+            <hr style="border: 0; border-top: 1px solid #ddd; margin-bottom: 0;">
+        </header>
 
-            <!-- References & Editorial Note -->
-            <h3>References</h3>
-            <ol style="margin-left: 20px; margin-bottom: 30px; font-size: 14px; line-height: 1.8;">
-                <li>Smith, J. (2020). <i>The Geological Formation of the English Channel</i>. Oxford University Press. DOI: [Placeholder DOI]</li>
-                <li>Jones, A., & Taylor, B. (2022). "Chemical Weathering of Calcareous Coastal Cliffs." <i>Journal of Coastal Research</i>. DOI: [Placeholder DOI]</li>
-                <li>Hampton, R. (2018). <i>Industrial Chemistry in 19th Century Kent</i>. Kent Historical Society. DOI: [Placeholder DOI]</li>
-            </ol>
+        <!-- Article Body -->
+        <article class="article-body">
 
-            <div class="bg-light" style="padding: 15px; border-radius: 8px; font-size: 14px;">
-                <strong>Editorial Note:</strong> This article has passed the CATS Insights Quality Assurance Pipeline. Turnitin Similarity index: 4%. GPTZero scan: Human verified. All sources cite peer-reviewed literature using Oxford referencing standards.
+            <div class="figure-container">
+                <img src="images/white-cliffs-cover.jpeg" alt="Figure 1. The White Cliffs of Dover">
+                <div class="figure-caption">Figure 1. The White Cliffs of Dover, rising approximately 110 metres above the English Channel. The cliff face is composed almost entirely of Upper Cretaceous chalk, a biogenic sedimentary rock formed from the compacted remains of trillions of coccolith plates. The distinctive vertical gullies are carved by acidified rainwater dissolving calcium carbonate through the carbonate equilibria described in Section III.</div>
+                <div class="figure-source">Source: Immanuel Giel / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:White_Cliffs_of_Dover_02.JPG">CC BY-SA 3.0</a></div>
             </div>
 
-        </div>
-    </article>
+            <h2>I. Shells to Stone: Coccolith Sedimentation and Diagenesis</h2>
+            <p>The chalk owes its existence to coccolithophores, unicellular marine phytoplankton belonging to the division Haptophyta. These organisms, typically 5–20 &micro;m in diameter, construct an external armour of interlocking calcite plates called <i>coccoliths</i>, each plate measuring approximately 1–5 &micro;m across.<sup><a href="#id-2">2</a></sup> The dominant species in modern oceans is <i>Emiliania huxleyi</i>, though the Cretaceous assemblage would have been taxonomically different; genera such as <i>Watznaueria</i> and <i>Prediscosphaera</i> are the principal coccolith taxa recovered from English chalk deposits.<sup><a href="#id-3">3</a></sup></p>
+
+            <div class="figure-container">
+                <img src="images/white-cliffs-fig2.jpg" alt="Figure 2. Scanning electron micrograph of Emiliania huxleyi">
+                <div class="figure-caption">Figure 2. Scanning electron micrograph of <i>Emiliania huxleyi</i> (Position E), the most abundant coccolithophore species in modern oceans and 13 other species. The cell (approximately 5 &micro;m in diameter) is encased in a coccosphere of interlocking calcite coccolith plates, each measuring 2–4 &micro;m across. These plates are assembled inside the cell within a Golgi-derived coccolith vesicle and extruded to the cell surface upon completion. When coccolithophores die, their coccospheres disaggregate and the individual plates sink to the seabed, the process that, over 30 million years of sustained deposition, built the Dover chalk.</div>
+                <div class="figure-source">Source: Monteiro, F.M. / Wikimedia Commons, <a href="https://doi.org/10.1126/sciadv.1501822">CC BY-SA 4.0</a></div>
+            </div>
+
+            <p>Coccolith formation is an entirely intracellular process. Calcite crystals are nucleated upon an organic baseplate within a specialised Golgi-derived vesicle, the <i>coccolith vesicle</i>, where crystal growth is directed by coccolith-associated polysaccharides (CAPs) that regulate nucleation sites and control crystal morphology.<sup><a href="#id-2">2</a></sup> The net intracellular reaction is:</p>
+            <p class="math-equation">Ca<sup>2+</sup> + 2HCO<sub>3</sub><sup>-</sup> &rarr; CaCO<sub>3</sub> + CO<sub>2</sub> + H<sub>2</sub>O</p>
+            <p>This is significant since for every mole of calcite precipitated, one mole of carbon dioxide is released, meaning that coccolithophore calcification is simultaneously a carbon sink (locking carbon into solid CaCO<sub>3</sub>) and a carbon source (releasing CO<sub>2</sub> that can re-enter the atmosphere).<sup><a href="#id-4">4</a></sup> The net effect on atmospheric carbon depends on the balance between these two fluxes, a balance that remains one of the central questions in marine biogeochemistry.</p>
+
+            <p>During the Late Cretaceous period (approximately 100–66 million years ago), Kent's coastline lay beneath a warm, shallow epicontinental sea at a palaeolatitude of roughly 35&deg;N.<sup><a href="#id-3">3</a></sup> Conditions were ideal for sustained coccolithophore productivity: elevated atmospheric CO<sub>2</sub> concentrations (estimated at 600–1,200 ppm, compared to roughly 425 ppm today), warm sea-surface temperatures, and an extensive flooded continental shelf that suppressed terrigenous sediment input.<sup><a href="#id-5">5</a></sup> When coccolithophores died, their coccospheres disaggregated, and the individual coccolith plates rained down through the water column, accumulating on the seabed at rates of approximately 0.5–2 millimetres per year.<sup><a href="#id-3">3</a></sup>,<sup><a href="#id-6">6</a></sup></p>
+            
+            <p>Over approximately 30 million years of sustained deposition, this process built chalk strata up to 500 metres thick in parts of southern England.<sup><a href="#id-6">6</a></sup> The transformation from soft coccolith ooze to solid chalk rock is called <i>diagenesis</i>. As overlying sediment accumulated, the increasing overburden pressure expelled pore water and compacted the coccolith fragments. Small secondary calcite crystals precipitated in the intergranular spaces, cementing the compacted mass into a coherent rock with a typical porosity of 35–45% and a composition of 95–99% calcium carbonate by weight.<sup><a href="#id-3">3</a></sup> Horizontal bands of black flint visible in the cliff face formed later during diagenesis, as dissolved silica from the skeletons of siliceous radiolarians and sponge spicules migrated through the chalk and precipitated as microcrystalline quartz nodules.<sup><a href="#id-6">6</a></sup></p>
+
+            <h2>II. Why Chalk Is White: Light Scattering in Microcrystalline Calcite</h2>
+            <p>Pure calcite is transparent. A single crystal of Iceland spar, the optically clear variety prized since the seventeenth century for its extraordinary birefringence, transmits light from approximately 250 nm to 2,500 nm with minimal absorption.<sup><a href="#id-7">7</a></sup> So why are the Dover cliffs white? The answer lies not in the crystal structure of calcite itself, but in the microcrystalline texture of chalk.</p>
+
+            <p>Chalk is composed of billions of calcite particles, coccolith fragments and secondary cement crystals, each measuring between 0.5 and 5 &micro;m in diameter. When visible light (wavelengths 380–700 nm) encounters a particle whose dimensions are comparable to or larger than the wavelength, it undergoes <i>Mie scattering</i>, a process in which the incident radiation is redirected in all directions without wavelength-selective absorption.<sup><a href="#id-8">8</a></sup> Because chalk's grain size falls squarely in this regime, all wavelengths of visible light are scattered with approximately equal efficiency. The result is diffuse, broadband reflectance: whiteness. This is the same physics that makes snow white (ice crystals scatter light), milk white (fat globules scatter light), and clouds white (water droplets scatter light). In each case, the material's individual constituents are transparent; the opacity and whiteness emerge from the collective scattering of vast numbers of microscopic particles.<sup><a href="#id-8">8</a></sup> Chalk's high porosity further enhances the effect by creating innumerable air&ndash;calcite interfaces, each of which presents a refractive index boundary (calcite: <i>n</i> = 1.49–1.66; air: <i>n</i> = 1.00) at which additional scattering occurs.</p>
+
+            <p>There is a practical corollary to these optics. The softness of chalk (Mohs hardness 3, inherited directly from calcite) means that the cliff face is continually being refreshed by coastal erosion. Wave undercutting at the base causes blocks of chalk to collapse, exposing fresh, unweathered surfaces. It is this constant renewal that keeps the cliffs white; a stable, unrefreshed chalk surface would gradually discolour as biological growth and atmospheric deposition accumulated.<sup><a href="#id-1">1</a></sup> The erosion rate has increased to 220–320 mm per year over the last 150 years, approximately three to five times the pre-industrial rate of 20–60 mm per year, driven primarily by the loss of protective beach material and the increasing frequency of severe storms.<sup><a href="#id-1">1</a></sup></p>
+
+            <h2>III. Dissolving the Cliffs: Carbonate Equilibria and Chemical Weathering</h2>
+            <p>The White Cliffs are not static. They are being dissolved, grain by grain, by a set of coupled equilibrium reactions that connect atmospheric carbon dioxide to the chemistry of every raindrop that strikes the chalk surface.</p>
+
+            <div class="figure-container">
+                <img src="images/white-cliffs-fig3.png" alt="Figure 3. The marine carbonate equilibrium system">
+                <div class="figure-caption">Figure 3. The marine carbonate equilibrium system. Dissolved CO<sub>2</sub> reacts with water to form carbonic acid, which dissociates stepwise through bicarbonate to carbonate. At typical seawater pH (8.1), approximately 90% of dissolved inorganic carbon exists as bicarbonate (HCO<sub>3</sub><sup>-</sup>), 9% as carbonate (CO<sub>3</sub><sup>2-</sup>), and less than 1% as dissolved CO<sub>2</sub> or H<sub>2</sub>CO<sub>3</sub>. As pH decreases through ocean acidification, the equilibrium shifts toward CO<sub>2</sub> and HCO<sub>3</sub><sup>-</sup> at the expense of CO<sub>3</sub><sup>2-</sup>, reducing the calcite saturation state (&Omega;) and threatening calcifying organisms.</div>
+                <div class="figure-source">Source: Diagram: K.S. Ye Yint, CATS Insights, 2026.</div>
+            </div>
+
+            <p>The process begins in the atmosphere. Carbon dioxide dissolves in rainwater to form carbonic acid, a weak diprotic acid:</p>
+            <p class="math-equation">CO<sub>2</sub>(g) + H<sub>2</sub>O(l) &#8652; H<sub>2</sub>CO<sub>3</sub>(aq) &nbsp;&nbsp;&nbsp; <i>K</i><sub>1</sub> = 3.4 &times; 10<sup>-2</sup> at 25&deg;C</p>
+            <p>Carbonic acid then dissociates in two stages, releasing hydrogen ions that lower the pH of the solution:</p>
+            <p class="math-equation">H<sub>2</sub>CO<sub>3</sub>(aq) &#8652; H<sup>+</sup>(aq) + HCO<sub>3</sub><sup>-</sup>(aq) &nbsp;&nbsp;&nbsp; <i>K</i><sub>a1</sub> = 4.3 &times; 10<sup>-7</sup><br>HCO<sub>3</sub><sup>-</sup>(aq) &#8652; H<sup>+</sup>(aq) + CO<sub>3</sub><sup>2-</sup>(aq) &nbsp;&nbsp;&nbsp; <i>K</i><sub>a2</sub> = 4.7 &times; 10<sup>-11</sup></p>
+            
+            <p>Unpolluted rainwater in equilibrium with atmospheric CO<sub>2</sub> at current concentrations (approximately 425 ppm) has a pH of roughly 5.6.<sup><a href="#id-9">9</a></sup> When this weakly acidic solution contacts the chalk, the hydrogen ions react with calcium carbonate in a dissolution reaction:</p>
+            <p class="math-equation">CaCO<sub>3</sub>(s) + H<sub>2</sub>CO<sub>3</sub>(aq) &#8652; Ca<sup>2+</sup>(aq) + 2HCO<sub>3</sub><sup>-</sup>(aq)</p>
+
+            <p>The overall process converts solid calcite into soluble calcium bicarbonate. This is a reversible equilibrium: the position of the reaction depends on the partial pressure of CO<sub>2</sub>, temperature, and the pH of the solution. Le Chatelier's principle predicts, correctly, that increasing atmospheric CO<sub>2</sub> drives the equilibrium to the right, accelerating dissolution. Conversely, removing CO<sub>2</sub> (for example, when groundwater emerges at the surface and degasses) shifts the equilibrium to the left, causing calcite to precipitate, a process responsible for stalactite and stalagmite formation in chalk caves and for the calcite-rich 'hard water' characteristic of Kent's domestic water supply.<sup><a href="#id-9">9</a></sup></p>
+
+            <p>The dissolution is visible at every scale. At the cliff face, acidified rainwater percolating through vertical fractures and bedding planes carves the distinctive gullies and undercuts that define the Dover coastline. Across geological timescales, this process has transported millions of tonnes of dissolved calcium back into the ocean, where marine organisms recycle it into new shells, completing the lithospheric component of the carbon cycle.<sup><a href="#id-4">4</a></sup> The cliffs are, therefore, not merely a product of the carbon cycle, they are an active participant in it, mediating the transfer of carbon between the atmosphere, hydrosphere, and lithosphere.</p>
+
+            <h2>IV. Fire and Powder: Thermal Decomposition and Kent's Lime Industry</h2>
+            <p>Kent's chalk has been quarried and burnt for at least two thousand years. Lime burning was a technology introduced to Britain by the Romans, and there is no evidence of lime kilns in England before the Roman period.<sup><a href="#id-10">10</a></sup> The chemistry is textbook thermal decomposition:</p>
+            <p class="math-equation">CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g) &nbsp;&nbsp;&nbsp; &Delta;<i>H</i> = +178 kJ mol<sup>-1</sup></p>
+            
+            <p>The reaction requires temperatures above 840&deg;C, at which point the partial pressure of CO<sub>2</sub> above the calcium carbonate surface exceeds one atmosphere, allowing carbon dioxide to escape irreversibly in an open kiln.<sup><a href="#id-11">11</a></sup> In practice, temperatures of 900–1,000&deg;C were used to drive the reaction to completion within a practical timeframe, though exceeding 1,200&deg;C produced 'dead-burnt' lime, an unreactive sintered product that was useless as a building material.<sup><a href="#id-11">11</a></sup></p>
+
+            <p>The product, quicklime (calcium oxide), is chemically unstable in the atmosphere. Mixed with water in a violently exothermic reaction called <i>slaking</i>, it produces calcium hydroxide:</p>
+            <p class="math-equation">CaO(s) + H<sub>2</sub>O(l) &rarr; Ca(OH)<sub>2</sub>(s) &nbsp;&nbsp;&nbsp; &Delta;<i>H</i> = &minus;65 kJ mol<sup>-1</sup></p>
+
+            <p>Calcium hydroxide, or slaked lime, was the essential ingredient in lime mortar, the binding agent that built medieval Canterbury's cathedral, its city walls, and the castles at Dover, Rochester, and Leeds.<sup><a href="#id-10">10</a></sup> Over months and years, the mortar hardened as calcium hydroxide reabsorbed atmospheric carbon dioxide and reconverted to calcium carbonate:</p>
+            <p class="math-equation">Ca(OH)<sub>2</sub>(s) + CO<sub>2</sub>(g) &rarr; CaCO<sub>3</sub>(s) + H<sub>2</sub>O(l)</p>
+
+            <p>This slow carbonation means that lime mortar effectively recaptures most of the CO<sub>2</sub> originally released during calcination, a natural carbon loop that makes traditional lime mortar significantly less carbon-intensive over its lifecycle than modern Portland cement.<sup><a href="#id-11">11</a></sup> The chemistry comes full circle: chalk is burnt to release CO<sub>2</sub> and produce quicklime; quicklime is slaked and used as mortar; the mortar reabsorbs CO<sub>2</sub> from the air and slowly reverts to calcium carbonate. The mediaeval builders of Canterbury were, without knowing it, exploiting a reversible reaction.</p>
+
+            <p>Beyond construction, quicklime was applied to Kent's acidic Weald Clay soils as an agricultural amendment. Calcium oxide neutralises soil acidity through the reaction:</p>
+            <p class="math-equation">CaO(s) + 2H<sup>+</sup>(aq) &rarr; Ca<sup>2+</sup>(aq) + H<sub>2</sub>O(l)</p>
+
+            <p>Kent's lime-burning kilns, now mostly ruined or converted into private homes, were concentrated along the chalk downlands of the North Downs. They represent the industrial infrastructure of a chemistry that sustained the county's agriculture and construction for centuries.<sup><a href="#id-10">10</a></sup></p>
+
+            <h2>V. The Acid Test: Ocean Acidification and the Carbonate Saturation State</h2>
+            <p>The chemistry that shaped the cliffs over geological time is now operating in reverse and at an accelerating rate. Since the beginning of the Industrial Revolution, the ocean has absorbed approximately 30% of anthropogenic CO<sub>2</sub> emissions.<sup><a href="#id-12">12</a></sup> This absorption triggers the same carbonic acid equilibria described in Section III, but in seawater rather than rainwater, and the consequences for calcifying marine organisms are severe.</p>
+
+            <div class="figure-container">
+                <img src="images/white-cliffs-fig4.png" alt="Figure 4. Projected decline in surface ocean pH">
+                <div class="figure-caption">Figure 4. Projected decline in surface ocean pH under different CO<sub>2</sub> emission scenarios. Pre-industrial surface ocean pH was approximately 8.2. Current pH is approximately 8.1, representing a 26% increase in hydrogen ion concentration. Under business-as-usual projections (atmospheric CO<sub>2</sub> reaching 800 ppm), pH is expected to fall to approximately 7.7–7.8 by 2100. The moderate mitigation scenario projects stabilisation at approximately 7.9. Data synthesised from Doney et al. (2009) and IPCC projections.</div>
+                <div class="figure-source">Source: Diagram: K.S. Ye Yint, CATS Insights, 2026.</div>
+            </div>
+
+            <p>The key reactions are:</p>
+            <p class="math-equation">CO<sub>2</sub>(g) + H<sub>2</sub>O(l) &#8652; H<sub>2</sub>CO<sub>3</sub>(aq) &#8652; H<sup>+</sup>(aq) + HCO<sub>3</sub><sup>-</sup>(aq)</p>
+
+            <p>The excess hydrogen ions then react with dissolved carbonate ions:</p>
+            <p class="math-equation">H<sup>+</sup>(aq) + CO<sub>3</sub><sup>2-</sup>(aq) &#8652; HCO<sub>3</sub><sup>-</sup>(aq)</p>
+
+            <p>This is the critical step. The hydrogen ions do not simply accumulate freely in solution; they are partially buffered by reacting with carbonate to form bicarbonate. The result is a simultaneous decrease in pH and a decrease in the concentration of dissolved carbonate ions (CO<sub>3</sub><sup>2-</sup>).<sup><a href="#id-12">12</a></sup>,<sup><a href="#id-13">13</a></sup></p>
+
+            <p>Since the pre-industrial era, average surface ocean pH has fallen from approximately 8.2 to 8.1, a 0.1-unit decline that represents a roughly 26% increase in hydrogen ion concentration, because the pH scale is logarithmic.<sup><a href="#id-12">12</a></sup> The biological significance is captured by the calcite saturation state (&Omega;), defined as:</p>
+            <p class="math-equation">&Omega; = [Ca<sup>2+</sup>][CO<sub>3</sub><sup>2-</sup>] / <i>K</i><sub>sp</sub></p>
+
+            <p>Where <i>K</i><sub>sp</sub> is the solubility product of calcite at the relevant temperature and pressure. When &Omega; > 1, seawater is supersaturated with respect to calcite, and shell formation is thermodynamically favourable. When &Omega; < 1, calcite dissolution is favoured.<sup><a href="#id-13">13</a></sup></p>
+
+            <p>Current surface ocean waters remain supersaturated (&Omega; > 1) for calcite, but the saturation state is declining. If atmospheric CO<sub>2</sub> reaches 800 ppm under business-as-usual emission scenarios, surface pH is projected to fall by a further 0.3–0.4 units by 2100, representing a total increase in ocean acidity of 100–150% relative to pre-industrial conditions.<sup><a href="#id-12">12</a></sup>,<sup><a href="#id-13">13</a></sup></p>
+
+            <p>For coccolithophores, the very organisms whose ancestors built the Dover chalk, this presents an existential challenge. Laboratory studies have demonstrated that calcification rates in key species decline under elevated CO<sub>2</sub> conditions, producing thinner coccoliths and weaker coccospheres.<sup><a href="#id-2">2</a></sup> The saturation horizons, the ocean depths below which calcite dissolves, are already shoaling by 30–200 metres globally since the pre-industrial period.<sup><a href="#id-13">13</a></sup> The White Cliffs, in this sense, record the conditions of a world in which marine calcification flourished; the chemistry of the modern ocean is trending away from those conditions.</p>
+
+            <h2>VI. The Archive, Revisited</h2>
+            <p>The White Cliffs of Dover compress 30 million years of marine productivity into a single geological monument. The coccolithophores that built them used intracellular calcification in Golgi-derived vesicles, and the diagenesis that hardened them illustrates pressure-driven cementation and silica remobilisation; the whiteness that defines them is an exercise in Mie scattering at the micron scale. The dissolution that reshapes them every winter is Le Chatelier's principle in real time, and the ocean acidification that threatens their living descendants is the same carbonate chemistry running under different boundary conditions. From biomineralisation to thermal decomposition, from equilibrium thermodynamics to global biogeochemistry, these cliffs connect more branches of chemistry than any single landmark in Kent. So the next time you see them from the Dover ferry, remember that you are looking at a scientific marvel, that, and to mind the crumbling edge.</p>
+
+            <!-- Bibliography Section -->
+            <h2>References</h2>
+            <div class="bib-list" style="font-size: 15px; color: #444; line-height: 1.6;">
+                <p id="id-1">[1] Hurst, M.D., Rood, D.H., Ellis, M.A., Anderson, R.S. and Dornbusch, U., 'Recent Acceleration in Coastal Cliff Retreat Rates on the South Coast of Great Britain', <i>Proceedings of the National Academy of Sciences</i>, vol. 113, no. 47, 2016, pp. 13336–13341. doi: <a href="https://doi.org/10.1073/pnas.1613044113">10.1073/pnas.1613044113</a>.</p>
+                <p id="id-2">[2] Brownlee, C., Wheeler, G.L. and Taylor, A.R., 'Coccolithophore Biomineralization: New Questions, New Answers', <i>Seminars in Cell & Developmental Biology</i>, vol. 46, 2015, pp. 11–16. doi: <a href="https://doi.org/10.1016/j.semcdb.2015.10.027">10.1016/j.semcdb.2015.10.027</a>.</p>
+                <p id="id-3">[3] Bell, F.G., Culshaw, M.G. and Cripps, J.C., 'A Review of Selected Engineering Geological Characteristics of English Chalk', <i>Engineering Geology</i>, vol. 54, no. 3–4, 1999, pp. 237–269. doi: <a href="https://doi.org/10.1016/S0013-7952(99)00043-5">10.1016/S0013-7952(99)00043-5</a>.</p>
+                <p id="id-4">[4] Ridgwell, A. and Zeebe, R.E., 'The Role of the Global Carbonate Cycle in the Regulation and Evolution of the Earth System', <i>Earth and Planetary Science Letters</i>, vol. 234, no. 3–4, 2005, pp. 299–315. doi: <a href="https://doi.org/10.1016/j.epsl.2005.03.006">10.1016/j.epsl.2005.03.006</a>.</p>
+                <p id="id-5">[5] Berner, R.A. and Kothavala, Z., 'GEOCARB III: A Revised Model of Atmospheric CO<sub>2</sub> over Phanerozoic Time', <i>American Journal of Science</i>, vol. 301, no. 2, 2001, pp. 182–204. doi: <a href="https://doi.org/10.2475/ajs.301.2.182">10.2475/ajs.301.2.182</a>.</p>
+                <p id="id-6">[6] Hancock, J.M., 'The Petrology of the Chalk', <i>Proceedings of the Geologists' Association</i>, vol. 86, no. 4, 1975, pp. 499–535. doi: <a href="https://doi.org/10.1016/S0016-7878(75)80061-7">10.1016/S0016-7878(75)80061-7</a>.</p>
+                <p id="id-7">[7] Nesse, W.D., <i>Introduction to Mineralogy</i>, 2nd edn (Oxford: Oxford University Press, 2012).</p>
+                <p id="id-8">[8] Bohren, C.F. and Huffman, D.R., <i>Absorption and Scattering of Light by Small Particles</i> (Weinheim: Wiley-VCH, 1998).</p>
+                <p id="id-9">[9] Stumm, W. and Morgan, J.J., <i>Aquatic Chemistry: Chemical Equilibria and Rates in Natural Waters</i>, 3rd edn (New York: Wiley-Interscience, 1996).</p>
+                <p id="id-10">[10] Historic England, 'Pre-industrial Lime Kilns: Introductions to Heritage Assets', Historic England, 2018. <a href="https://historicengland.org.uk/images-books/publications/iha-preindustrial-lime-kilns/heag222-pre-industrial-lime-kilns/">https://historicengland.org.uk/images-books/publications/iha-preindustrial-lime-kilns/heag222-pre-industrial-lime-kilns/</a> [accessed 25 March 2026].</p>
+                <p id="id-11">[11] Atkins, P. and de Paula, J., <i>Atkins' Physical Chemistry</i>, 10th edn (Oxford: Oxford University Press, 2014).</p>
+                <p id="id-12">[12] National Oceanic and Atmospheric Administration, 'Ocean Acidification', NOAA Education, n.d. <a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification">https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification</a> [accessed 25 March 2026].</p>
+                <p id="id-13">[13] Doney, S.C., Fabry, V.J., Feely, R.A. and Kleypas, J.A., 'Ocean Acidification: The Other CO<sub>2</sub> Problem', <i>Annual Review of Marine Science</i>, vol. 1, 2009, pp. 169–192. doi: <a href="https://doi.org/10.1146/annurev.marine.010908.163834">10.1146/annurev.marine.010908.163834</a>.</p>
+                <p id="id-14">[14] Dimes, H.G., 'Lime-burning in Kent', <i>Archaeologia Cantiana</i>, vol. 109, 1991, pp. 223–239.</p>
+                <p id="id-15">[15] National Trust, 'White Cliffs of Dover', National Trust, n.d. <a href="https://www.nationaltrust.org.uk/visit/kent/the-white-cliffs-of-dover">https://www.nationaltrust.org.uk/visit/kent/the-white-cliffs-of-dover</a> [accessed 25 March 2026].</p>
+                <p id="id-16">[16] Giel, I., White Cliffs of Dover 02 [photograph], Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:White_Cliffs_of_Dover_02.JPG">https://commons.wikimedia.org/wiki/File:White_Cliffs_of_Dover_02.JPG</a>. CC BY-SA 3.0 [accessed 20 March 2026].</p>
+                <p id="id-17">[17] Monteiro, F.M., Bach, L.T., Brownlee, C. et al., 'Why Marine Phytoplankton Calcify', <i>Science Advances</i>, vol. 2, no. 7, 2016, e1501822, Plate 1. doi: <a href="https://doi.org/10.1126/sciadv.1501822">10.1126/sciadv.1501822</a>. CC BY-SA 4.0.</p>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 40px 0;">
+
+            <!-- Article Footer Block -->
+            <div style="background-color: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 25px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; flex-shrink: 0;">
+                    KY
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 5px; font-size: 1.2rem;">Kyal Sin (Jason) Ye Yint</h4>
+                    <p style="margin: 0; font-size: 14px; color: #666;">CATS Insights, The Worthgate School</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 40px; padding: 0 10px;">
+                <p style="font-size: 13px; color: #666; margin: 0;">Published in CATS Insights | The Worthgate School, Canterbury, Kent &nbsp;&nbsp;<span class="badge" style="background-color: var(--primary); color: white; display: inline-block; padding: 2px 8px; font-size: 11px;">Chemistry</span></p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                <a href="chemistry-of-kent.html" class="btn" style="background-color: #f0f0f0; color: #333; text-decoration: none;">&larr; Back to Blog</a>
+                <button class="btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');" style="background-color: var(--secondary); color: var(--text-dark); border: none; cursor: pointer;">Share</button>
+            </div>
+            <div style="margin-top: 50px; text-align: center; border-top: 2px solid #eee; padding-top: 30px;">
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">Want to read this article offline or see the original formatting?</p>
+                <a href="assets/articles/white-cliffs.pdf" download class="btn" style="background-color: var(--secondary); color: var(--text-dark); padding: 12px 25px; font-weight: bold;">Download Original Article (PDF)</a>
+            </div>
+        </article>
+    </main>
 
     <!-- Footer -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
             <p style="margin: 0;">CATS Insights &copy; 2026 | The Worthgate School, Canterbury, Kent</p>
             <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
@@ -125,6 +470,655 @@
         </div>
     </footer>
 
+    <!-- JS -->
     <script src="script.js"></script>
+
+<!-- Glossary Sidebar -->
+<aside id="glossary-sidebar" class="glossary-sidebar collapsed">
+    <div class="glossary-toggle-tab" onclick="toggleGlossary()">
+        <span>GLOSSARY</span>
+    </div>
+    <div class="glossary-inner">
+        <div class="glossary-mobile-handle" onclick="toggleGlossary()"></div>
+        <div class="glossary-header-row">
+            <h2>Glossary</h2>
+            <button class="glossary-close" onclick="toggleGlossary()">&times;</button>
+        </div>
+        <div class="glossary-search-container">
+            <input type="text" id="glossary-search" placeholder="Search glossary..." onkeyup="filterGlossary()">
+        </div>
+        <div class="glossary-content">
+
+            <div class="glossary-section">
+                <button class="glossary-section-toggle" onclick="toggleSection(this)">
+                    <span class="chevron">&#9656;</span> Abstract / Introduction <span class="badge">6</span>
+                </button>
+                <div class="glossary-section-content" style="display: none;">
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">English Channel</div>
+                        <div class="glossary-def">The narrow body of water separating southern England from northern France, approximately 32 km wide at its narrowest point (the Strait of Dover).</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Chemical archive</div>
+                        <div class="glossary-def">A metaphor: the cliffs preserve a record of ancient chemical processes in the same way a library preserves written records. The chemistry of the ancient ocean is 'frozen' in the rock.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Marine carbon cycling</div>
+                        <div class="glossary-def">The continuous movement of carbon through the ocean in different chemical forms — as dissolved CO₂, as carbonate and bicarbonate ions in seawater, and as solid calcium carbonate in shells and sediment.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Crystalline sedimentary record</div>
+                        <div class="glossary-def">Sedimentary rock (formed from accumulated deposits) in which the minerals have a crystal structure. Chalk is composed of tiny calcite crystals.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Cretaceous ocean</div>
+                        <div class="glossary-def">The global ocean during the Cretaceous period (145–66 million years ago). Sea levels were much higher than today, and large parts of what is now land were submerged. The word 'Cretaceous' comes from the Latin <i>creta</i>, meaning chalk.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Atmospheric carbon dioxide (CO₂)</div>
+                        <div class="glossary-def">A gas in the Earth's atmosphere. It dissolves in rainwater to form a weak acid, and its concentration affects global temperature and ocean chemistry. Current levels are approximately 425 parts per million (ppm).</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="glossary-section">
+                <button class="glossary-section-toggle" onclick="toggleSection(this)">
+                    <span class="chevron">&#9656;</span> I. Shells to Stone: Coccolith Sedimentation and Diagenesis <span class="badge">33</span>
+                </button>
+                <div class="glossary-section-content" style="display: none;">
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Coccolithophores</div>
+                        <div class="glossary-def">Microscopic single-celled algae (phytoplankton) that live in the upper layers of the ocean. They build tiny armour plates made of calcium carbonate (calcite) around their cells. They are among the most important organisms in the ocean carbon cycle and are responsible for building the chalk of the White Cliffs.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Unicellular</div>
+                        <div class="glossary-def">Consisting of a single cell, as opposed to multi-celled organisms like plants or animals.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Phytoplankton</div>
+                        <div class="glossary-def">Microscopic organisms that float in the upper ocean and photosynthesise (use sunlight to make energy), like plants do on land. They form the base of the marine food chain.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Haptophyta</div>
+                        <div class="glossary-def">The biological division (a major taxonomic grouping, similar to a phylum) to which coccolithophores belong.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">µm (micrometre)</div>
+                        <div class="glossary-def">One millionth of a metre, or one thousandth of a millimetre. A human hair is about 70 µm wide, so coccolithophores (5–20 µm) are far too small to see with the naked eye.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Calcite</div>
+                        <div class="glossary-def">The most stable crystalline form of calcium carbonate (CaCO₃). It is the mineral that makes up chalk, limestone, and marble. Calcite defines hardness 3 on the Mohs scale.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Coccoliths</div>
+                        <div class="glossary-def">The individual calcite plates that coccolithophores build and interlock to form a protective sphere (coccosphere) around the cell. Each plate is typically 1–5 µm across — about 50 times smaller than the width of a human hair.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term"><i>Emiliania huxleyi</i></div>
+                        <div class="glossary-def">The most abundant coccolithophore species in modern oceans. Its blooms can be so large they are visible from space as milky-white patches in the sea. Named after Thomas Huxley and Cesare Emiliani.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term"><i>Watznaueria</i> and <i>Prediscosphaera</i></div>
+                        <div class="glossary-def">Genera (groups) of coccolithophores that were dominant during the Cretaceous period. They are now extinct but their coccolith plates are preserved in chalk.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Intracellular</div>
+                        <div class="glossary-def">Occurring inside the cell. Coccolithophores build their calcite plates inside a specialised internal compartment, not on their outer surface.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Golgi-derived vesicle</div>
+                        <div class="glossary-def">A small membrane-enclosed sac produced by the Golgi apparatus (a cellular structure involved in packaging and transporting molecules). In coccolithophores, the coccolith vesicle is where the calcite plate is assembled.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Coccolith vesicle</div>
+                        <div class="glossary-def">The specific Golgi-derived compartment in which a single coccolith plate is constructed before being transported to the cell surface.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Coccolith-associated polysaccharides (CAPs)</div>
+                        <div class="glossary-def">Sugar-based molecules attached to the coccolith that help control where and how calcite crystals grow. They act as a biological 'template' that directs crystal formation into the correct shape.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Nucleation</div>
+                        <div class="glossary-def">The very first step of crystal formation, where a few ions come together to form a tiny 'seed' crystal. All subsequent crystal growth builds on this initial nucleus.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Crystal morphology</div>
+                        <div class="glossary-def">The shape and form of a crystal. CAPs control morphology so that coccoliths grow into their characteristic wheel-like shapes rather than random lumps.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Ca²⁺ + 2HCO₃⁻ → CaCO₃ + CO₂ + H₂O</div>
+                        <div class="glossary-def">The net chemical equation for calcification. Calcium ions (Ca²⁺) and bicarbonate ions (HCO₃⁻) combine to form solid calcium carbonate (the coccolith), releasing carbon dioxide and water as by-products.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Mole</div>
+                        <div class="glossary-def">A standard unit in chemistry representing 6.022 × 10²³ particles (atoms, molecules, or ions). One mole of calcite weighs approximately 100 grams.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Carbon sink</div>
+                        <div class="glossary-def">Any process or reservoir that removes carbon from the atmosphere and stores it. Building CaCO₃ shells locks carbon into solid form.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Carbon source</div>
+                        <div class="glossary-def">Any process that releases carbon (as CO₂) into the atmosphere. The calcification reaction releases one molecule of CO₂ for every molecule of CaCO₃ formed.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Marine biogeochemistry</div>
+                        <div class="glossary-def">The study of how chemical elements (especially carbon, nitrogen, and phosphorus) cycle through living organisms, seawater, and marine sediments.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Late Cretaceous period (100–66 Ma)</div>
+                        <div class="glossary-def">The final stage of the Cretaceous period, ending with the mass extinction that killed the dinosaurs. 'Ma' means 'million years ago'.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Epicontinental sea</div>
+                        <div class="glossary-def">A shallow sea that floods a continental landmass, as opposed to a deep open ocean. Much of Europe was beneath such a sea during the Cretaceous.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Palaeolatitude</div>
+                        <div class="glossary-def">The latitude at which a location sat in the geological past. Due to tectonic plate movement, Kent was at roughly 35°N during the Cretaceous (it is now at approximately 51°N).</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">ppm (parts per million)</div>
+                        <div class="glossary-def">A unit of concentration. 425 ppm CO₂ means that for every million molecules of air, 425 are carbon dioxide.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Terrigenous sediment</div>
+                        <div class="glossary-def">Sediment derived from the erosion of land (soil, sand, rock fragments) washed into the sea by rivers. The Cretaceous flooding of the continent meant very little land-derived sediment reached the seabed, allowing almost pure coccolith accumulation. This explains chalk's exceptional purity.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Coccospheres</div>
+                        <div class="glossary-def">The complete sphere of interlocking coccolith plates surrounding a living coccolithophore cell. When the cell dies, the coccosphere breaks apart and the individual plates sink.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Diagenesis</div>
+                        <div class="glossary-def">The physical and chemical changes that transform loose sediment into solid rock after burial. For chalk, this mainly involves compaction (squeezing out water) and cementation (new calcite crystals growing between grains to glue them together).</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Overburden pressure</div>
+                        <div class="glossary-def">The weight of all the sediment piled on top of a buried layer. This pressure squeezes out water and compacts the material beneath.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Porosity</div>
+                        <div class="glossary-def">The percentage of a rock's volume that is empty space (pores). Chalk has unusually high porosity (35–45%), meaning more than a third of its volume is air or water. This is one reason chalk is so soft and why it appears white.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Flint</div>
+                        <div class="glossary-def">A very hard, dark-coloured form of microcrystalline quartz (SiO₂) found as nodules and horizontal bands within chalk. It forms during diagenesis when dissolved silica migrates and re-crystallises. Neolithic humans mined chalk flint for tools.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Radiolarians</div>
+                        <div class="glossary-def">Microscopic marine zooplankton (animals) that build skeletons made of silica (SiO₂) rather than calcium carbonate. Their dissolved remains are the source of the silica that eventually forms flint in chalk.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Sponge spicules</div>
+                        <div class="glossary-def">Tiny needle-like structural elements made of silica that form the skeleton of certain sea sponges. Like radiolarian skeletons, they contribute silica to chalk deposits.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Microcrystalline quartz</div>
+                        <div class="glossary-def">Quartz (SiO₂) composed of crystals too small to see individually, even under a standard microscope. Flint is a type of microcrystalline quartz.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="glossary-section">
+                <button class="glossary-section-toggle" onclick="toggleSection(this)">
+                    <span class="chevron">&#9656;</span> II. Why Chalk Is White: Light Scattering in Microcrystalline Calcite <span class="badge">8</span>
+                </button>
+                <div class="glossary-section-content" style="display: none;">
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Iceland spar</div>
+                        <div class="glossary-def">A naturally occurring, very pure and transparent variety of calcite, historically found in Iceland. It was famous for its double refraction (birefringence) — a single dot viewed through Iceland spar appears as two dots.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Birefringence (double refraction)</div>
+                        <div class="glossary-def">An optical property where a single ray of light entering a crystal is split into two rays travelling at different speeds and in slightly different directions. Calcite has very strong birefringence — the strongest of any common mineral.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">nm (nanometre)</div>
+                        <div class="glossary-def">One billionth of a metre. Visible light has wavelengths of approximately 380 nm (violet) to 700 nm (red). Ultraviolet light is shorter; infrared is longer.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Mie scattering</div>
+                        <div class="glossary-def">A type of light scattering that occurs when light hits particles whose size is comparable to or larger than the wavelength of the light. Unlike Rayleigh scattering (which preferentially scatters short wavelengths and makes the sky blue), Mie scattering affects all wavelengths roughly equally, producing white light. Named after German physicist Gustav Mie, who described the mathematics in 1908.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Wavelength-selective absorption</div>
+                        <div class="glossary-def">When a material absorbs some colours of light but not others — this is what makes coloured objects appear coloured. Chalk does NOT do this; it scatters all colours equally, which is why it appears white rather than any particular colour.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Diffuse, broadband reflectance</div>
+                        <div class="glossary-def">Light that is scattered in all directions ('diffuse') across the full visible spectrum ('broadband'). This is what whiteness looks like when measured optically.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Refractive index (n)</div>
+                        <div class="glossary-def">A number describing how much light slows down when it enters a material. Air has n ≈ 1.00; water has n ≈ 1.33; calcite has n ≈ 1.49–1.66. Every boundary between materials with different refractive indices causes some light to be reflected and scattered.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Mohs hardness</div>
+                        <div class="glossary-def">A scale from 1 (softest, talc) to 10 (hardest, diamond) that measures how easily a mineral can be scratched. Calcite defines hardness 3 — it can be scratched by a copper coin but not by a fingernail. This is why chalk is soft enough to write with.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="glossary-section">
+                <button class="glossary-section-toggle" onclick="toggleSection(this)">
+                    <span class="chevron">&#9656;</span> III. Dissolving the Cliffs: Carbonate Equilibria and Chemical Weathering <span class="badge">15</span>
+                </button>
+                <div class="glossary-section-content" style="display: none;">
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Equilibrium reactions</div>
+                        <div class="glossary-def">Chemical reactions that can proceed in both directions (forward and reverse) and eventually reach a balance point where the rates of the forward and reverse reactions are equal. Shown with the ⇌ symbol rather than a one-way arrow.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Carbonic acid (H₂CO₃)</div>
+                        <div class="glossary-def">A weak acid formed when carbon dioxide dissolves in water. It is the reason that rainwater is naturally slightly acidic (pH ~5.6) even without pollution. The fizz in carbonated drinks is dissolved CO₂ forming carbonic acid.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Diprotic acid</div>
+                        <div class="glossary-def">An acid that can donate two hydrogen ions (H⁺) per molecule in two successive steps. Carbonic acid first loses one H⁺ to become bicarbonate (HCO₃⁻), then can lose a second to become carbonate (CO₃²⁻).</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">K₁ (hydration constant)</div>
+                        <div class="glossary-def">The equilibrium constant for CO₂ dissolving in water to form carbonic acid. K₁ = 3.4 × 10⁻² means only about 3.4% of dissolved CO₂ actually converts to H₂CO₃ at any given moment.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Ka₁ and Ka₂ (acid dissociation constants)</div>
+                        <div class="glossary-def">Numbers that describe how far each dissociation step proceeds. Small Ka values (like 4.3 × 10⁻⁷ and 4.7 × 10⁻¹¹) mean the acid only partially dissociates — most molecules remain intact. This is why carbonic acid is classified as a 'weak' acid.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">pKa values (6.37 and 10.33)</div>
+                        <div class="glossary-def">The negative logarithm of Ka. pKa₁ = 6.37 means that at pH 6.37, exactly half of the carbonic acid has dissociated to bicarbonate. pKa₂ = 10.33 means at pH 10.33, half the bicarbonate has dissociated to carbonate. These values appear on Figure 3.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">pH</div>
+                        <div class="glossary-def">A logarithmic scale measuring acidity. pH 7 is neutral; below 7 is acidic; above 7 is alkaline. Each unit change represents a tenfold change in hydrogen ion concentration. Rainwater at pH 5.6 has about 25 times more H⁺ ions than pure water at pH 7.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Calcium bicarbonate (Ca(HCO₃)₂)</div>
+                        <div class="glossary-def">A soluble compound formed when calcium carbonate dissolves in carbonic acid. Unlike solid CaCO₃ (which is insoluble), calcium bicarbonate dissolves in water and can be carried away by flowing water. This is how the cliffs are chemically eroded.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Reversible equilibrium</div>
+                        <div class="glossary-def">A reaction that can go forwards or backwards depending on conditions. Adding more CO₂ pushes chalk dissolution forwards; removing CO₂ pushes it backwards (causing calcite to re-precipitate as stalactites or limescale).</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Le Chatelier's principle</div>
+                        <div class="glossary-def">A fundamental principle in chemistry: if a system at equilibrium is disturbed (e.g., by changing concentration, temperature, or pressure), it will shift to partially counteract the disturbance. Increasing atmospheric CO₂ shifts the carbonate equilibrium toward more dissolution of chalk.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Partial pressure of CO₂</div>
+                        <div class="glossary-def">The pressure that CO₂ alone would exert if it occupied the entire atmosphere. Currently about 0.04% of atmospheric pressure (425 ppm). Higher partial pressure means more CO₂ dissolves in water, making rain more acidic.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Stalactites and stalagmites</div>
+                        <div class="glossary-def">Mineral formations in caves. Stalactites hang from the ceiling; stalagmites grow up from the floor. They form when dissolved calcium bicarbonate in groundwater loses CO₂ (by degassing into cave air), causing calcite to precipitate out of solution — the reverse of chalk dissolution.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Hard water</div>
+                        <div class="glossary-def">Water containing high concentrations of dissolved calcium and magnesium ions. In Kent, groundwater percolates through chalk, dissolving calcium carbonate, making the water 'hard'. This causes limescale in kettles, pipes, and washing machines.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Carbon cycle (lithospheric component)</div>
+                        <div class="glossary-def">The part of the global carbon cycle involving carbon locked into rocks (the lithosphere). Chalk formation removes carbon from the ocean over millions of years; chalk dissolution returns it. This is much slower than the biological carbon cycle (days to years).</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Bjerrum plot</div>
+                        <div class="glossary-def">The graph shown in Figure 3. It shows the percentage of each dissolved inorganic carbon species (CO₂, H₂CO₃, HCO₃⁻, CO₃²⁻) as a function of pH. The classic crossed curves show that bicarbonate (HCO₃⁻) dominates at seawater pH (~8.1), while dissolved CO₂ dominates at acidic pH.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="glossary-section">
+                <button class="glossary-section-toggle" onclick="toggleSection(this)">
+                    <span class="chevron">&#9656;</span> IV. Fire and Powder: Thermal Decomposition and Kent's Lime Industry <span class="badge">15</span>
+                </button>
+                <div class="glossary-section-content" style="display: none;">
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Thermal decomposition</div>
+                        <div class="glossary-def">A chemical reaction in which a compound breaks down into simpler substances when heated. Calcium carbonate decomposes into calcium oxide and carbon dioxide when heated above 840°C.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">CaCO₃(s) → CaO(s) + CO₂(g)</div>
+                        <div class="glossary-def">The decomposition reaction. (s) means solid; (g) means gas. Solid chalk is heated, producing solid quicklime and carbon dioxide gas that escapes into the air.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">ΔH = +178 kJ mol⁻¹</div>
+                        <div class="glossary-def">The enthalpy change of the reaction. The '+' sign means the reaction is endothermic — it absorbs heat from its surroundings. 178 kilojoules of energy are needed to decompose one mole (100 g) of calcium carbonate. This is why lime kilns required sustained high temperatures.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Partial pressure exceeds one atmosphere</div>
+                        <div class="glossary-def">At 840°C, the CO₂ gas produced by decomposition builds up enough pressure to escape into open air. Below this temperature, the reaction cannot proceed to completion in an open kiln because the CO₂ pressure is too low to overcome atmospheric pressure.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Dead-burnt lime</div>
+                        <div class="glossary-def">Quicklime that has been heated too aggressively (above approximately 1,200°C), causing the calcium oxide to sinter (fuse together into a dense, unreactive mass). Dead-burnt lime will not react properly with water, making it useless for mortar.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Quicklime (calcium oxide, CaO)</div>
+                        <div class="glossary-def">The white solid produced when chalk or limestone is burned in a kiln. It is highly reactive and dangerous — it reacts vigorously with water and can cause severe chemical burns on contact with skin.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Slaking</div>
+                        <div class="glossary-def">The process of carefully adding water to quicklime to produce slaked lime (calcium hydroxide). The reaction is violently exothermic: the mixture can reach temperatures above 100°C and may boil and spit.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">ΔH = −65 kJ mol⁻¹</div>
+                        <div class="glossary-def">The enthalpy change for slaking. The '−' sign means the reaction is exothermic — it releases heat. This is why quicklime mixed with water gets extremely hot and was historically used as a weapon (Greek fire) and to heat food in the field.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Calcium hydroxide (Ca(OH)₂, slaked lime)</div>
+                        <div class="glossary-def">A white powder produced by adding water to quicklime. It is the active ingredient in lime mortar and lime plaster. It is alkaline (pH ~12.4 in solution).</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Lime mortar</div>
+                        <div class="glossary-def">A building material made by mixing slaked lime with sand and water. Used for thousands of years to bind bricks and stones together. Unlike modern cement, lime mortar remains slightly flexible, 'breathes' (allows moisture to pass through), and slowly self-heals small cracks through continued carbonation.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Carbonation</div>
+                        <div class="glossary-def">The slow process by which calcium hydroxide in lime mortar reabsorbs CO₂ from the air and gradually converts back to calcium carbonate. This is what causes lime mortar to harden over months and years — it is literally turning back into chalk.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Portland cement</div>
+                        <div class="glossary-def">The modern cement (invented in 1824 by Joseph Aspdin in Leeds) that largely replaced lime mortar in construction from the 19th century onwards. It is stronger and sets faster, but more brittle, less breathable, and far more carbon-intensive to produce.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Weald Clay</div>
+                        <div class="glossary-def">A geological formation of heavy clay soil found across the Weald of Kent and Sussex. These soils are naturally acidic and historically required liming (adding calcium oxide) to raise their pH and support productive agriculture.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Agricultural amendment</div>
+                        <div class="glossary-def">Any substance added to soil to improve its chemical or physical properties. Quicklime raises soil pH (reduces acidity), making acidic soils more suitable for crops.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">North Downs</div>
+                        <div class="glossary-def">A ridge of chalk hills running east–west across Kent and Surrey, from the Hog's Back near Guildford to the White Cliffs at Dover. The chalk of the North Downs is the same geological formation that forms the cliffs.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="glossary-section">
+                <button class="glossary-section-toggle" onclick="toggleSection(this)">
+                    <span class="chevron">&#9656;</span> V. The Acid Test: Ocean Acidification and the Carbonate Saturation State <span class="badge">12</span>
+                </button>
+                <div class="glossary-section-content" style="display: none;">
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Ocean acidification</div>
+                        <div class="glossary-def">The ongoing decrease in ocean pH caused by the absorption of human-produced CO₂ from the atmosphere. The ocean has become approximately 26% more acidic since the Industrial Revolution. Important: the ocean is still alkaline (pH ~8.1), not acidic in absolute terms. 'Acidification' means it is becoming <i>less</i> alkaline, not that it has become acid.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Anthropogenic</div>
+                        <div class="glossary-def">Caused by human activity. Anthropogenic CO₂ emissions include those from burning fossil fuels (coal, oil, gas), manufacturing cement, and deforestation.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Buffered</div>
+                        <div class="glossary-def">In chemistry, a buffered solution resists changes in pH when acid or base is added. Seawater is naturally buffered by the carbonate system: excess H⁺ ions react with CO₃²⁻ to form HCO₃⁻, partially absorbing the acid. However, this buffering consumes carbonate ions, reducing their availability for shell-building organisms.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Logarithmic scale (pH)</div>
+                        <div class="glossary-def">A mathematical scale where each unit represents a tenfold change. A pH decrease of 0.1 units (from 8.2 to 8.1) means H⁺ concentration has increased by about 26%, because 10⁰·¹ ≈ 1.26. A decrease of 1.0 unit would mean a tenfold (1,000%) increase in acidity.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Calcite saturation state (Ω, omega)</div>
+                        <div class="glossary-def">A number describing whether seawater conditions favour calcite formation (Ω > 1, supersaturated) or calcite dissolution (Ω < 1, undersaturated). It is the single most important number for predicting whether shell-building organisms can thrive.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Ω = [Ca²⁺][CO₃²⁻] / Ksp</div>
+                        <div class="glossary-def">The mathematical definition. [Ca²⁺] and [CO₃²⁻] are the actual concentrations of calcium and carbonate ions in seawater. Ksp is the solubility product — the concentration at which calcite is exactly at equilibrium between dissolving and precipitating.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Solubility product (Ksp)</div>
+                        <div class="glossary-def">A constant describing how much of a sparingly soluble salt will dissolve at a given temperature and pressure. For calcite, Ksp increases with pressure and decreases with temperature, which is why deep, cold ocean water dissolves calcite more readily than warm, shallow water.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Supersaturated (Ω > 1)</div>
+                        <div class="glossary-def">When seawater contains more dissolved calcium and carbonate ions than the equilibrium amount. Under these conditions, it is thermodynamically favourable (energetically 'downhill') for organisms to build CaCO₃ shells.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Saturation horizons</div>
+                        <div class="glossary-def">The ocean depth at which the saturation state Ω equals exactly 1. Above this depth, calcite is stable and organisms can build shells; below it, calcite dissolves. These horizons are moving closer to the surface (shoaling) as the ocean absorbs more CO₂ — by 30–200 metres since pre-industrial times.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Shoaling</div>
+                        <div class="glossary-def">Moving upward toward the surface. The calcite saturation horizon is 'shoaling' because ocean acidification is reducing carbonate ion concentrations in progressively shallower waters.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Business-as-usual emission scenarios (RCP 8.5)</div>
+                        <div class="glossary-def">Climate projections assuming that global CO₂ emissions continue at current rates without significant policy intervention. Under these scenarios, atmospheric CO₂ could reach approximately 800 ppm by 2100 (compared to ~425 ppm today and ~280 ppm pre-industrial). RCP stands for 'Representative Concentration Pathway'.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">RCP 4.5 (moderate mitigation)</div>
+                        <div class="glossary-def">A scenario assuming moderate emissions reductions are achieved. Surface pH would stabilise at approximately 7.9 by 2100 under this pathway, compared to 7.7–7.8 under business-as-usual.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="glossary-section">
+                <button class="glossary-section-toggle" onclick="toggleSection(this)">
+                    <span class="chevron">&#9656;</span> VI. The Archive, Revisited <span class="badge">5</span>
+                </button>
+                <div class="glossary-section-content" style="display: none;">
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Silica remobilisation</div>
+                        <div class="glossary-def">The process during diagenesis in which dissolved silica (from radiolarian and sponge remains) migrates through the chalk pore water and re-precipitates as flint nodules in a different location.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Boundary conditions</div>
+                        <div class="glossary-def">In science, the external constraints that define how a system behaves. The same carbonate chemistry operates today as in the Cretaceous, but under different boundary conditions (higher CO₂, lower pH, different temperature). Changing the boundary conditions changes the outcome.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Biomineralisation</div>
+                        <div class="glossary-def">The process by which living organisms produce minerals. Coccolithophore calcification, coral reef building, bone formation, and tooth enamel production are all examples of biomineralisation.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Equilibrium thermodynamics</div>
+                        <div class="glossary-def">The branch of chemistry and physics that predicts the direction and extent of chemical reactions based on energy considerations (enthalpy, entropy, free energy). It explains why calcite dissolves under some conditions and precipitates under others.</div>
+                    </div>
+
+                    <div class="glossary-entry">
+                        <div class="glossary-term">Biogeochemistry</div>
+                        <div class="glossary-def">The study of how biological, geological, and chemical processes interact to cycle elements (especially carbon, nitrogen, phosphorus, and silicon) through the Earth system — atmosphere, ocean, land, and rock.</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</aside>
+
+
+<script>
+let glossaryOpen = false;
+
+function toggleGlossary() {
+    const sidebar = document.getElementById('glossary-sidebar');
+    glossaryOpen = !glossaryOpen;
+    if (glossaryOpen) {
+        sidebar.classList.remove('collapsed');
+        sidebar.classList.add('expanded');
+    } else {
+        sidebar.classList.remove('expanded');
+        sidebar.classList.add('collapsed');
+    }
+}
+
+function toggleSection(btn) {
+    const content = btn.nextElementSibling;
+    const chevron = btn.querySelector('.chevron');
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        chevron.innerHTML = '&#9662;'; // expanded
+    } else {
+        content.style.display = 'none';
+        chevron.innerHTML = '&#9656;'; // collapsed
+    }
+}
+
+function filterGlossary() {
+    const query = document.getElementById('glossary-search').value.toLowerCase();
+    const sections = document.querySelectorAll('.glossary-section');
+    
+    sections.forEach(section => {
+        const entries = section.querySelectorAll('.glossary-entry');
+        let sectionHasVisible = false;
+        
+        entries.forEach(entry => {
+            const term = entry.querySelector('.glossary-term').innerText.toLowerCase();
+            const def = entry.querySelector('.glossary-def').innerText.toLowerCase();
+            
+            if (term.includes(query) || def.includes(query)) {
+                entry.style.display = 'block';
+                sectionHasVisible = true;
+            } else {
+                entry.style.display = 'none';
+            }
+        });
+        
+        if (query.trim() === '') {
+            section.style.display = 'block';
+        } else {
+            section.style.display = sectionHasVisible ? 'block' : 'none';
+            if (sectionHasVisible) {
+                const btn = section.querySelector('.glossary-section-toggle');
+                const content = section.querySelector('.glossary-section-content');
+                const chevron = btn.querySelector('.chevron');
+                content.style.display = 'block';
+                chevron.innerHTML = '&#9662;';
+            }
+        }
+    });
+}
+
+// Mobile swipe close & click outside
+document.addEventListener('click', function(e) {
+    const sidebar = document.getElementById('glossary-sidebar');
+    // Only close if it's mobile drawer, it is open, and click is outside sidebar
+    if (glossaryOpen && window.innerWidth <= 1024) {
+        if (!sidebar.contains(e.target)) {
+            toggleGlossary();
+        }
+    }
+});
+
+let touchStartY = 0;
+let touchEndY = 0;
+
+document.addEventListener('touchstart', e => {
+    touchStartY = e.changedTouches[0].screenY;
+}, {passive: true});
+
+document.addEventListener('touchend', e => {
+    touchEndY = e.changedTouches[0].screenY;
+    if (window.innerWidth <= 1024 && glossaryOpen) {
+        const sidebar = document.getElementById('glossary-sidebar');
+        // Check if swipe was on the handle or header area to prevent closing when just scrolling definitions
+        let isTopArea = e.target.closest('.glossary-mobile-handle') || e.target.closest('.glossary-header-row');
+        if (isTopArea && touchEndY - touchStartY > 50) { 
+            toggleGlossary();
+        }
+    }
+}, {passive: true});
+</script>
+
 </body>
 </html>
