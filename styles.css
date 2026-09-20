@@ -111,7 +111,7 @@ a:hover {
 }
 
 .navbar-brand:hover {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 .brand-logo {
@@ -136,7 +136,7 @@ a:hover {
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 /* Nav Dropdown */
@@ -191,8 +191,8 @@ a:hover {
 }
 
 .dropdown-menu li a:hover {
-  background-color: rgba(137, 118, 75, 0.2);
-  color: var(--secondary);
+  background-color: rgba(255, 255, 255, 0.14);
+  color: var(--accent);
 }
 
 .hamburger {
@@ -223,7 +223,7 @@ a:hover {
 }
 
 .footer a:hover {
-  color: var(--secondary);
+  color: #ffffff;
 }
 
 /* Hero Section */
@@ -256,7 +256,7 @@ a:hover {
 /* Buttons */
 .btn {
   display: inline-block;
-  background-color: var(--secondary);
+  background-color: var(--accent);
   color: var(--text-dark);
   padding: 12px 24px;
   border-radius: 6px;
@@ -370,7 +370,7 @@ a:hover {
 /* Quote Cards */
 .quote-card {
   background-color: rgba(137, 118, 75, 0.1); /* light gold */
-  border-left: 4px solid var(--secondary);
+  border-left: 4px solid var(--accent);
   padding: 20px 30px;
   font-style: italic;
   margin: 20px 0;
@@ -421,7 +421,7 @@ a:hover {
   padding: 20px;
   background-color: var(--bg-light);
   border-radius: 8px;
-  border-left: 4px solid var(--secondary);
+  border-left: 4px solid var(--accent);
   position: relative;
 }
 
@@ -793,3 +793,13 @@ hr, .rule { border: 0; border-top: 1px solid var(--rule); }
   .publisher-band .band-rule { display: none; }
   .publisher-band .band-text { font-size: 13px; }
 }
+
+
+/* ---------- Contrast safety net ----------
+   --secondary is a TEXT colour on light grounds (links).
+   Anything using it as a FILL gets the Tan accent instead, so dark text stays readable. */
+[style*="background-color: var(--secondary)"], [style*="background-color:var(--secondary)"] {
+  background-color: var(--accent) !important;
+  color: var(--text-dark) !important;
+}
+[style*="background: var(--secondary)"] { background: var(--accent) !important; color: var(--text-dark) !important; }
