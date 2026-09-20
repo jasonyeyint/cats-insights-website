@@ -1,0 +1,127 @@
+[build]
+  publish = "."
+
+# ---------------------------------------------------------------------------
+# PURGED PATHS — return 410 Gone, not 404.
+# 410 tells search engines the resource is permanently removed and should be
+# dropped from the index. 404 is treated as possibly temporary and is retried.
+# force = true ensures the rule applies even if a file is ever re-added.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/assets/mentoring-evidence/editor-reports/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/assets/mentoring-evidence/editor-test/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/assets/mentoring-evidence/designer-test/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/assets/mentoring-evidence/cats-insights-metrics-tracker.xlsx"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/assets/mentoring-evidence/cats-insights---level-2-writing-submission-(responses).xlsx"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/assets/mentoring-evidence/writer-test/writers-marks.docx"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/Context/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/Category 3 Materials/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/Writers course tests/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/Microwaves and Metal.mp4"
+  to = "/410.html"
+  status = 410
+  force = true
+
+# Orphaned duplicate asset directories
+[[redirects]]
+  from = "/Pfizer Images/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/Superconductor Images/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/WhiteCliffs Images/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/Idea Article Images/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+# ---------------------------------------------------------------------------
+# CATCH-ALL — must remain last.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# ---------------------------------------------------------------------------
+# HEADERS
+# X-Robots-Tag on /assets/* stops search engines indexing anything under that
+# path WITHOUT naming sensitive paths in a public robots.txt file.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"

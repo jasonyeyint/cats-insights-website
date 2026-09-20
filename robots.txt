@@ -1,0 +1,7 @@
+# CATS Insights — The Worthgate School, Canterbury, United Kingdom
+# Specific paths are deliberately NOT listed here. A robots.txt file is public;
+# naming a sensitive directory in it advertises that directory. Exclusion of
+# non-public assets is enforced by X-Robots-Tag headers in netlify.toml.
+
+User-agent: *
+Allow: /
