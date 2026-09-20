@@ -93,6 +93,12 @@
   status = 410
   force = true
 
+[[redirects]]
+  from = "/foundational-suite.html"
+  to = "/resources.html"
+  status = 301
+  force = true
+
 # ---------------------------------------------------------------------------
 # CATCH-ALL — must remain last.
 # ---------------------------------------------------------------------------
