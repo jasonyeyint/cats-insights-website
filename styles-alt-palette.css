@@ -1,0 +1,19 @@
+/* CATS Insights — ALTERNATE PALETTE (preview only, NOT brand-approved)
+   Swap by replacing the :root block in styles.css with the block below.
+   Requires sign-off from Naomi Lalor-Neely, CGS Product Marketing, before use. */
+:root {
+  --primary:   #25344F;   /* Space Cadet — headings, nav, footer.  12.48:1 on white */
+  --secondary: #25344F;   /* links */
+  --accent:    #D5B893;   /* Tan — 1.89:1 on white. NEVER text on white; on Space Cadet only (6.60:1) */
+  --teal:      #617891;   /* Slate Gray — rules and borders ONLY. 2.74:1 on Space Cadet, fails as text there */
+  --grey:      #6F4D38;   /* Coffee — secondary text. 7.51:1 on white */
+  --highlight: #632024;   /* Caput Mortuum — sparing emphasis. 11.91:1 on white */
+  --bg-white:  #FFFFFF;
+  --bg-light:  #FAF6F0;
+  --text-dark: #1A1A1A;
+  --cgs-navy:  #191F2F;
+  --font-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  --font-head: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+}
+/* NOTE: with this palette the Worthgate GREEN logo is unusable (1.16:1 on Space Cadet).
+   The WHITE logo variants must be used throughout. */

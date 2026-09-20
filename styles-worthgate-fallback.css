@@ -1,22 +1,14 @@
 /* CATS Insights Global Styles */
 :root {
-  /* ---- CATS Insights palette (publication identity) ---- */
-  --primary:   #25344F;   /* Space Cadet — headings, nav, hero.       11.59:1 on cream */
-  --secondary: #25344F;   /* links */
-  --accent:    #D5B893;   /* Tan — 6.60:1 on Space Cadet, 5.69:1 on green.
-                             NEVER as text on white or cream (1.76:1). Dark grounds only. */
-  --rule:      #617891;   /* Slate Gray — borders and rules ONLY, never text */
-  --teal:      #617891;   /* legacy alias */
-  --grey:      #6F4D38;   /* Coffee — secondary text.                  6.98:1 on cream */
-  --highlight: #632024;   /* Caput Mortuum — sparing emphasis.        11.07:1 on cream */
-
-  /* ---- Publisher identity (Worthgate) — endorsement band and footer ONLY ---- */
-  --publisher: #024734;   /* Worthgate green. White on it = 10.75:1 */
-
-  --bg-white:  #FFFFFF;
-  --bg-light:  #FAF6F0;
+  --primary: #024734;       /* Worthgate green */
+  --secondary: #024734;      /* links — green, not gold (gold fails contrast on white) */
+  --accent: #fed169;         /* Worthgate gold — ONLY on green or navy, never text on white */
+  --teal: #5EA8AD;           /* CGS teal — rules and borders only, never text */
+  --grey: #575756;           /* secondary text */
+  --bg-white: #FFFFFF;
+  --bg-light: #fffbf1;       /* Worthgate cream */
   --text-dark: #1A1A1A;
-  --cgs-navy:  #191F2F;
+  --cgs-navy: #191F2F;
   --font-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
   --font-head: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --header-height: 70px;
@@ -708,7 +700,7 @@ a:hover {
 
 /* ---------- Rebuild: footer, Edition 1, utilities ---------- */
 
-.footer { background-color: var(--publisher); color: #ffffff; padding: 48px 0 36px; margin-top: 64px; }
+.footer { background-color: var(--primary); color: #ffffff; padding: 48px 0 36px; margin-top: 64px; }
 .footer a { color: var(--accent); text-decoration: none; }
 .footer a:hover { color: #ffffff; text-decoration: underline; }
 .footer-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
@@ -769,27 +761,4 @@ a:hover {
   .hero-marks .mark-cgs { height: 26px; }
   .mark-rule { display: none; }
   .footer-marks img { height: 28px; }
-}
-
-
-/* ---------- Publisher endorsement band (Worthgate zone) ---------- */
-.publisher-band { background-color: var(--publisher); color: #ffffff; padding: 26px 0; }
-.publisher-band .container { display: flex; align-items: center; justify-content: center; gap: 26px; flex-wrap: wrap; text-align: center; }
-.publisher-band img { height: 40px; width: auto; }
-.publisher-band .cgs { height: 32px; }
-.publisher-band .band-text { font-size: 14px; letter-spacing: 0.04em; color: #ffffff; }
-.publisher-band .band-rule { width: 1px; height: 34px; background: rgba(255,255,255,0.3); }
-
-/* Scope the low-contrast colours so they can never become text */
-hr, .rule { border: 0; border-top: 1px solid var(--rule); }
-.contents-section h2 { border-bottom: 2px solid var(--rule); }
-.meta-panel { border-left: 4px solid var(--rule); }
-.board-list li { border-left: 3px solid var(--rule); }
-
-@media (max-width: 600px) {
-  .publisher-band .container { gap: 14px; }
-  .publisher-band img { height: 30px; }
-  .publisher-band .cgs { height: 24px; }
-  .publisher-band .band-rule { display: none; }
-  .publisher-band .band-text { font-size: 13px; }
 }
