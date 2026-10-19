@@ -93,6 +93,31 @@
   status = 301
   force = true
 
+# Standalone web versions replaced by the final edited versions in Edition 1
+[[redirects]]
+  from = "/superconductivity-materials-mechanisms.html"
+  to = "/edition-1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-exactly-are-ideas.html"
+  to = "/edition-1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/articles/superconductivity.pdf"
+  to = "/edition-1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/articles/what-are-ideas.pdf"
+  to = "/edition-1.html"
+  status = 301
+  force = true
+
 # ---------------------------------------------------------------------------
 # CATCH-ALL — must remain last.
 # ---------------------------------------------------------------------------
